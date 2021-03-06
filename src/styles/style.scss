@@ -1,3 +1,32 @@
 body {
-  font-family: "sans-serif";
+  background-color: #48a9a6;
+  font-family: "sans";
+}
+
+body > div {
+  background-color: #e4dfda !important;
+}
+
+h2 span {
+
+  &.time {
+    background-color: #d4b483;
+    border-radius: 10px;
+    border: 2px solid #4281a4;
+    color: #4281a4;
+    font-size: 0.8em;
+    padding: 5px;
+    margin-right: 10px;
+  }
+
+  &.who {
+    background-color: none;
+    font-size: 0.6em;
+    padding-right: 5px;
+    margin-right: 15px;
+  }
+}
+
+.slides li {
+  padding-bottom: 10px;
 }

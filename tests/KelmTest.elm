@@ -1,7 +1,7 @@
 module KelmTest exposing (suite)
 
 import Base
-import Expect exposing (Expectation)
+import Expect
 import Test exposing (..)
 
 

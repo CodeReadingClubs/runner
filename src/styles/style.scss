@@ -1,5 +1,12 @@
+$light: #f6f4d2;
+$mid1: #d4e09b;
+$mid2: #cbdfbd; //tea green
+$mid3: #73a6ad; //cadet blue
+//$mid3: #f19c79; // peach
+$dark: #a44a3f; //light rust
+
 body {
-  background-color: #48a9a6;
+  background-color: $mid3; //#48a9a6;
   font-family: "sans";
 }
 
@@ -10,10 +17,10 @@ body > div {
 h2 span {
 
   &.time {
-    background-color: #d4b483;
+    background-color: $mid2; //#d4b483;
     border-radius: 10px;
-    border: 2px solid #4281a4;
-    color: #4281a4;
+    border: 2px solid $dark; //#4281a4;
+    color: $dark; //#4281a4;
     font-size: 0.8em;
     padding: 5px;
     margin-right: 10px;

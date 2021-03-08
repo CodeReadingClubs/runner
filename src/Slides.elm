@@ -68,6 +68,7 @@ slides =
       , item (p [] [ text "Katja Mordaunt @katjam on Github" ])
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
+            , bulletLink "Code sample" "https://docs.google.com/document/d/1HEg5qMUYPS4FZd2EmaCVgoMeAcMbD_rUqiyln7Gs35k"
             , bulletLink "Jamboard for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/viewer"
             ]
       ]
@@ -77,6 +78,7 @@ slides =
             , bullet "I'll keep the exercises & timer posted on my screen"
             , bullet "You write on your code doc & the jamboard"
             ]
+      , slideP "Don't worry about what you know!" |> hide
       ]
     , [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
@@ -102,8 +104,8 @@ slides =
       , timedHeading "1" "Independently" "Glance at the code"
       , slideP "It's important that is an immediate reaction."
       , bullets
-            [ bullet "Right away, note down the first thing that catches your eye\n"
-            , bullet "Then note down the second thing that catches your eye\n"
+            [ bullet "Right away, note down the first thing that catches your eye"
+            , bullet "Then note down the second thing that catches your eye"
             , bullet "Take the remainder of the minute to think about why you noticed those things first"
             ]
       ]
@@ -158,7 +160,7 @@ slides =
             , bullet "lines named but not by a lot of people"
             , bullet "Agree less than 8 of the most important lines"
             ]
-      , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (or less/more, could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore.\n[Save the last word for me protocol](https://lead.nwp.org/knowledgebase/save-the-last-word-for-me-protocol/)"
+      , slideMarkdownP "Take turns in the group, and let every member talk about the code for 30 seconds (or less/more, could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore.\n[Save the last word for me protocol](https://lead.nwp.org/knowledgebase/save-the-last-word-for-me-protocol/)"
       ]
     , [ slideHeading "Summary"
       , timedHeading "5" "Independently" "Summarize"
@@ -196,6 +198,11 @@ slideHeading title =
 slideP : String -> CustomContent
 slideP paragraph =
     item (p [] [ text paragraph ])
+
+
+slideMarkdownP : String -> CustomContent
+slideMarkdownP paragraph =
+    item (Markdown.toHtml [] paragraph)
 
 
 timedHeading : String -> String -> String -> CustomContent

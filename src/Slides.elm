@@ -1,23 +1,26 @@
 module Slides exposing (Message, Model, slides, subscriptions, update, view)
 
-import Browser.Events exposing (onAnimationFrameDelta)
 import Html exposing (Html, a, div, h1, h2, img, li, p, small, span, text, ul)
 import Html.Attributes exposing (class, href, src, style)
 import Markdown
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
+import Time exposing (Posix)
 
 
 {-| Model type of the custom content
 -}
 type alias Model =
-    Float
+    { elapsedTime : Float
+    , timerStarted : Bool
+    }
 
 
 {-| Message type for the custom content
 -}
-type alias Message =
-    Float
+type Message
+    = Tick Posix
+    | StartStopPressed Bool
 
 
 {-| Type for custom content
@@ -35,19 +38,23 @@ type alias CustomSlide =
 {-| Update function for the custom content
 -}
 update : Message -> Model -> ( Model, Cmd Message )
-update elapsed time =
-    ( time + elapsed, Cmd.none )
+update msg model =
+    case msg of
+        Tick _ ->
+            ( { model | elapsedTime = model.elapsedTime + 1000 }, Cmd.none )
+
+        StartStopPressed state ->
+            ( { model | timerStarted = not state }, Cmd.none )
 
 
 {-| View function for the custom content that shows elapsed time for the slide
 -}
 view : Model -> Html Message
-view time =
+view model =
     small
         [ style "position" "absolute", style "bottom" "0", style "right" "0" ]
         [ text
-            ("the slide is visible for "
-                ++ (round time // 1000 |> String.fromInt)
+            ((round model.elapsedTime // 1000 |> String.fromInt)
                 ++ " seconds"
             )
         ]
@@ -56,8 +63,12 @@ view time =
 {-| Inputs for the custom content
 -}
 subscriptions : Model -> Sub Message
-subscriptions _ =
-    onAnimationFrameDelta identity
+subscriptions model =
+    if model.timerStarted then
+        Time.every 1000 Tick
+
+    else
+        Sub.none
 
 
 {-| The list of slides
@@ -229,5 +240,5 @@ paddedSlide content =
     slide
         [ container
             (div [ class "slides", style "padding" "50px 100px" ])
-            (content ++ [ custom 0 ])
+            (content ++ [ custom { elapsedTime = 0, timerStarted = True } ])
         ]

@@ -1,7 +1,8 @@
 module Slides exposing (Message, Model, slides, subscriptions, update, view)
 
-import Html exposing (Html, a, div, h1, h2, img, li, p, small, span, text, ul)
+import Html exposing (Html, a, button, div, h1, h2, img, li, p, small, span, text, ul)
 import Html.Attributes exposing (class, href, src, style)
+import Html.Events exposing (onClick)
 import Markdown
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
@@ -52,11 +53,18 @@ update msg model =
 view : Model -> Html Message
 view model =
     small
-        [ style "position" "absolute", style "bottom" "0", style "right" "0" ]
+        [ style "position" "absolute", style "bottom" "10", style "right" "200" ]
         [ text
             ((round model.elapsedTime // 1000 |> String.fromInt)
                 ++ " seconds"
             )
+        , button [ onClick (StartStopPressed model.timerStarted) ]
+            [ if model.timerStarted then
+                text "Stop"
+
+              else
+                text "Start"
+            ]
         ]
 
 
@@ -240,5 +248,5 @@ paddedSlide content =
     slide
         [ container
             (div [ class "slides", style "padding" "50px 100px" ])
-            (content ++ [ custom { elapsedTime = 0, timerStarted = True } ])
+            (content ++ [ custom { elapsedTime = 0, timerStarted = False } ])
         ]

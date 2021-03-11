@@ -1,6 +1,6 @@
 module Slides exposing (Message, Model, slides, subscriptions, update, view)
 
-import Html exposing (Html, a, button, div, h1, h2, img, li, p, small, span, text, ul)
+import Html exposing (Html, a, button, div, h1, h2, hr, img, li, p, small, span, text, ul)
 import Html.Attributes exposing (class, href, src, style)
 import Html.Events exposing (onClick)
 import Markdown
@@ -52,18 +52,20 @@ update msg model =
 -}
 view : Model -> Html Message
 view model =
-    small
-        [ style "position" "absolute", style "bottom" "10", style "right" "200" ]
-        [ text
-            ((round model.elapsedTime // 1000 |> String.fromInt)
-                ++ " seconds"
-            )
+    div
+        [ class "stopwatch" ]
+        [ span []
+            [ text
+                ((round model.elapsedTime // 1000 |> String.fromInt)
+                    ++ " seconds"
+                )
+            ]
         , button [ onClick (StartStopPressed model.timerStarted) ]
             [ if model.timerStarted then
                 text "Stop"
 
               else
-                text "Start"
+                text "Go !"
             ]
         ]
 
@@ -83,11 +85,18 @@ subscriptions model =
 -}
 slides : List CustomSlide
 slides =
-    [ [ slideHeading "Introduction"
-      , item (p [] [ text "Katja Mordaunt @katjam on Github" ])
+    [ [ slideHeading "Code Reading Club workshop"
+      , item (h2 [] [ text "Katja Mordaunt" ])
+      , slideP "email: katjamordaunt@gmail.com"
+      , slideP "github: @katjam"
+      , slideP "website: https://code-reading.org"
+      , slideHr
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
             , bulletLink "Jamboard for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/viewer"
+            , bullet "Code pdf"
+            , bullet "Annotate app"
+            , bullet "Coloured code"
             ]
       ]
     , [ slideHeading "How this will work"
@@ -212,6 +221,11 @@ slideHeading title =
     item (h1 [] [ text title ])
 
 
+slideHr : CustomContent
+slideHr =
+    item (hr [] [])
+
+
 slideP : String -> CustomContent
 slideP paragraph =
     item (p [] [ text paragraph ])
@@ -219,10 +233,18 @@ slideP paragraph =
 
 timedHeading : String -> String -> String -> CustomContent
 timedHeading minutes who heading =
+    let
+        label =
+            if minutes == "1" then
+                " minute"
+
+            else
+                " minutes"
+    in
     container (h2 [])
-        [ item (span [ class "time" ] [ text (minutes ++ " mins") ])
+        [ item (text heading)
         , item (span [ class "who" ] [ text who ])
-        , item (text heading)
+        , item (span [ class "time" ] [ text (minutes ++ label) ])
         ]
 
 

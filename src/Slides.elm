@@ -1,23 +1,27 @@
 module Slides exposing (Message, Model, slides, subscriptions, update, view)
 
-import Browser.Events exposing (onAnimationFrameDelta)
-import Html exposing (Html, a, div, h1, h2, img, li, p, small, span, text, ul)
+import Html exposing (Html, a, button, div, h1, h2, hr, img, li, p, small, span, text, ul)
 import Html.Attributes exposing (class, href, src, style)
+import Html.Events exposing (onClick)
 import Markdown
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
+import Time exposing (Posix)
 
 
 {-| Model type of the custom content
 -}
 type alias Model =
-    Float
+    { elapsedTime : Float
+    , timerStarted : Bool
+    }
 
 
 {-| Message type for the custom content
 -}
-type alias Message =
-    Float
+type Message
+    = Tick Posix
+    | StartStopPressed Bool
 
 
 {-| Type for custom content
@@ -35,43 +39,64 @@ type alias CustomSlide =
 {-| Update function for the custom content
 -}
 update : Message -> Model -> ( Model, Cmd Message )
-update elapsed time =
-    ( time + elapsed, Cmd.none )
+update msg model =
+    case msg of
+        Tick _ ->
+            ( { model | elapsedTime = model.elapsedTime + 1000 }, Cmd.none )
+
+        StartStopPressed state ->
+            ( { model | timerStarted = not state }, Cmd.none )
 
 
 {-| View function for the custom content that shows elapsed time for the slide
 -}
 view : Model -> Html Message
-view time =
-    small
-        [ style "position" "absolute", style "bottom" "0", style "right" "0" ]
-        [ text
-            ("the slide is visible for "
-                ++ (round time // 1000 |> String.fromInt)
-                ++ " seconds"
-            )
+view model =
+    div
+        [ class "stopwatch" ]
+        [ span []
+            [ text
+                ((round model.elapsedTime // 1000 |> String.fromInt)
+                    ++ " seconds"
+                )
+            ]
+        , button [ onClick (StartStopPressed model.timerStarted) ]
+            [ if model.timerStarted then
+                text "Stop"
+
+              else
+                text "Go !"
+            ]
         ]
 
 
 {-| Inputs for the custom content
 -}
 subscriptions : Model -> Sub Message
-subscriptions _ =
-    onAnimationFrameDelta identity
+subscriptions model =
+    if model.timerStarted then
+        Time.every 1000 Tick
+
+    else
+        Sub.none
 
 
 {-| The list of slides
 -}
 slides : List CustomSlide
 slides =
-    [ [ slideHeading "Introduction"
-      , item (p [] [ text "Katja Mordaunt @katjam on Github" ])
+    [ [ slideHeading "Code Reading Club workshop"
+      , item (h2 [] [ text "Katja Mordaunt" ])
+      , slideP "email: katjamordaunt@gmail.com"
+      , slideP "github: @katjam"
+      , slideP "website: https://code-reading.org"
+      , slideHr
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
             , bulletLink "Jamboard for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/viewer"
             , bulletLink "Pdf annotation tool" "https://www.goodannotations.com/"
             , bulletLink "Code googledoc (view only)" "https://docs.google.com/document/d/1HEg5qMUYPS4FZd2EmaCVgoMeAcMbD_rUqiyln7Gs35k"
-            , bulletLink "Code pdf" ""
+            , bulletLink "Coloured pdf" ""
             ]
       ]
     , [ slideHeading "How this will work"
@@ -196,6 +221,11 @@ slideHeading title =
     item (h1 [] [ text title ])
 
 
+slideHr : CustomContent
+slideHr =
+    item (hr [] [])
+
+
 slideP : String -> CustomContent
 slideP paragraph =
     item (p [] [ text paragraph ])
@@ -203,10 +233,18 @@ slideP paragraph =
 
 timedHeading : String -> String -> String -> CustomContent
 timedHeading minutes who heading =
+    let
+        label =
+            if minutes == "1" then
+                " minute"
+
+            else
+                " minutes"
+    in
     container (h2 [])
-        [ item (span [ class "time" ] [ text (minutes ++ " mins") ])
+        [ item (text heading)
         , item (span [ class "who" ] [ text who ])
-        , item (text heading)
+        , item (span [ class "time" ] [ text (minutes ++ label) ])
         ]
 
 
@@ -232,5 +270,5 @@ paddedSlide content =
     slide
         [ container
             (div [ class "slides", style "padding" "50px 100px" ])
-            (content ++ [ custom 0 ])
+            (content ++ [ custom { elapsedTime = 0, timerStarted = False } ])
         ]

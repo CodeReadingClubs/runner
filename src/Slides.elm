@@ -129,19 +129,19 @@ slides =
             , bullet "I'll keep the exercises & timer posted on my screen"
             , bullet "You write on your code doc & the jamboard"
             ]
+      , item (h2 [] [ text "Any questions before we start?" ]) |> hide
       ]
     , [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
-            [ timedHeading "2" "Independently" "Note down one thing"
+            [ timedHeading "1" "Independently" "Note down one thing"
             , bullets [ bullet "that you are looking forward to or excited about", bullet "that you are worried or confused about" ]
             ]
             |> hide
       ]
     , [ slideHeading "Why are we doing this?"
-      , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
-            [ timedHeading "5" "Together" "Discuss"
+            [ timedHeading "3" "Together" "Discuss"
             , bullets
                 [ bullet "Give everyone a chance to read out their hopes and fears"
                 , bullet "Discuss collectively what you want to get out of the club"
@@ -156,13 +156,12 @@ slides =
       , timedHeading "1" "Independently" "Glance at the code"
       , slideP "It's important that is an immediate reaction."
       , bullets
-            [ bullet "Right away, note down the first thing that catches your eye"
-            , bullet "Then note down the second thing that catches your eye"
-            , bullet "Take the remainder of the minute to think about why you noticed those things first"
+            [ bullet "Look at code for a few seconds. Note down the first thing that catches your eye"
+            , bullet "Then look again for a few more seconds. Note down the second thing that catches your eye"
+            , bullet "Now think about why you noticed those things first"
             ]
       ]
     , [ slideHeading "First glance"
-      , slideP "The goal of this exercise is to practice to get a first impression of code and to act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
       , timedHeading "5" "Together" "Discuss"
       , slideP "Talk about why things might have jumped out for different people. It might be tempting for some people to start talking about the big picture; try to steer discussion back to individual details, rather than summaries."
       , bullets
@@ -189,7 +188,6 @@ slides =
             ]
       ]
     , [ slideHeading "Code structure"
-      , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help! Digital annotation can take a bit longer than on paper. Leave time for your group members to settle on a technique that works for them."
       , timedHeading "10" "Together" "Discuss"
       , bullets
             [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
@@ -211,7 +209,6 @@ slides =
             ]
       ]
     , [ slideHeading "Content"
-      , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
       , timedHeading "10" "Together" "Discuss"
       , slideP "Discuss in the group:"
       , bullets

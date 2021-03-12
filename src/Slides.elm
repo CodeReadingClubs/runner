@@ -93,7 +93,8 @@ slides =
       , slideHr
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
-            , bulletLink "Jamboard for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/viewer"
+            , bulletLink "Jamboard (A-L) for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/edit"
+            , bulletLink "Jamboard (M-Z) for workshop exercises" "https://jamboard.google.com/d/1rHKt3dEVQzN8mGuAEuPlmcN-EitMUEDecLBHuQ7w-S4/edit"
             , bulletLink "pdf annotation tool: goodannotations.com" "https://www.goodannotations.com/"
             , bulletLink "Code googledoc (view only)" "https://docs.google.com/document/d/1HEg5qMUYPS4FZd2EmaCVgoMeAcMbD_rUqiyln7Gs35k"
             , bulletLink "Clean pdf to download" "/code.pdf"

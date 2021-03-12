@@ -93,10 +93,11 @@ slides =
       , slideHr
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
-            , bulletLink "Jamboard for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/viewer"
-            , bulletLink "Pdf annotation tool" "https://www.goodannotations.com/"
+            , bulletLink "Jamboard (A-L) for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/edit"
+            , bulletLink "Jamboard (M-Z) for workshop exercises" "https://jamboard.google.com/d/1rHKt3dEVQzN8mGuAEuPlmcN-EitMUEDecLBHuQ7w-S4/edit"
+            , bulletLink "pdf annotation tool: goodannotations.com" "https://www.goodannotations.com/"
             , bulletLink "Code googledoc (view only)" "https://docs.google.com/document/d/1HEg5qMUYPS4FZd2EmaCVgoMeAcMbD_rUqiyln7Gs35k"
-            , bulletLink "Coloured pdf" ""
+            , bulletLink "Clean pdf to download" "/code.pdf"
             ]
       ]
     , [ slideHeading "How this will work"
@@ -109,29 +110,31 @@ slides =
     , [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
-            [ timedHeading "2" "Independently" "Note down one thing about the club"
+            [ timedHeading "2" "Independently" "Note down one thing"
             , bullets [ bullet "that you are looking forward to or excited about", bullet "that you are worried or confused about" ]
             ]
             |> hide
+      ]
+    , [ slideHeading "Why are we doing this?"
+      , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
             [ timedHeading "5" "Together" "Discuss"
             , bullets
                 [ bullet "Give everyone a chance to read out their hopes and fears"
-                , bullet "Use the remaining time to discuss collectively what you want to get out of the club"
-                , bullet "Decide how long you want your sessions to be and how often you want to run them"
-                , bullet "Decide if the same person will facilitate all of the sessions or if you want to take turns"
+                , bullet "Discuss collectively what you want to get out of the club"
+                , bullet "Decide how long and how often you want your sessions to be"
+                , bullet "Decide if the same person will always facilitate or if you want to take turns"
                 , bullet "Think about how to accommodate members of your group who might have varying levels of experience and confidence"
                 ]
             ]
-            |> hide
       ]
     , [ slideHeading "First glance"
       , slideP "The goal of this exercise is to practice to get a first impression of code and to act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
       , timedHeading "1" "Independently" "Glance at the code"
       , slideP "It's important that is an immediate reaction."
       , bullets
-            [ bullet "Right away, note down the first thing that catches your eye\n"
-            , bullet "Then note down the second thing that catches your eye\n"
+            [ bullet "Right away, note down the first thing that catches your eye"
+            , bullet "Then note down the second thing that catches your eye"
             , bullet "Take the remainder of the minute to think about why you noticed those things first"
             ]
       ]
@@ -158,6 +161,9 @@ slides =
             , bullet "Functions / Methods"
             , bullet "Instantiation"
             ]
+      , bullets
+            [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/KSGpW01QDe"
+            ]
       ]
     , [ slideHeading "Code structure"
       , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help! Digital annotation can take a bit longer than on paper. Leave time for your group members to settle on a technique that works for them."
@@ -167,6 +173,10 @@ slides =
             , bullet "What patterns are visible from the colors and links only?"
             , bullet "How does the data flow through the code?"
             , bullet "What parts of the code seem to warrant more attention?"
+            ]
+      , bullets
+            [ bulletLink "Coloured pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/tGBSC1xrUR"
+            , bulletLink "Coloured pdf to download" "/code-coloured.pdf"
             ]
       ]
     , [ slideHeading "Content"
@@ -202,13 +212,13 @@ slides =
       ]
     , [ slideHeading "Reflect on the session"
       , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
-      , timedHeading "5" "Together" "Note down things about the session"
+      , timedHeading "5" "Together" "Note down things"
       , bullets
             [ bullet "that went well or felt good"
             , bullet "you want to try to do differently next time because they didn't work or felt bad"
             ]
       ]
-    , [ slideHeading "Questions?"
+    , [ slideHeading "What now?"
       , slideP "Code reading club resources"
       , slideP "Get in touch"
       ]

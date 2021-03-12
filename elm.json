@@ -9,6 +9,7 @@
             "elm/core": "1.0.2",
             "elm/html": "1.0.0",
             "elm/time": "1.0.0",
+            "elm-explorations/markdown": "1.0.0",
             "w0rm/elm-slice-show": "5.0.2"
         },
         "indirect": {

@@ -3,6 +3,7 @@ module Slides exposing (Message, Model, slides, subscriptions, update, view)
 import Html exposing (Html, a, button, div, h1, h2, hr, li, p, span, text, ul)
 import Html.Attributes exposing (class, href, style)
 import Html.Events exposing (onClick)
+import Markdown
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
 import Time exposing (Posix)
@@ -129,19 +130,19 @@ slides =
             , bullet "I'll keep the exercises & timer posted on my screen"
             , bullet "You write on your code doc & the jamboard"
             ]
+      , item (h2 [] [ text "Any questions before we start?" ]) |> hide
       ]
     , [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
-            [ timedHeading "2" "Independently" "Note down one thing"
+            [ timedHeading "1" "Independently" "Note down one thing"
             , bullets [ bullet "that you are looking forward to or excited about", bullet "that you are worried or confused about" ]
             ]
             |> hide
       ]
     , [ slideHeading "Why are we doing this?"
-      , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
-            [ timedHeading "5" "Together" "Discuss"
+            [ timedHeading "3" "Together" "Discuss"
             , bullets
                 [ bullet "Give everyone a chance to read out their hopes and fears"
                 , bullet "Discuss collectively what you want to get out of the club"
@@ -156,14 +157,14 @@ slides =
       , timedHeading "1" "Independently" "Glance at the code"
       , slideP "It's important that is an immediate reaction."
       , bullets
-            [ bullet "Right away, note down the first thing that catches your eye"
-            , bullet "Then note down the second thing that catches your eye"
-            , bullet "Take the remainder of the minute to think about why you noticed those things first"
+            [ bullet "Look at code for a few seconds. Note down the first thing that catches your eye"
+            , bullet "Then look again for a few more seconds. Note down the second thing that catches your eye"
+            , bullet "Now think about why you noticed those things first"
             ]
+            |> hide
       ]
     , [ slideHeading "First glance"
-      , slideP "The goal of this exercise is to practice to get a first impression of code and to act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
-      , timedHeading "5" "Together" "Discuss"
+      , timedHeading "4" "Together" "Discuss"
       , slideP "Talk about why things might have jumped out for different people. It might be tempting for some people to start talking about the big picture; try to steer discussion back to individual details, rather than summaries."
       , bullets
             [ bullet "How do those initial observations help with deciding what to look at next?"
@@ -177,20 +178,20 @@ slides =
       ]
     , [ slideHeading "Code structure"
       , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help! Digital annotation can take a bit longer than on paper. Leave time for your group members to settle on a technique that works for them."
-      , timedHeading "12" "Independently" "Examine structure"
+      , timedHeading "5" "Independently" "Examine structure"
       , slideP "Circle the places where they are defined a draw links to where they are used. Use 3 different colours."
+      , bullets
+            [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/KSGpW01QDe"
+            ]
       , bullets
             [ bullet "Variables"
             , bullet "Functions / Methods"
             , bullet "Instantiation"
             ]
-      , bullets
-            [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/KSGpW01QDe"
-            ]
+            |> hide
       ]
     , [ slideHeading "Code structure"
-      , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help! Digital annotation can take a bit longer than on paper. Leave time for your group members to settle on a technique that works for them."
-      , timedHeading "10" "Together" "Discuss"
+      , timedHeading "6" "Together" "Discuss"
       , bullets
             [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
             , bullet "What patterns are visible from the colors and links only?"
@@ -204,28 +205,28 @@ slides =
       ]
     , [ slideHeading "Content"
       , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
-      , timedHeading "8" "Independently" "Identify the most important lines"
+      , timedHeading "4" "Independently" "Identify important lines"
       , slideP "Briefly discuss what it means to be important as a group (if you want to)"
       , bullets
-            [ bullet "then, identify the 5 lines you consider most important"
+            [ bullet "then, identify the 4 lines you consider most important"
             ]
       ]
     , [ slideHeading "Content"
-      , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
-      , timedHeading "10" "Together" "Discuss"
+      , timedHeading "6" "Together" "Discuss"
       , slideP "Discuss in the group:"
       , bullets
             [ bullet "lines covered by many people?"
             , bullet "lines named but not by a lot of people"
             , bullet "Agree less than 8 of the most important lines"
             ]
-      , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (or less/more, could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore.\n[Save the last word for me protocol](https://lead.nwp.org/knowledgebase/save-the-last-word-for-me-protocol/)"
+      , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore."
+      , slidePMarkdown "[Save the last word for me protocol](https://lead.nwp.org/knowledgebase/save-the-last-word-for-me-protocol/)"
       ]
     , [ slideHeading "Summary"
-      , timedHeading "5" "Independently" "Summarize"
+      , timedHeading "3" "Independently" "Summarize"
       , slideP "Try to write down the essence of the code in a few sentences."
       , container (div [])
-            [ timedHeading "10" "Together" "Discuss"
+            [ timedHeading "4" "Together" "Discuss"
             , bullets
                 [ bullet "topics covered by many vs few"
                 , bullet "strategies used to create the summary (e.g. method names, documentation, variable names, prior knowledge of system)"
@@ -242,8 +243,11 @@ slides =
             ]
       ]
     , [ slideHeading "What now?"
-      , slideP "Code reading club resources"
-      , slideP "Get in touch"
+      , slideP "Code reading club resources: https://code-reading.org"
+      , slideP "Read Felienne's book! The Programmer's Brain"
+      , slideP "Start a club"
+      , slideP "Join a club"
+      , slideP "Get in touch katjamordaunt@gmail.com"
       ]
     ]
         |> List.map paddedSlide
@@ -262,6 +266,11 @@ slideHr =
 slideP : String -> CustomContent
 slideP paragraph =
     item (p [] [ text paragraph ])
+
+
+slidePMarkdown : String -> CustomContent
+slidePMarkdown paragraph =
+    item (Markdown.toHtml [] paragraph)
 
 
 timedHeading : String -> String -> String -> CustomContent

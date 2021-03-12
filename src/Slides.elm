@@ -1,9 +1,8 @@
 module Slides exposing (Message, Model, slides, subscriptions, update, view)
 
-import Html exposing (Html, a, button, div, h1, h2, hr, img, li, p, small, span, text, ul)
-import Html.Attributes exposing (class, href, src, style)
+import Html exposing (Html, a, button, div, h1, h2, hr, li, p, span, text, ul)
+import Html.Attributes exposing (class, href, style)
 import Html.Events exposing (onClick)
-import Markdown
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
 import Time exposing (Posix)
@@ -12,7 +11,8 @@ import Time exposing (Posix)
 {-| Model type of the custom content
 -}
 type alias Model =
-    { elapsedTime : Float
+    { displayTime : Float
+    , startTime : Float
     , timerStarted : Bool
     }
 
@@ -21,6 +21,7 @@ type alias Model =
 -}
 type Message
     = Tick Posix
+    | AddStartMinute
     | StartStopPressed Bool
 
 
@@ -42,27 +43,49 @@ update : Message -> Model -> ( Model, Cmd Message )
 update msg model =
     case msg of
         Tick _ ->
-            ( { model | elapsedTime = model.elapsedTime + 1000 }, Cmd.none )
+            ( { model | displayTime = model.displayTime - 1000 }, Cmd.none )
+
+        AddStartMinute ->
+            ( { model | startTime = model.startTime + 60 }, Cmd.none )
 
         StartStopPressed state ->
-            ( { model | timerStarted = not state }, Cmd.none )
+            ( { model
+                | displayTime = model.startTime * 1000
+                , timerStarted = not state
+              }
+            , Cmd.none
+            )
 
 
-{-| View function for the custom content that shows elapsed time for the slide
+{-| View function for the custom content that shows time remaining
 -}
 view : Model -> Html Message
 view model =
     div
         [ class "stopwatch" ]
         [ span []
-            [ text
-                ((round model.elapsedTime // 1000 |> String.fromInt)
-                    ++ " seconds"
-                )
+            [ if
+                model.startTime
+                    /= 0
+                    && model.timerStarted
+              then
+                if model.displayTime > 0 then
+                    text
+                        ((round model.displayTime // 1000 |> String.fromInt)
+                            ++ " seconds"
+                        )
+
+                else
+                    text "Time's up"
+
+              else
+                button
+                    [ onClick AddStartMinute ]
+                    [ text (String.fromFloat model.startTime) ]
             ]
         , button [ onClick (StartStopPressed model.timerStarted) ]
             [ if model.timerStarted then
-                text "Stop"
+                text ""
 
               else
                 text "Go !"
@@ -100,9 +123,9 @@ slides =
             , bulletLink "Clean pdf to download" "/code.pdf"
             ]
       ]
-    , [ slideHeading "How this will work"
+    , [ slideHeading "How this will work?"
       , bullets
-            [ bullet "Grab a copy of code from googledocs"
+            [ bullet "Grab a copy of code"
             , bullet "I'll keep the exercises & timer posted on my screen"
             , bullet "You write on your code doc & the jamboard"
             ]
@@ -280,5 +303,17 @@ paddedSlide content =
     slide
         [ container
             (div [ class "slides", style "padding" "50px 100px" ])
-            (content ++ [ custom { elapsedTime = 0, timerStarted = False } ])
+            (content
+                ++ [ custom
+                        { displayTime = 0
+                        , startTime = 0
+                        , timerStarted = False
+                        }
+                   , item
+                        (div [ class "footer" ]
+                            [ text "Slides for this workshop: https://runner.code-reading.org"
+                            ]
+                        )
+                   ]
+            )
         ]

@@ -120,7 +120,7 @@ slides =
             , bulletLink "Jamboard (M-Z) for workshop exercises" "https://jamboard.google.com/d/1rHKt3dEVQzN8mGuAEuPlmcN-EitMUEDecLBHuQ7w-S4/edit"
             , bulletLink "pdf annotation tool: goodannotations.com" "https://www.goodannotations.com/"
             , bulletLink "Code googledoc (view only)" "https://docs.google.com/document/d/1HEg5qMUYPS4FZd2EmaCVgoMeAcMbD_rUqiyln7Gs35k"
-            , bulletLink "Clean pdf to download" "/code.pdf"
+            , bulletLink "Clean pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code.pdf"
             ]
       ]
     , [ slideHeading "How this will work?"
@@ -199,7 +199,7 @@ slides =
             ]
       , bullets
             [ bulletLink "Coloured pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/tGBSC1xrUR"
-            , bulletLink "Coloured pdf to download" "/code-coloured.pdf"
+            , bulletLink "Coloured pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code-coloured.pdf"
             ]
       ]
     , [ slideHeading "Content"

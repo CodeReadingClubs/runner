@@ -199,8 +199,7 @@ slides =
             , bullet "What parts of the code seem to warrant more attention?"
             ]
       , bullets
-            [ bulletLink "Coloured pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/tGBSC1xrUR"
-            , bulletLink "Coloured pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code-coloured.pdf"
+            [ bulletLink "Coloured pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code-coloured.pdf"
             ]
       ]
     , [ slideHeading "Content"

@@ -109,16 +109,16 @@ subscriptions model =
 -}
 slides : List CustomSlide
 slides =
-    [ [ slideHeading "Code Reading Club workshop"
-      , item (h2 [] [ text "Katja Mordaunt" ])
-      , slideP "email: katjamordaunt@gmail.com"
-      , slideP "github: @katjam"
+    [ [ slideHeading "Code Reading Club introduction"
+      , slideP "Facilitators: Felienne, Katja, Nick and Dan"
+      , slideP "email: hello@code-reading.org"
       , slideP "website: https://code-reading.org"
       , slideHr
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
-            , bulletLink "Jamboard (A-L) for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/edit"
-            , bulletLink "Jamboard (M-Z) for workshop exercises" "https://jamboard.google.com/d/1rHKt3dEVQzN8mGuAEuPlmcN-EitMUEDecLBHuQ7w-S4/edit"
+            , bulletLink "Jamboard (1) for workshop exercises" "https://jamboard.google.com/d/1yjeLAoW0Q_7QgCOPVs33mS79kphpAl1Vw8wazlE1gvY/edit"
+            , bulletLink "Jamboard (2) for workshop exercises" "https://jamboard.google.com/d/1n4CFNRQZBg-NhMBj_hg4PmysivVq1l1kHY79rm7z5ns/edit"
+            , bulletLink "Jamboard (3) for workshop exercises" "https://jamboard.google.com/d/1pDFuRQapYKSXL8uq8EL2zc0AVNFtKQuSb-1cHj-8xXc/edit"
             , bulletLink "pdf annotation tool: goodannotations.com" "https://www.goodannotations.com/"
             , bulletLink "Code googledoc (view only)" "https://docs.google.com/document/d/1HEg5qMUYPS4FZd2EmaCVgoMeAcMbD_rUqiyln7Gs35k"
             , bulletLink "Clean pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code.pdf"
@@ -246,7 +246,7 @@ slides =
       , slideP "Read Felienne's book! The Programmer's Brain"
       , slideP "Start a club"
       , slideP "Join a club"
-      , slideP "Get in touch katjamordaunt@gmail.com"
+      , slideP "Get in touch hello@code-reading.org"
       ]
     ]
         |> List.map paddedSlide

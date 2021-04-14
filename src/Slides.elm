@@ -210,7 +210,7 @@ slides =
             ]
       ]
     , [ slideHeading "Content"
-      , timedHeading "88888888" "Together" "Discuss"
+      , timedHeading "8" "Together" "Discuss"
       , slideP "Discuss in the group:"
       , bullets
             [ bullet "lines covered by many people?"

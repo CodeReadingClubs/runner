@@ -142,7 +142,7 @@ slides =
       ]
     , [ slideHeading "Why are we doing this?"
       , container (div [])
-            [ timedHeading "3" "Together" "Discuss"
+            [ timedHeading "5" "Together" "Discuss"
             , bullets
                 [ bullet "Give everyone a chance to read out their hopes and fears"
                 , bullet "Discuss collectively what you want to get out of the club"
@@ -164,7 +164,7 @@ slides =
             |> hide
       ]
     , [ slideHeading "First glance"
-      , timedHeading "4" "Together" "Discuss"
+      , timedHeading "5" "Together" "Discuss"
       , slideP "Talk about why things might have jumped out for different people. It might be tempting for some people to start talking about the big picture; try to steer discussion back to individual details, rather than summaries."
       , bullets
             [ bullet "How do those initial observations help with deciding what to look at next?"
@@ -178,7 +178,7 @@ slides =
       ]
     , [ slideHeading "Code structure"
       , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help! Digital annotation can take a bit longer than on paper. Leave time for your group members to settle on a technique that works for them."
-      , timedHeading "5" "Independently" "Examine structure"
+      , timedHeading "10" "Independently" "Examine structure"
       , slideP "Circle the places where they are defined a draw links to where they are used. Use 3 different colours."
       , bullets
             [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/KSGpW01QDe"
@@ -191,7 +191,7 @@ slides =
             |> hide
       ]
     , [ slideHeading "Code structure"
-      , timedHeading "6" "Together" "Discuss"
+      , timedHeading "5" "Together" "Discuss"
       , bullets
             [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
             , bullet "What patterns are visible from the colors and links only?"
@@ -204,14 +204,14 @@ slides =
       ]
     , [ slideHeading "Content"
       , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
-      , timedHeading "4" "Independently" "Identify important lines"
+      , timedHeading "5" "Independently" "Identify important lines"
       , slideP "Briefly discuss what it means to be important as a group (if you want to)"
       , bullets
             [ bullet "then, identify the 4 lines you consider most important"
             ]
       ]
     , [ slideHeading "Content"
-      , timedHeading "6" "Together" "Discuss"
+      , timedHeading "10" "Together" "Discuss"
       , slideP "Discuss in the group:"
       , bullets
             [ bullet "lines covered by many people?"

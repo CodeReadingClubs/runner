@@ -123,14 +123,6 @@ slides =
             , bulletLink "Clean pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code.pdf"
             ]
       ]
-    , [ slideHeading "How this will work?"
-      , bullets
-            [ bullet "Grab a copy of code"
-            , bullet "I'll keep the exercises & timer posted on my screenshare"
-            , bullet "You write on your code doc & the jamboard"
-            ]
-      , item (h2 [] [ text "Any questions before we start?" ]) |> hide
-      ]
     , [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
@@ -150,6 +142,14 @@ slides =
                 , bullet "Think about how to accommodate members of your group who might have varying levels of experience and confidence"
                 ]
             ]
+      ]
+    , [ slideHeading "How this will work?"
+      , bullets
+            [ bullet "Grab a copy of code"
+            , bullet "I'll keep the exercises & timer posted on my screenshare"
+            , bullet "You write on your code doc & the jamboard"
+            ]
+      , item (h2 [] [ text "Any questions before we start?" ]) |> hide
       ]
     , [ slideHeading "First glance"
       , slideP "The goal of this exercise is to practice to get a first impression of code and to act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."

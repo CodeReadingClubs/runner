@@ -159,7 +159,7 @@ slides =
             [ bullet "Look at code for a few seconds. Note down the first thing that catches your eye"
             , bullet "Then look again for a few more seconds. Note down the second thing that catches your eye"
             ]
-      , slideP "Now think about why you noticed those things first & note that down"
+      , slideP "Now think about why you noticed those things first & note that down" |> hide
       ]
     , [ slideHeading "First glance"
       , timedHeading "5" "Together" "Discuss"

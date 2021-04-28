@@ -110,7 +110,7 @@ subscriptions model =
 slides : List CustomSlide
 slides =
     [ [ slideHeading "Code Reading Club introduction"
-      , slideP "Facilitators: Felienne, Katja, Nick and Dan"
+      , slideP "Facilitators: Felienne, Katja and Dan"
       , slideP "email: hello@code-reading.org"
       , slideP "website: https://code-reading.org"
       , slideHr
@@ -126,7 +126,7 @@ slides =
     , [ slideHeading "How this will work?"
       , bullets
             [ bullet "Grab a copy of code"
-            , bullet "I'll keep the exercises & timer posted on my screen"
+            , bullet "I'll keep the exercises & timer posted on my screenshare"
             , bullet "You write on your code doc & the jamboard"
             ]
       , item (h2 [] [ text "Any questions before we start?" ]) |> hide
@@ -158,9 +158,8 @@ slides =
       , bullets
             [ bullet "Look at code for a few seconds. Note down the first thing that catches your eye"
             , bullet "Then look again for a few more seconds. Note down the second thing that catches your eye"
-            , bullet "Now think about why you noticed those things first"
             ]
-            |> hide
+      , slideP "Now think about why you noticed those things first & note that down"
       ]
     , [ slideHeading "First glance"
       , timedHeading "5" "Together" "Discuss"

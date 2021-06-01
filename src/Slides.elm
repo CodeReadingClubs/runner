@@ -110,30 +110,28 @@ subscriptions model =
 slides : List CustomSlide
 slides =
     [ [ slideHeading "Code Reading Club introduction"
-      , slideP "Facilitators: Felienne, Katja and Dan"
+      , slideP "Facilitators: Felienne, Dan, Katja and Nick"
       , slideP "email: hello@code-reading.org"
       , slideP "website: https://code-reading.org"
       , slideHr
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
-            , bulletLink "Jamboard (1) for workshop exercises" "https://jamboard.google.com/d/1n4CFNRQZBg-NhMBj_hg4PmysivVq1l1kHY79rm7z5ns/edit?usp=sharing"
-            , bulletLink "Jamboard (2) for workshop exercises" "https://jamboard.google.com/d/1pDFuRQapYKSXL8uq8EL2zc0AVNFtKQuSb-1cHj-8xXc/edit?usp=sharing"
+            , bulletLink "Jamboard for workshop exercises" "https://jamboard.google.com/d/16RSTxtSzktjsClpY6nKqO3vYkzgPEcjI_XuzyvjJ1zg/edit?usp=sharing"
             , bulletLink "pdf annotation tool: goodannotations.com" "https://www.goodannotations.com/"
-            , bulletLink "Code googledoc (view only)" "https://docs.google.com/document/d/1HEg5qMUYPS4FZd2EmaCVgoMeAcMbD_rUqiyln7Gs35k"
-            , bulletLink "Clean pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code.pdf"
+            , bulletLink "Clean pdf to download" "https://github.com/CodeReadingClubs/Resources/raw/trunk/StarterKit/Session2/code.pdf"
             ]
       ]
     , [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
-            [ timedHeading "1" "Independently" "Note down one thing"
+            [ timedHeading "2" "Independently" "Note down one thing"
             , bullets [ bullet "that you are looking forward to or excited about", bullet "that you are worried or confused about" ]
             ]
             |> hide
       ]
     , [ slideHeading "Why are we doing this?"
       , container (div [])
-            [ timedHeading "5" "Together" "Discuss"
+            [ timedHeading "3" "Together" "Discuss"
             , bullets
                 [ bullet "Give everyone a chance to read out their hopes and fears"
                 , bullet "Discuss collectively what you want to get out of the club"
@@ -179,7 +177,7 @@ slides =
       , timedHeading "10" "Independently" "Examine structure"
       , slideP "Circle the places where they are defined a draw links to where they are used. Use 3 different colours."
       , bullets
-            [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/KSGpW01QDe"
+            [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/7KFxWkwq5O/"
             ]
       , bullets
             [ bullet "Variables"
@@ -189,19 +187,25 @@ slides =
             |> hide
       ]
     , [ slideHeading "Code structure"
-      , timedHeading "5" "Together" "Discuss"
+      , timedHeading "10" "Together" "Discuss"
       , bullets
             [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
             , bullet "What patterns are visible from the colors and links only?"
             , bullet "How does the data flow through the code?"
             , bullet "What parts of the code seem to warrant more attention?"
             ]
-      , bullets
-            [ bulletLink "Coloured pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code-coloured.pdf"
-            ]
       ]
     , [ slideHeading "Content"
       , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
+      , timedHeading "8" "Together" "Note down all variable/class/method names"
+      , slideP "As a group, go through the code mechanically and create a list of all identifier names in the snippet. This can be done with one person scribing while others call out. If you have done the 'examine structure' exercise before, this should be relatively quick and easy; but sometimes, you will need short discussions to agree on things."
+      , bullets
+            [ bullet "What can we learn from these names?"
+            , bullet "Which elements are related to each other, from the names only?"
+            , bullet "Are there names that are ambiguous when looked at without context?"
+            ]
+      ]
+    , [ slideHeading "Content"
       , timedHeading "5" "Independently" "Identify important lines"
       , slideP "Briefly discuss what it means to be important as a group (if you want to)"
       , bullets
@@ -240,6 +244,10 @@ slides =
             ]
       ]
     , [ slideHeading "What now?"
+      , slideP "Code used for this session..."
+      , bullets
+            [ bulletLink "moment: from-anything.js" "https://github.com/moment/moment/blob/52019f1dda47c3e598aaeaa4ac89d5a574641604/src/lib/create/from-anything.js"
+            ]
       , slideP "Code reading club resources: https://code-reading.org"
       , slideP "Read Felienne's book! The Programmer's Brain"
       , slideP "Start a club"

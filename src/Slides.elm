@@ -110,7 +110,7 @@ subscriptions model =
 slides : List CustomSlide
 slides =
     [ [ slideHeading "Code Reading Club introduction"
-      , slideP "Facilitators: Felienne, Katja and Nick"
+      , slideP "Facilitators: Felienne, Dan, Katja and Nick"
       , slideP "email: hello@code-reading.org"
       , slideP "website: https://code-reading.org"
       , slideHr
@@ -194,9 +194,6 @@ slides =
             , bullet "How does the data flow through the code?"
             , bullet "What parts of the code seem to warrant more attention?"
             ]
-      , bullets
-            [ bulletLink "Coloured pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code-coloured.pdf"
-            ]
       ]
     , [ slideHeading "Content"
       , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
@@ -235,6 +232,10 @@ slides =
             ]
       ]
     , [ slideHeading "What now?"
+      , slideP "Code used for this session..."
+      , bullets
+            [ bulletLink "moment: from-anything.js" "https://github.com/moment/moment/blob/52019f1dda47c3e598aaeaa4ac89d5a574641604/src/lib/create/from-anything.js"
+            ]
       , slideP "Code reading club resources: https://code-reading.org"
       , slideP "Read Felienne's book! The Programmer's Brain"
       , slideP "Start a club"

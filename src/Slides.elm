@@ -223,6 +223,18 @@ slides =
       , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore."
       , slidePMarkdown "[Save the last word for me protocol](https://lead.nwp.org/knowledgebase/save-the-last-word-for-me-protocol/)"
       ]
+    , [ slideHeading "Summary"
+      , timedHeading "3" "Independently" "Summarize"
+      , slideP "Try to write down the essence of the code in a few sentences."
+      , container (div [])
+            [ timedHeading "4" "Together" "Discuss"
+            , bullets
+                [ bullet "topics covered by many vs few"
+                , bullet "strategies used to create the summary (e.g. method names, documentation, variable names, prior knowledge of system)"
+                ]
+            ]
+            |> hide
+      ]
     , [ slideHeading "Reflect on the session"
       , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
       , timedHeading "5" "Together" "Note down things"

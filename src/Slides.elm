@@ -195,8 +195,10 @@ slides =
     , [ slideHeading "The decisions made in the code"
       , timedHeading "5" "Independently" "Consider code choices"
       , slideP "Reexamine the code snippet and list decisions of the creator(s) of the code, for example a decision to use a certain design pattern or use a certain library or API."
-      , bullets [bullet "Try not to judge the decisions as good or bad"
-      , bullet "Focus on what decisions the developer(s) had to make, not why they made them"
+      , bullets
+            [ bullet "Try not to judge the decisions as good or bad"
+            , bullet "Focus on what decisions the developer(s) had to make, not why they made them"
+            ]
       ]
     , [ slideHeading "The decisions made in the code"
       , timedHeading "5" "Together" "Discuss"

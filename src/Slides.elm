@@ -110,14 +110,27 @@ subscriptions model =
 slides : List CustomSlide
 slides =
     [ [ slideHeading "Code Reading Club introduction"
-      , slideP "Facilitators: Felienne, Dan, Katja and Nick"
+      , slideP "Facilitators: Dan, Katja and Nick"
       , slideP "email: hello@code-reading.org"
       , slideP "website: https://code-reading.org"
       , slideHr
       , bullets
-            [ bulletLink "Miro board" "https://miro.com/welcomeonboard/QkV5Y0ZXZERKeGJHOXNoczFWSFp3d3BLZW9oQzJEZE5hMVBJNEY1ZFliTTllenJRdzBlOVVYQmJmQ204SzdRNHwzMDc0NDU3MzQ5MTgyMDYwNDgy"
-            , bulletLink "Code pdf to download" "https://github.com/CodeReadingClubs/Resources/raw/trunk/StarterKit/Session2/code.pdf"
+            [ bulletLink "Code of conduct" "https://code-reading.org/conduct"
+            , bulletLink "Miro board" "https://miro.com/app/board/o9J_l4I23P0=/"
+            , bulletLink "Code to annotate" "https://crc-annotations.netlify.app/#/file/IYBxCcHsDdgGwM4HoCCYqzgFQKYIC4IB0AUsLEgEZySVIDGAbPQJwDMAjACaNf0AM-FgCYA7Dn71h9LlwAsAVnH8AHFw4rhbYcAULgfJKAgx4+PISQJw9JAFtgASwB2SAFblgSSOADmR9FM4cwJkekg7ShdgfEdIZ2QAYQio5xi4hIAJHDgQHHAiD1ggA"
             ]
+      ]
+    , [ slideHeading "How this will work?"
+      , bullets
+            [ bullet "Grab a copy of the code"
+            , bullet "I'll keep the exercises & timer posted on my screenshare"
+            , bullet "Join the miro and claim a board"
+            , bullet "Make independent notes on your board"
+            , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
+            ]
+          , slideHr
+      , slidePMarkdown "[Miro Board](https://miro.com/welcomeonboard/QkV5Y0ZXZERKeGJHOXNoczFWSFp3d3BLZW9oQzJEZE5hMVBJNEY1ZFliTTllenJRdzBlOVVYQmJmQ204SzdRNHwzMDc0NDU3MzQ5MTgyMDYwNDgy)"
+      , item (h2 [] [ text "Any questions before we start?" ]) |> hide
       ]
     , [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
@@ -139,35 +152,27 @@ slides =
                 ]
             ]
       ]
-    , [ slideHeading "How this will work?"
+    , [ slideHeading "First glance"
+      , slideP "The goal of this exercise is to practice to get a first impression of code and to act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
+      , timedHeading "1" "Independently" "Glance at the code"
+      , slideP "It's important that is an immediate reaction."
       , bullets
-            [ bullet "Grab a copy of the code"
-            , bullet "I'll keep the exercises & timer posted on my screenshare"
-            , bullet "Join the miro and claim a board"
-            , bulletLink "Miro board" "https://miro.com/welcomeonboard/QkV5Y0ZXZERKeGJHOXNoczFWSFp3d3BLZW9oQzJEZE5hMVBJNEY1ZFliTTllenJRdzBlOVVYQmJmQ204SzdRNHwzMDc0NDU3MzQ5MTgyMDYwNDgy"
-            , bullet "You can add notes and annotate your copy of the code there"
+            [ bullet "Look at code for a few seconds. Note down the first thing that catches your eye"
+            , bullet "Then look again for a few more seconds. Note down the second thing that catches your eye"
             ]
-      , item (h2 [] [ text "Any questions before we start?" ]) |> hide
+      , slideP "Now think about why you noticed those things first & note that down" |> hide
       ]
-    , [ slideHeading "Code structure"
-      , slideP "We look at the pieces that make up the code and how they connect or flow together. This exercise is meant as a recap of the first session on the code, and as a way to onboard people that might have missed the first session on this code snippet."
-      , timedHeading "5" "Independently" "Examine structure"
-      , slideP "If you have an annotated copy from the last session, look at that and make some notes about what parts of the code stand out and why."
-      , slideP "If you haven't got one, or did not participate in the previous session, use this time to highlight the variables, methods and classes. Draw links between where they are instantiated and used."
-      , slidePMarkdown "[Annotated code](https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/7KFxWkwq5O)"
+    , [ slideHeading "First glance"
+      , timedHeading "8" "Together" "Discuss"
+      , slideP "Talk about why things might have jumped out for different people. It might be tempting for some people to start talking about the big picture; try to steer discussion back to individual details, rather than summaries."
       , bullets
-            [ bullet "Study the patterns and think about what they tell you."
-            , bullet "What direction does the code flow in?"
-            , bullet "What parts stand out for lack, or excess, of links to other parts?"
+            [ bullet "How do those initial observations help with deciding what to look at next?"
+            , bullet "What lines or facts or concepts were chosen by everyone versus by only a few people?"
             ]
-      ]
-    , [ slideHeading "Code structure"
-      , timedHeading "10" "Together" "Discuss"
+      , slideP "Reflect also on what kind of knowledge you used in this exercise."
       , bullets
-            [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
-            , bullet "What parts of the code seem to warrant more attention?"
-            , bullet "What parts did many or only a few people mention?"
-            , bullet "What thoughts did you have when thinking about the structure?"
+            [ bullet "Knowledge of the domain, of the programming language? Of a framework?"
+            , bullet "What knowledge do you think might be needed to better understand this code?"
             ]
       ]
     , [ slideHeading "Random line"
@@ -179,62 +184,52 @@ slides =
             ]
       ]
     , [ slideHeading "The line in context"
-      , timedHeading "5" "Together" "Discuss in group"
+      , timedHeading "8" "Together" "Discuss in group"
       , bullets
             [ bullet "What is the 'scope' of the random line?"
             , bullet "What part of the code was seen as related?"
             , bullet "How does the line fit into the rest of the code base?"
             ]
       ]
-    , [ slideHeading "Summerise for people not here last time"
-      , timedHeading "4" "One person" "Essence of the code"
-      , slideP "Explain in brief what the code does."
-      , slideP "This code is written in javascript for the popular moment library and can be found:" |> hide
-      , slidePMarkdown "[moment/src/lib/create/from-anything.js](https://github.com/moment/src/lib/create/from-anything.js)" |> hide
-      ]
-    , [ slideHeading "The decisions made in the code"
-      , timedHeading "5" "Independently" "Consider code choices"
-      , slideP "Reexamine the code snippet and list decisions of the creator(s) of the code, for example a decision to use a certain design pattern or use a certain library or API."
+    , [ slideHeading "Code structure"
+      , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help!"
+      , timedHeading "8" "Independently" "Examine structure"
+      , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
       , bullets
-            [ bullet "Try not to judge the decisions as good or bad"
-            , bullet "Focus on what decisions the developer(s) had to make, not why they made them"
+            [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/7KFxWkwq5O/"
             ]
+      , bullets
+            [ bullet "Variables"
+            , bullet "Functions / Methods"
+            , bullet "Instantiation"
+            ]
+            |> hide
       ]
-    , [ slideHeading "The decisions made in the code"
+    , [ slideHeading "Code structure"
       , timedHeading "5" "Together" "Discuss"
       , bullets
-            [ bullet "Decisions covered by many vs few"
-            , bullet "Strategies used to decide (e.g. method names, documentation, variable names, prior knowledge of system)"
+            [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
+            , bullet "What patterns are visible from the colors and links only?"
+            , bullet "How does the data flow through the code?"
+            , bullet "What parts of the code seem to warrant more attention?"
             ]
       ]
-    , [ slideHeading "Consequences of the decisions"
-      , timedHeading "5" "Independently" "Consider the consequences"
-      , slideP "Think about the consequences of the decisions that were made. These could be the decisions you found yourself in the previous exercise or a decision someone else pointed out."
-      , slideP "You might want to think consider the impact of the decisions this code on:"
+    , [ slideHeading "Content"
+      , timedHeading "5" "Independently" "Identify important lines"
+      , slideP "Briefly discuss what it means to be important as a group (if you want to)"
       , bullets
-            [ bullet "readability"
-            , bullet "performance"
-            , bullet "extendability"
+            [ bullet "then, identify the 4 lines you consider most important"
             ]
       ]
-    , [ slideHeading "Consequences of the decisions"
-      , timedHeading "5" "Together" "Discuss"
+    , [ slideHeading "Content"
+      , timedHeading "8" "Together" "Discuss"
+      , slideP "Discuss in the group:"
       , bullets
-            [ bullet "Consequences covered by many vs few"
-            , bullet "Different 'ilities' chosen"
-            , bullet "Pros of these decisions"
-            , bullet "Possible cons of these decisions"
+            [ bullet "lines covered by many people?"
+            , bullet "lines named but not by a lot of people"
+            , bullet "Agree less than 8 of the most important lines"
             ]
-      ]
-    , [ slideHeading "The 'why' of the decisions"
-      , timedHeading "5" "Together" "Make statements"
-      , slideP "Can you understand why the code was designed this way?"
-      , bullets
-            [ bullet "What assumptions do these decisions rely on?"
-            , bullet "Can you think of reasons these decisions might have been made?"
-            , bullet "What alternatives would have been possible?"
-            ]
-      , slideP ""
+      , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore."
       ]
     , [ slideHeading "Reflect on the session"
       , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
@@ -247,7 +242,7 @@ slides =
     , [ slideHeading "What now?"
       , slideP "Code used for this session..."
       , bullets
-            [ bulletLink "moment: from-anything.js" "https://github.com/moment/moment/blob/52019f1dda47c3e598aaeaa4ac89d5a574641604/src/lib/create/from-anything.js"
+            [ bulletLink "Java combinations helper from https://approvaltests.com/" "https://github.com/approvals/ApprovalTests.Java/blob/36b68f2b6e5978e43ef2a52ebed56944a56136bf/approvaltests/src/main/java/org/approvaltests/combinations/CombinationsHelper.java"
             ]
       , slideP "Code reading club resources: https://code-reading.org"
       , slideP "Read Felienne's book! The Programmer's Brain"

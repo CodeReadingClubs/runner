@@ -196,7 +196,7 @@ slides =
       , timedHeading "8" "Independently" "Examine structure"
       , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
       , bullets
-            [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/7KFxWkwq5O/"
+            [ bulletLink "Code to annotate" "https://crc-annotations.netlify.app/#/file/IYBxCcHsDdgGwM4HoCCYqzgFQKYIC4IB0AUsLEgEZySVIDGAbPQJwDMAjACaNf0AM-FgCYA7Dn71h9LlwAsAVnH8AHFw4rhbYcAULgfJKAgx4+PISQJw9JAFtgASwB2SAFblgSSOADmR9FM4cwJkekg7ShdgfEdIZ2QAYQio5xi4hIAJHDgQHHAiD1ggA"
             ]
       , bullets
             [ bullet "Variables"

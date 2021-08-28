@@ -111,16 +111,14 @@ slides : List CustomSlide
 slides =
     [ [ slideHeading "Code Reading Club workshop"
       , item (h2 [] [ text "Katja Mordaunt" ])
-      , slideP "email: katjamordaunt@gmail.com"
+      , slideP "email: hello@code-reading.org"
       , slideP "github: @katjam"
       , slideP "website: https://code-reading.org"
       , slideHr
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
-            , bulletLink "Jamboard (A-L) for workshop exercises" "https://jamboard.google.com/d/1t0IUpVMyk-e_E1h55gxnuFqQ0MRuuXbSPLb1wBgnTPE/edit"
-            , bulletLink "Jamboard (M-Z) for workshop exercises" "https://jamboard.google.com/d/1rHKt3dEVQzN8mGuAEuPlmcN-EitMUEDecLBHuQ7w-S4/edit"
-            , bulletLink "pdf annotation tool: goodannotations.com" "https://www.goodannotations.com/"
-            , bulletLink "Code googledoc (view only)" "https://docs.google.com/document/d/1HEg5qMUYPS4FZd2EmaCVgoMeAcMbD_rUqiyln7Gs35k"
+            , bulletLink "Jamboard for workshop exercises" "https://jamboard.google.com/d/10TJRcH-R0CBDqEdDr-KXk-cTLaYjZfOmUmdFWg8chUA/viewer"
+            , bulletLink "Dan's pdf annotation tool" "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
             , bulletLink "Clean pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code.pdf"
             ]
       ]
@@ -181,7 +179,7 @@ slides =
       , timedHeading "5" "Independently" "Examine structure"
       , slideP "Circle the places where they are defined a draw links to where they are used. Use 3 different colours."
       , bullets
-            [ bulletLink "Clean pdf demo on goodannotations.com" "https://www.goodannotations.com/project/9QLhBgPoF5SK2UBm1J3arBakBz32/KSGpW01QDe"
+            [ bulletLink "Dan's annotation tool" "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
             ]
       , bullets
             [ bullet "Variables"
@@ -246,7 +244,7 @@ slides =
       , slideP "Read Felienne's book! The Programmer's Brain"
       , slideP "Start a club"
       , slideP "Join a club"
-      , slideP "Get in touch katjamordaunt@gmail.com"
+      , slideP "Get in touch hello@code-reading.org"
       ]
     ]
         |> List.map paddedSlide

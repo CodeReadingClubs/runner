@@ -131,7 +131,7 @@ slides =
             , bullet "Make independent notes on your board"
             , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
             ]
-          , slideHr
+      , slideHr
       , slidePMarkdown "[Miro Board](https://miro.com/welcomeonboard/QkV5Y0ZXZERKeGJHOXNoczFWSFp3d3BLZW9oQzJEZE5hMVBJNEY1ZFliTTllenJRdzBlOVVYQmJmQ204SzdRNHwzMDc0NDU3MzQ5MTgyMDYwNDgy)"
       , item (h2 [] [ text "Any questions before we start?" ]) |> hide
       ]
@@ -199,7 +199,7 @@ slides =
       , timedHeading "8" "Independently" "Examine structure"
       , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
       , bullets
-      [ bulletLink "Dan's annotation tool" "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
+            [ bulletLink "Dan's annotation tool" "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
             ]
       , bullets
             [ bullet "Variables"

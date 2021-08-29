@@ -125,27 +125,23 @@ slides =
       ]
     , [ slideHeading "How this will work?"
       , bullets
-            [ bullet "Grab a copy of the code"
-            , bullet "I'll keep the exercises & timer posted on my screenshare"
-            , bullet "Join the miro and claim a board"
-            , bullet "Make independent notes on your board"
-            , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
+            [ bullet "Grab a copy of code"
+            , bullet "I'll keep the exercises & timer posted on my screen"
+            , bullet "You write on your code doc & the jamboard"
             ]
-      , slideHr
-      , slidePMarkdown "[Miro Board](https://miro.com/welcomeonboard/QkV5Y0ZXZERKeGJHOXNoczFWSFp3d3BLZW9oQzJEZE5hMVBJNEY1ZFliTTllenJRdzBlOVVYQmJmQ204SzdRNHwzMDc0NDU3MzQ5MTgyMDYwNDgy)"
       , item (h2 [] [ text "Any questions before we start?" ]) |> hide
       ]
     , [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
-            [ timedHeading "2" "Independently" "Note down one thing"
+            [ timedHeading "1" "Independently" "Note down one thing"
             , bullets [ bullet "that you are looking forward to or excited about", bullet "that you are worried or confused about" ]
             ]
             |> hide
       ]
     , [ slideHeading "Why are we doing this?"
       , container (div [])
-            [ timedHeading "5" "Together" "Discuss"
+            [ timedHeading "3" "Together" "Discuss"
             , bullets
                 [ bullet "Give everyone a chance to read out their hopes and fears"
                 , bullet "Discuss collectively what you want to get out of the club"
@@ -166,7 +162,7 @@ slides =
       , slideP "Now think about why you noticed those things first & note that down" |> hide
       ]
     , [ slideHeading "First glance"
-      , timedHeading "8" "Together" "Discuss"
+      , timedHeading "4" "Together" "Discuss"
       , slideP "Talk about why things might have jumped out for different people. It might be tempting for some people to start talking about the big picture; try to steer discussion back to individual details, rather than summaries."
       , bullets
             [ bullet "How do those initial observations help with deciding what to look at next?"
@@ -178,25 +174,9 @@ slides =
             , bullet "What knowledge do you think might be needed to better understand this code?"
             ]
       ]
-    , [ slideHeading "Random line"
-      , timedHeading "3" "Independently" "Examine this line"
-      , slideP "Select a random line from the code in whatever way you like. It can be helpful to randomly pick 3 line numbers and have the facilitator choose from them, which they think will be most interesting to talk about; but surprisingly, even a blank line can generate some conversation!"
-      , bullets
-            [ bullet "What is the main idea of this line?"
-            , bullet "What lines does it relate to and why?"
-            ]
-      ]
-    , [ slideHeading "The line in context"
-      , timedHeading "8" "Together" "Discuss in group"
-      , bullets
-            [ bullet "What is the 'scope' of the random line?"
-            , bullet "What part of the code was seen as related?"
-            , bullet "How does the line fit into the rest of the code base?"
-            ]
-      ]
     , [ slideHeading "Code structure"
-      , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help!"
-      , timedHeading "8" "Independently" "Examine structure"
+      , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help! Digital annotation can take a bit longer than on paper. Leave time for your group members to settle on a technique that works for them."
+      , timedHeading "5" "Independently" "Examine structure"
       , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
       , bullets
             [ bulletLink "Dan's annotation tool" "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
@@ -209,7 +189,7 @@ slides =
             |> hide
       ]
     , [ slideHeading "Code structure"
-      , timedHeading "5" "Together" "Discuss"
+      , timedHeading "6" "Together" "Discuss"
       , bullets
             [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
             , bullet "What patterns are visible from the colors and links only?"
@@ -218,14 +198,15 @@ slides =
             ]
       ]
     , [ slideHeading "Content"
-      , timedHeading "5" "Independently" "Identify important lines"
+      , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
+      , timedHeading "4" "Independently" "Identify important lines"
       , slideP "Briefly discuss what it means to be important as a group (if you want to)"
       , bullets
             [ bullet "then, identify the 4 lines you consider most important"
             ]
       ]
     , [ slideHeading "Content"
-      , timedHeading "8" "Together" "Discuss"
+      , timedHeading "6" "Together" "Discuss"
       , slideP "Discuss in the group:"
       , bullets
             [ bullet "lines covered by many people?"

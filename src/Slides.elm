@@ -245,7 +245,7 @@ slides =
     , [ slideHeading "What now?"
       , slideP "Code used for this session..."
       , bullets
-            [ bulletLink "Java combinations helper from https://approvaltests.com/" "https://github.com/approvals/ApprovalTests.Java/blob/36b68f2b6e5978e43ef2a52ebed56944a56136bf/approvaltests/src/main/java/org/approvaltests/combinations/CombinationsHelper.java"
+            [ bulletLink "Phone number validator from Signal iOS app https://github.com/signalapp/Signal-iOS" "https://github.com/signalapp/Signal-iOS/blob/b68d8a3c8147feb2b69e7421a625608c44b98652/Signal/src/Models/PhoneNumberValidator.swift"
             ]
       , slideP "Code reading club resources: https://code-reading.org"
       , slideP "Read Felienne's book! The Programmer's Brain"

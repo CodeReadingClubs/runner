@@ -115,8 +115,9 @@ slides =
       , slideP "website: https://code-reading.org"
       , slideHr
       , bullets
-            [ bulletLink "Miro board" "https://miro.com/welcomeonboard/QkV5Y0ZXZERKeGJHOXNoczFWSFp3d3BLZW9oQzJEZE5hMVBJNEY1ZFliTTllenJRdzBlOVVYQmJmQ204SzdRNHwzMDc0NDU3MzQ5MTgyMDYwNDgy"
-            , bulletLink "Code pdf to download" "https://github.com/CodeReadingClubs/Resources/raw/trunk/StarterKit/Session2/code.pdf"
+            [ bulletLink "Miro board" "https://miro.com/welcomeonboard/d0lFUzJmVEJaV3VYU1g4RmRoOFE4UzNJT2tHazNRSTd6T1hjZVVtNGhsWmd5WE5xV2Z3ZDI0OWxjTno4Yk1rUXwzMDc0NDU3MzQ5MTgyMDYwNDgy"
+            , bulletLink "Code in annotation tool" "https://annotate.code-reading.org/#/file/IYBxCcHsDdgGwM4HoCCYqzgFQKYIC4IB0AUsLEgEZySVIDGAbPQJwDMAjACaNf0AM-FgCYA7Dn71h9LlwAsAVnH8AHFw4rhbYcAULgfJKAgx4+PISQJw9JAFtgASwB2SAFblgSSOADmR9FM4cwJkekg7ShdgfEdIZ2QAYQio5xi4hIAJHDgQHHAiD1ggA"
+            , bulletLink "Code pdf to download" ""
             ]
       ]
     , [ slideHeading "Why are we doing this?"
@@ -132,19 +133,17 @@ slides =
             [ timedHeading "5" "Together" "Discuss"
             , bullets
                 [ bullet "Give everyone a chance to read out their hopes and fears"
-                , bullet "Discuss collectively what you want to get out of the club"
-                , bullet "Decide how long and how often you want your sessions to be"
-                , bullet "Decide if the same person will always facilitate or if you want to take turns"
-                , bullet "Think about how to accommodate members of your group who might have varying levels of experience and confidence"
+                , bullet "Discuss what you want to get out of the club"
+                , bullet "Think about how to accommodate members with varying levels of experience and confidence"
                 ]
             ]
       ]
     , [ slideHeading "How this will work?"
       , bullets
-            [ bullet "Grab a copy of the code"
-            , bullet "I'll keep the exercises & timer posted on my screenshare"
+            [ bullet "Grab a copy of the code (paper or digital annotation)"
+            , bullet "I'll keep the exercises & timer posted on my screen"
             , bullet "Join the miro and claim a board"
-            , bulletLink "Miro board" "https://miro.com/welcomeonboard/QkV5Y0ZXZERKeGJHOXNoczFWSFp3d3BLZW9oQzJEZE5hMVBJNEY1ZFliTTllenJRdzBlOVVYQmJmQ204SzdRNHwzMDc0NDU3MzQ5MTgyMDYwNDgy"
+            , bulletLink "Miro board" "https://miro.com/welcomeonboard/d0lFUzJmVEJaV3VYU1g4RmRoOFE4UzNJT2tHazNRSTd6T1hjZVVtNGhsWmd5WE5xV2Z3ZDI0OWxjTno4Yk1rUXwzMDc0NDU3MzQ5MTgyMDYwNDgy"
             , bullet "You can add notes and annotate your copy of the code there"
             ]
       , item (h2 [] [ text "Any questions before we start?" ]) |> hide
@@ -247,7 +246,7 @@ slides =
     , [ slideHeading "What now?"
       , slideP "Code used for this session..."
       , bullets
-            [ bulletLink "moment: from-anything.js" "https://github.com/moment/moment/blob/52019f1dda47c3e598aaeaa4ac89d5a574641604/src/lib/create/from-anything.js"
+            [ bulletLink "Java combinations helper from https://approvaltests.com/" "https://github.com/approvals/ApprovalTests.Java/blob/36b68f2b6e5978e43ef2a52ebed56944a56136bf/approvaltests/src/main/java/org/approvaltests/combinations/CombinationsHelper.java"
             ]
       , slideP "Code reading club resources: https://code-reading.org"
       , slideP "Read Felienne's book! The Programmer's Brain"

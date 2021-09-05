@@ -112,9 +112,15 @@ slides =
     [ [ slideHeading "Code Reading Club workshop"
       , item (h2 [] [ text "Katja Mordaunt" ])
       , slideP "email: hello@code-reading.org"
-      , slideP "github: @katjam"
+      , slideP "github: @codereadingclubs"
       , slideP "website: https://code-reading.org"
       , slideHr
+      ]
+    , [ slideHeading "Where it all started"
+      , item (h2 [] [ text "Felienne Talk" ])
+      , slideHr
+      ]
+    , [ slideHeading "How this will work?"
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
             , bulletLink "Code of conduct" "https://code-reading.org/conduct"
@@ -122,11 +128,11 @@ slides =
             , bulletLink "Dan's pdf annotation tool" "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
             , bulletLink "Clean pdf to download" "https://github.com/katjam/code-reading-runner/raw/main/src/assets/code.pdf"
             ]
-      ]
-    , [ slideHeading "How this will work?"
+      , slideHr
       , bullets
-            [ bullet "Grab a copy of code"
+            [ bullet "Grab a copy of code (paper or digital annotation)"
             , bullet "I'll keep the exercises & timer posted on my screen"
+            , bullet "Dan will share the jamboard screen"
             , bullet "You write on your code doc & the jamboard"
             ]
       , item (h2 [] [ text "Any questions before we start?" ]) |> hide

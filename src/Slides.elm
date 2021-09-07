@@ -198,7 +198,7 @@ slides =
             , bullet "extendability"
             ]
 
-      , item (img [src "example-iconsequences.png", style "height" "250px"][])
+      , item (img [src "example-consequences.png", style "height" "210px"][])
       ]
     , [ slideHeading "Consequences of the decisions"
       , timedHeading "10" "Together" "Discuss"

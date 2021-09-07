@@ -110,7 +110,7 @@ subscriptions model =
 slides : List CustomSlide
 slides =
     [ [ slideHeading "Code Reading Club introduction"
-      , slideP "Facilitators: Felienne, Dan, Katja and Nick"
+      , slideP "Facilitators: Dan, Katja and Nick"
       , slideP "email: hello@code-reading.org"
       , slideP "website: https://code-reading.org"
       , slideHr
@@ -140,7 +140,7 @@ slides =
                 ]
             ]
       ]
-    , [ slideHeading "How this will work?"
+    , [ slideHeading "How will this work?"
       , bullets
             [ bullet "Grab a copy of the code (paper or digital annotation)"
             , bullet "I'll keep the exercises & timer posted on my screen"
@@ -197,7 +197,6 @@ slides =
             , bullet "performance"
             , bullet "extendability"
             ]
-
       , item (img [src "example-consequences.png", style "height" "210px"][])
       ]
     , [ slideHeading "Consequences of the decisions"

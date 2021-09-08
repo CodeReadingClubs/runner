@@ -117,7 +117,15 @@ slides =
       , slideHr
       ])
     , (False, [ slideHeading "Where it all started"
-      , item (img [src "felienne.png", style "height" "220px"] [])
+      , item (img [src "felienne.png"
+      , style "height" "220px"
+      , style "margin-bottom" "8px"
+      , style "margin-right" "8px"
+      , style "float" "left"
+      ] [])
+      , slidePMarkdown "[Strangeloop Talk](https://www.youtube.com/watch?v=g1ib43q3uXQ)"
+      , slideP "website: https://felienne.com"
+      , slideP "twitter: @felienne"
       , item (img [src "strangeloop.png", style "height" "220px", style "margin-left" "-60px"] [])
       , item (img [src "practice-reading.png", style "height" "220px", style "float" "right"] [])
       ])

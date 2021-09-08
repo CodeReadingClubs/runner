@@ -205,16 +205,16 @@ slides =
     , (True, [ slideHeading "Content"
       , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
       , timedHeading "3" "Independently" "Identify important lines"
-      , slideP "Briefly discuss what it means to be important as a group (if you want to)"
       , bullets
-          [ bullet "then, identify the 4 lines you consider most important"
+          [ bullet "identify the 4 lines you consider most important"
+          , bullet "reflect on your reasons for choosing them"
           ]
       ])
     , (True, [ slideHeading "Content"
       , timedHeading "5" "Together" "Discuss"
       , slideP "Discuss in the group:"
       , bullets
-            [ bullet "lines covered by many people?"
+            [ bullet "lines covered by many people"
             , bullet "lines named but not by a lot of people"
             , bullet "agree about 6 of the most important lines"
             ]

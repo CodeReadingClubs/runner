@@ -109,18 +109,19 @@ subscriptions model =
 -}
 slides : List CustomSlide
 slides =
-    [ [ slideHeading "Code Reading Club workshop"
-      , item (h2 [] [ text "Katja Mordaunt with Nick & Dan" ])
+    [ (False, [ slideHeading "Code Reading Club workshop"
+      , item (h2 [] [ text "Katja Mordaunt (with Nick & Dan)" ])
       , slideP "email: hello@code-reading.org"
       , slideP "github: @codereadingclubs"
       , slideP "website: https://code-reading.org"
       , slideHr
-      ]
-    , [ slideHeading "Where it all started"
-      , item (h2 [] [ text "Felienne Talk" ])
-      , slideHr
-      ]
-    , [ slideHeading "How this will work?"
+      ])
+    , (False, [ slideHeading "Where it all started"
+      , item (img [src "felienne.png", style "height" "220px"] [])
+      , item (img [src "strangeloop.png", style "height" "220px", style "margin-left" "-60px"] [])
+      , item (img [src "practice-reading.png", style "height" "220px", style "float" "right"] [])
+      ])
+    ,(False,  [ slideHeading "How this will work?"
       , bullets
             [ bulletLink "Slides for this talk: runner.code-reading.org" "https://runner.code-reading.org"
             , bulletLink "Code of conduct" "https://code-reading.org/conduct"
@@ -136,17 +137,15 @@ slides =
             , bullet "You write on your code doc & the jamboard"
             ]
       , item (h2 [] [ text "Any questions before we start?" ]) |> hide
-      ]
-    , [ slideHeading "Why are we doing this?"
+      ])
+    , (True, [ slideHeading "Why are we doing this?"
       , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
       , container (div [])
             [ timedHeading "1" "Independently" "Note down one thing"
             , bullets [ bullet "that you are looking forward to or excited about", bullet "that you are worried or confused about" ]
-            , item (img [src "example-excited-worried.png", style "height" "250px"][])
             ]
-            |> hide
-      ]
-    , [ slideHeading "Why are we doing this?"
+      ])
+    , (True, [ slideHeading "Why are we doing this?"
       , container (div [])
             [ timedHeading "2" "Together" "Discuss"
             , bullets
@@ -154,21 +153,21 @@ slides =
                 , bullet "Discuss collectively what you want to get out of the club"
                 , bullet "Decide how long and how often you want your sessions to be"
                 , bullet "Decide if the same person will always facilitate or if you want to take turns"
-                , bullet "Think about how to accommodate members of your group with varying levels of experience and confidence"
+                , bullet "Think about how to accommodate members with varying levels of experience and confidence"
                 ]
             ]
-      ]
-    , [ slideHeading "First glance"
+      ])
+    , (True, [ slideHeading "First glance"
       , slideP "The goal of this exercise is to practice to get a first impression of code and to act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
       , timedHeading "1" "Independently" "Glance at the code"
       , slideP "It's important that is an immediate reaction."
       , bullets
-            [ bullet "Look at code for a few seconds. Note down the first thing that catches your eye"
-            , bullet "Then look again for a few more seconds. Note down the second thing that catches your eye"
+            [ bullet "Look at code for a few seconds. Note down the first thing that catches your eye." |> hide
+            , bullet "Then look again for a few more seconds. Note down the second thing that catches your eye." |> hide
+            , bullet "Now think about why you noticed those things first & note that down." |> hide
             ]
-      , slideP "Now think about why you noticed those things first & note that down" |> hide
-      ]
-    , [ slideHeading "First glance"
+      ])
+    , (True, [ slideHeading "First glance"
       , timedHeading "4" "Together" "Discuss"
       , slideP "Talk about why things might have jumped out for different people. It might be tempting for some people to start talking about the big picture; try to steer discussion back to individual details, rather than summaries."
       , bullets
@@ -180,57 +179,56 @@ slides =
             [ bullet "Knowledge of the domain, of the programming language? Of a framework?"
             , bullet "What knowledge do you think might be needed to better understand this code?"
             ]
-      ]
-    , [ slideHeading "Code structure"
-      , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help! Digital annotation can take a bit longer than on paper. Leave time for your group members to settle on a technique that works for them."
+      ])
+    , (True, [ slideHeading "Code structure"
+      , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help!"
       , timedHeading "5" "Independently" "Examine structure"
-      , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
       , bullets
             [ bulletLink "Dan's annotation tool" "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
             ]
+      , slideP "Highlight the places where they are defined. Draw links to where they are used."
       , bullets
-            [ bullet "Variables"
-            , bullet "Functions / Methods"
-            , bullet "Instantiation"
+            [ bullet "variables"
+            , bullet "functions/ methods"
+            , bullet "classes"
             ]
-            |> hide
-      ]
-    , [ slideHeading "Code structure"
-      , timedHeading "6" "Together" "Discuss"
+      ])
+    , (True, [ slideHeading "Code structure"
+      , timedHeading "5" "Together" "Discuss"
       , bullets
-            [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
-            , bullet "What patterns are visible from the colors and links only?"
-            , bullet "How does the data flow through the code?"
-            , bullet "What parts of the code seem to warrant more attention?"
-            ]
-      ]
-    , [ slideHeading "Content"
+          [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
+          , bullet "What patterns are visible from the colors and links only?"
+          , bullet "How does the data flow through the code?"
+          , bullet "What parts of the code seem to warrant more attention?"
+          ]
+      ])
+    , (True, [ slideHeading "Content"
       , slideP "The goal of this exercise is to start to think about which lines in the code define its essence, have the biggest impact or need to be paid close attention to."
-      , timedHeading "4" "Independently" "Identify important lines"
+      , timedHeading "3" "Independently" "Identify important lines"
       , slideP "Briefly discuss what it means to be important as a group (if you want to)"
       , bullets
-            [ bullet "then, identify the 4 lines you consider most important"
-            ]
-      ]
-    , [ slideHeading "Content"
-      , timedHeading "6" "Together" "Discuss"
+          [ bullet "then, identify the 4 lines you consider most important"
+          ]
+      ])
+    , (True, [ slideHeading "Content"
+      , timedHeading "5" "Together" "Discuss"
       , slideP "Discuss in the group:"
       , bullets
             [ bullet "lines covered by many people?"
             , bullet "lines named but not by a lot of people"
-            , bullet "Agree less than 8 of the most important lines"
+            , bullet "agree about 6 of the most important lines"
             ]
       , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore."
-      ]
-    , [ slideHeading "Reflect on the session"
+      ])
+    , (True, [ slideHeading "Reflect on the session"
       , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
-      , timedHeading "5" "Together" "Note down things"
+      , timedHeading "3" "Together" "Note down things"
       , bullets
             [ bullet "that went well or felt good"
             , bullet "you want to try to do differently next time because they didn't work or felt bad"
             ]
-      ]
-    , [ slideHeading "What now?"
+      ])
+    , (False, [ slideHeading "What now?"
       , slideP "Code used for this session..."
       , bullets
             [ bulletLink "Phone number validator from Signal iOS app https://github.com/signalapp/Signal-iOS" "https://github.com/signalapp/Signal-iOS/blob/b68d8a3c8147feb2b69e7421a625608c44b98652/Signal/src/Models/PhoneNumberValidator.swift"
@@ -240,7 +238,7 @@ slides =
       , slideP "Start a club"
       , slideP "Join a club"
       , slideP "Get in touch hello@code-reading.org"
-      ]
+      ])
     ]
         |> List.map paddedSlide
 
@@ -299,17 +297,20 @@ bulletLink str url =
 
 {-| Custom slide that sets the padding and appends the custom content
 -}
-paddedSlide : List CustomContent -> CustomSlide
-paddedSlide content =
+paddedSlide : (Bool, List CustomContent) -> CustomSlide
+paddedSlide (showStopwatch, content) =
     slide
         [ container
             (div [ class "slides", style "padding" "50px 100px" ])
             (content
-                ++ [ custom
+                ++ [ if showStopwatch then 
+                    custom
                         { displayTime = 0
                         , startTime = 0
                         , timerStarted = False
                         }
+                        else
+                            item(text "")
                    , item
                         (div [ class "footer" ]
                             [ text "Slides for this workshop: https://runner.code-reading.org"

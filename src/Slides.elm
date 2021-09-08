@@ -1,7 +1,7 @@
 module Slides exposing (Message, Model, slides, subscriptions, update, view)
 
-import Html exposing (Html, a, button, div, h1, h2, hr, li, p, span, text, ul)
-import Html.Attributes exposing (class, href, style)
+import Html exposing (Html, a, img, button, div, h1, h2, hr, li, p, span, text, ul)
+import Html.Attributes exposing (src, class, href, style)
 import Html.Events exposing (onClick)
 import Markdown
 import SliceShow.Content exposing (..)
@@ -110,7 +110,7 @@ subscriptions model =
 slides : List CustomSlide
 slides =
     [ [ slideHeading "Code Reading Club workshop"
-      , item (h2 [] [ text "Katja Mordaunt" ])
+      , item (h2 [] [ text "Katja Mordaunt with Nick & Dan" ])
       , slideP "email: hello@code-reading.org"
       , slideP "github: @codereadingclubs"
       , slideP "website: https://code-reading.org"
@@ -142,18 +142,19 @@ slides =
       , container (div [])
             [ timedHeading "1" "Independently" "Note down one thing"
             , bullets [ bullet "that you are looking forward to or excited about", bullet "that you are worried or confused about" ]
+            , item (img [src "example-excited-worried.png", style "height" "250px"][])
             ]
             |> hide
       ]
     , [ slideHeading "Why are we doing this?"
       , container (div [])
-            [ timedHeading "3" "Together" "Discuss"
+            [ timedHeading "2" "Together" "Discuss"
             , bullets
                 [ bullet "Give everyone a chance to read out their hopes and fears"
                 , bullet "Discuss collectively what you want to get out of the club"
                 , bullet "Decide how long and how often you want your sessions to be"
                 , bullet "Decide if the same person will always facilitate or if you want to take turns"
-                , bullet "Think about how to accommodate members of your group who might have varying levels of experience and confidence"
+                , bullet "Think about how to accommodate members of your group with varying levels of experience and confidence"
                 ]
             ]
       ]

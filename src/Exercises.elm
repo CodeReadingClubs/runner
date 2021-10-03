@@ -56,7 +56,7 @@ slideContent section =
                     , bullet "Make independent notes on your board"
                     , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
                     ]
-                , item (h2 [] [ text "Any questions before we start?" ]) |> hide
+                , item (h2 [ style "margin-top" "-20px" ] [ text "Any questions before we start?" ]) |> hide
                 ]
               )
             ]
@@ -163,13 +163,13 @@ slideContent section =
                 , bullets
                     [ bullet "Variables"
                     , bullet "Functions / Methods"
-                    , bullet "Instantiation"
+                    , bullet "Classes / Instantiation"
                     ]
                 ]
               )
             , ( True
               , [ slideHeading "Code structure"
-                , timedHeading "5" "Together" "Discuss"
+                , timedHeading "10" "Together" "Discuss"
                 , bullets
                     [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
                     , bullet "What patterns are visible from the colors and links only?"
@@ -211,7 +211,25 @@ slideContent section =
             ]
 
         Summarise ->
-            [ ( True, [] ) ]
+            [ ( True
+              , [ slideHeading "Summary"
+                , timedHeading "5" "Independently" "Summarise"
+                , slideP "The goal of this exercise is to think about the core purpose or function of this code."
+                , bullets
+                    [ bullet "try to write down the essence of the code in a few sentences"
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "Summary"
+                , timedHeading "8" "Together" "Discuss"
+                , bullets
+                    [ bullet "topics covered by many vs few"
+                    , bullet "strategies used to create the summary (e.g. method names, documentation, variable names, prior knowledge of system)"
+                    ]
+                ]
+              )
+            ]
 
         -- Second Look
         RecapStructure ->
@@ -233,11 +251,8 @@ slideContent section =
             [ ( True, [] ) ]
 
 
-{-| The list of slides
--}
-slides : List (List SharedType.CustomContent)
-slides =
-    []
+
+-- Markup helpers
 
 
 slideHeading : String -> CustomContent

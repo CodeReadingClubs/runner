@@ -4,7 +4,7 @@ import Html exposing (Html, a, button, div, h1, h2, hr, img, li, p, span, text, 
 import Html.Attributes exposing (class, href, src, style)
 import Html.Events exposing (onClick)
 import Markdown
-import SharedType exposing (CustomContent, CustomSlide, EndInfo, StartInfo)
+import SharedType exposing (AnnotateInfo, CustomContent, CustomSlide, EndInfo, StartInfo)
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
 import Time exposing (Posix)
@@ -15,10 +15,11 @@ type
     -- Information
     = SessionStart StartInfo
     | WhyDoingThis
+    | Reflect
     | SessionEnd EndInfo
       -- First Look
     | FirstGlance
-    | AnnotateStructure
+    | AnnotateStructure AnnotateInfo
     | ListNames
     | RandomLine
     | ImportantLines
@@ -86,6 +87,19 @@ slideContent section =
               )
             ]
 
+        Reflect ->
+            [ ( True
+              , [ slideHeading "Reflect on the session"
+                , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
+                , timedHeading "5" "Together" "Note down things"
+                , bullets
+                    [ bullet "that went well or felt good"
+                    , bullet "you want to try to do differently next time because they didn't work or felt bad"
+                    ]
+                ]
+              )
+            ]
+
         SessionEnd { codeDescription, codeLink } ->
             [ ( False
               , [ slideHeading "What now?"
@@ -134,8 +148,37 @@ slideContent section =
               )
             ]
 
-        AnnotateStructure ->
-            [ ( True, [] ) ]
+        AnnotateStructure { annotationLink, pdfLink } ->
+            [ ( True
+              , [ slideHeading "Code structure"
+                , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help!"
+                , timedHeading "8" "Independently" "Examine structure"
+                , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
+                , item (img [ src "annotated-code.png", style "float" "right", style "height" "260px" ] [])
+                , item (img [ src "scribbled-code.png", style "float" "right", style "height" "260px", style "margin" "-20px 20px 0 0" ] [])
+                , bullets
+                    [ bulletLink "Code to annotate" annotationLink
+                    , bulletLink "Pdf to print" pdfLink
+                    ]
+                , bullets
+                    [ bullet "Variables"
+                    , bullet "Functions / Methods"
+                    , bullet "Instantiation"
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "Code structure"
+                , timedHeading "5" "Together" "Discuss"
+                , bullets
+                    [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
+                    , bullet "What patterns are visible from the colors and links only?"
+                    , bullet "How does the data flow through the code?"
+                    , bullet "What parts of the code seem to warrant more attention?"
+                    ]
+                ]
+              )
+            ]
 
         ListNames ->
             [ ( True, [] ) ]
@@ -144,7 +187,28 @@ slideContent section =
             [ ( True, [] ) ]
 
         ImportantLines ->
-            [ ( True, [] ) ]
+            [ ( True
+              , [ slideHeading "Content"
+                , timedHeading "5" "Independently" "Identify important lines"
+                , slideP "Briefly discuss what it means to be important as a group (if you want to)"
+                , bullets
+                    [ bullet "then, identify the 4 lines you consider most important"
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "Content"
+                , timedHeading "8" "Together" "Discuss"
+                , slideP "Discuss in the group:"
+                , bullets
+                    [ bullet "lines covered by many people?"
+                    , bullet "lines named but not by a lot of people"
+                    , bullet "Agree less than 8 of the most important lines"
+                    ]
+                , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore."
+                ]
+              )
+            ]
 
         Summarise ->
             [ ( True, [] ) ]
@@ -173,55 +237,7 @@ slideContent section =
 -}
 slides : List (List SharedType.CustomContent)
 slides =
-    [ [ slideHeading "Code structure"
-      , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help!"
-      , timedHeading "8" "Independently" "Examine structure"
-      , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
-      , bullets
-            [ bulletLink "Code to annotate" "https://crc-annotations.netlify.app/#/file/IYBxCcHsDdgGwM4HoCCYqzgFQKYIC4IB0AUsLEgEZySVIDGAbPQJwDMAjACaNf0AM-FgCYA7Dn71h9LlwAsAVnH8AHFw4rhbYcAULgfJKAgx4+PISQJw9JAFtgASwB2SAFblgSSOADmR9FM4cwJkekg7ShdgfEdIZ2QAYQio5xi4hIAJHDgQHHAiD1ggA"
-            ]
-      , bullets
-            [ bullet "Variables"
-            , bullet "Functions / Methods"
-            , bullet "Instantiation"
-            ]
-            |> hide
-      ]
-    , [ slideHeading "Code structure"
-      , timedHeading "5" "Together" "Discuss"
-      , bullets
-            [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
-            , bullet "What patterns are visible from the colors and links only?"
-            , bullet "How does the data flow through the code?"
-            , bullet "What parts of the code seem to warrant more attention?"
-            ]
-      ]
-    , [ slideHeading "Content"
-      , timedHeading "5" "Independently" "Identify important lines"
-      , slideP "Briefly discuss what it means to be important as a group (if you want to)"
-      , bullets
-            [ bullet "then, identify the 4 lines you consider most important"
-            ]
-      ]
-    , [ slideHeading "Content"
-      , timedHeading "8" "Together" "Discuss"
-      , slideP "Discuss in the group:"
-      , bullets
-            [ bullet "lines covered by many people?"
-            , bullet "lines named but not by a lot of people"
-            , bullet "Agree less than 8 of the most important lines"
-            ]
-      , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore."
-      ]
-    , [ slideHeading "Reflect on the session"
-      , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
-      , timedHeading "5" "Together" "Note down things"
-      , bullets
-            [ bullet "that went well or felt good"
-            , bullet "you want to try to do differently next time because they didn't work or felt bad"
-            ]
-      ]
-    ]
+    []
 
 
 slideHeading : String -> CustomContent

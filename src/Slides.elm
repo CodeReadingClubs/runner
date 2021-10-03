@@ -99,8 +99,12 @@ slides =
     , WhyDoingThis
     , FirstGlance
     , AnnotateStructure
+        { annotationLink = ""
+        , pdfLink = "https://katj.am/code.pdf"
+        }
     , ImportantLines
     , Summarise
+    , Reflect
     , SessionEnd
         { codeDescription = "Code from"
         , codeLink = ""

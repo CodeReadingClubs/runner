@@ -42,3 +42,9 @@ type alias EndInfo =
     { codeDescription : String
     , codeLink : String
     }
+
+
+type alias AnnotateInfo =
+    { annotationLink : String
+    , pdfLink : String
+    }

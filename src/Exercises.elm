@@ -4,7 +4,7 @@ import Html exposing (Html, a, button, div, h1, h2, hr, img, li, p, span, text, 
 import Html.Attributes exposing (class, href, src, style)
 import Html.Events exposing (onClick)
 import Markdown
-import SharedType exposing (CustomContent, CustomSlide, StartInfo)
+import SharedType exposing (CustomContent, CustomSlide, EndInfo, StartInfo)
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
 import Time exposing (Posix)
@@ -15,7 +15,7 @@ type
     -- Information
     = SessionStart StartInfo
     | WhyDoingThis
-    | SessionEnd
+    | SessionEnd EndInfo
       -- First Look
     | FirstGlance
     | AnnotateStructure
@@ -86,21 +86,35 @@ slideContent section =
               )
             ]
 
-        SessionEnd ->
-            [ ( False, [] ) ]
+        SessionEnd { codeDescription, codeLink } ->
+            [ ( False
+              , [ slideHeading "What now?"
+                , slideP "Code used for this session..."
+                , bullets
+                    [ bulletLink codeDescription codeLink
+                    ]
+                , slideP "Code reading club resources: https://code-reading.org"
+                , slideP "Read Felienne's book! The Programmer's Brain"
+                , slideP "Start a club"
+                , slideP "Join a club"
+                , slideP "Get in touch hello@code-reading.org"
+                ]
+              )
+            ]
 
         -- First Look
         FirstGlance ->
             [ ( True
               , [ slideHeading "First glance"
-                , slideP "The goal of this exercise is to practice to get a first impression of code and to act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
+                , slideP "The goal of this exercise is to practice to get a first impression of code and act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
                 , timedHeading "1" "Independently" "Glance at the code"
                 , slideP "It's important that is an immediate reaction."
                 , bullets
-                    [ bullet "Look at code for a few seconds. Note down the first thing that catches your eye"
-                    , bullet "Then look again for a few more seconds. Note down the second thing that catches your eye"
+                    [ bullet "Look at code for a few seconds. Note the first thing that catches your eye"
+                    , bullet "Then look again for a few more seconds. Note the second thing that catches your eye"
+                    , bullet "Now think about why you noticed those things first & note that down"
                     ]
-                , slideP "Now think about why you noticed those things first & note that down" |> hide
+                , item (img [ src "example-first-glance.png", style "width" "120%", style "margin" "-10px 0 0 -10%" ] [])
                 ]
               )
             , ( True
@@ -206,17 +220,6 @@ slides =
             [ bullet "that went well or felt good"
             , bullet "you want to try to do differently next time because they didn't work or felt bad"
             ]
-      ]
-    , [ slideHeading "What now?"
-      , slideP "Code used for this session..."
-      , bullets
-            [ bulletLink "Java combinations helper from https://approvaltests.com/" "https://github.com/approvals/ApprovalTests.Java/blob/36b68f2b6e5978e43ef2a52ebed56944a56136bf/approvaltests/src/main/java/org/approvaltests/combinations/CombinationsHelper.java"
-            ]
-      , slideP "Code reading club resources: https://code-reading.org"
-      , slideP "Read Felienne's book! The Programmer's Brain"
-      , slideP "Start a club"
-      , slideP "Join a club"
-      , slideP "Get in touch hello@code-reading.org"
       ]
     ]
 

@@ -102,6 +102,9 @@ slides =
     , ImportantLines
     , Summarise
     , SessionEnd
+        { codeDescription = "Code from"
+        , codeLink = ""
+        }
     ]
         |> List.map (\section -> Exercises.slideContent section)
         |> List.concat

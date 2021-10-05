@@ -92,22 +92,22 @@ slides : List CustomSlide
 slides =
     [ SessionStart
         { facilitatedBy = "Dan, Felienne, Katja and Nick"
-        , miroLink = ""
-        , annotationLink = ""
+        , miroLink = "https://miro.com/welcomeonboard/bEZkN3dFek9xdUlxNUJMZGhQWGNIc09nS21udjZuN2pXekZvRmgyTEVEVkJzb3JGeFZxOTkzZFU1SmxBamhIb3wzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=58854779347"
+        , annotationLink = "https://annotate.code-reading.org/#/file/M4FwhgTsAWCWAOB6UkYMQIwDYHsOIGMCAWARgHZziAmDDAMwFNSBOAZkcZfoIAYATauQAcxRsX7kAbAFZhperN61kEAogC2OfgFcsjYIkYQsYAHYBzAHRQgA"
         , pdfLink = "https://katj.am/code.pdf"
         }
     , WhyDoingThis
     , FirstGlance
     , AnnotateStructure
-        { annotationLink = ""
+        { annotationLink = "https://annotate.code-reading.org/#/file/M4FwhgTsAWCWAOB6UkYMQIwDYHsOIGMCAWARgHZziAmDDAMwFNSBOAZkcZfoIAYATauQAcxRsX7kAbAFZhperN61kEAogC2OfgFcsjYIkYQsYAHYBzAHRQgA"
         , pdfLink = "https://katj.am/code.pdf"
         }
     , ImportantLines
     , Summarise
     , Reflect
     , SessionEnd
-        { codeDescription = "Code from"
-        , codeLink = ""
+        { codeDescription = "Code from Starship - starship.rs Cross-shell prompt"
+        , codeLink = "https://github.com/starship/starship/blob/cc417742bbfe193ee9fc0d2784e4d76581f6502b/src/modules/erlang.rs"
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

@@ -96,6 +96,7 @@ slideContent section =
                     [ bullet "that went well or felt good"
                     , bullet "you want to try to do differently next time because they didn't work or felt bad"
                     ]
+                , slideP "Same code or new next time?"
                 ]
               )
             ]

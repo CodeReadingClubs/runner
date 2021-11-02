@@ -118,10 +118,9 @@ slideContent section =
                 , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
                 , timedHeading "5" "Together" "Note down things"
                 , bullets
-                    [ bullet "that went well or felt good"
-                    , bullet "you want to try to do differently next time because they didn't work or felt bad"
+                    [ bullet "Feedback we can act on - both good and bad is helpful"
+                    , bullet "Observations about the experience - in the club today or thoughts you've had between clubs"
                     ]
-                , slideP "Same code or new next time?"
                 ]
               )
             ]

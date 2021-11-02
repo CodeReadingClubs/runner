@@ -15,6 +15,7 @@ type
     -- Information
     = SessionStart StartInfo
     | WhyDoingThis
+    | SecondThoughts
     | Reflect
     | SessionEnd EndInfo
       -- First Look
@@ -25,7 +26,7 @@ type
     | ImportantLines
     | Summarise
       -- Second Look
-    | RecapStructure
+    | RecapStructure AnnotateInfo
     | CentralThemes
     | CentralConcepts
     | DecisionsMade
@@ -79,6 +80,30 @@ slideContent section =
                     [ timedHeading "5" "Together" "Discuss"
                     , bullets
                         [ bullet "Give everyone a chance to read out their hopes and fears"
+                        , bullet "Discuss what you want to get out of the club"
+                        , bullet "Think about how to accommodate members with varying levels of experience and confidence"
+                        ]
+                    ]
+                ]
+              )
+            ]
+
+        SecondThoughts ->
+            [ ( True
+              , [ slideHeading "Second thoughts?"
+                , slideP "What's the most disorientating feature of the process or the code sample?"
+                , container (div [])
+                    [ timedHeading "2" "Independently" "Note down one thing"
+                    , item (img [ src "example-excited-worried.png", style "height" "250px" ] [])
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "Second thoughts?"
+                , container (div [])
+                    [ timedHeading "5" "Together" "Discuss"
+                    , bullets
+                        [ bullet "Give everyone a chance share if they want to"
                         , bullet "Discuss what you want to get out of the club"
                         , bullet "Think about how to accommodate members with varying levels of experience and confidence"
                         ]
@@ -185,7 +210,29 @@ slideContent section =
             [ ( True, [] ) ]
 
         RandomLine ->
-            [ ( True, [] ) ]
+            [ ( True
+              , [ slideHeading "Random Line"
+                , timedHeading "5" "Independently" "Examine the line"
+                , slideP "Select a random line from the code in whatever way you like. It can be helpful to randomly pick 3 line numbers and have the facilitator choose from them, which they think will be most interesting to talk about; but surprisingly, even a blank line can generate some conversation!"
+                , slideP "Examine this line individually."
+                , bullets
+                    [ bullet "What is the main idea of this line?"
+                    , bullet "What lines does it relate to and why?"
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "The Line in Context"
+                , timedHeading "8" "Together" "Discuss"
+                , bullets
+                    [ bullet "What is the 'scope' of the random line?"
+                    , bullet "What part of the code was seen as related?"
+                    , bullet "How does the line fit into the rest of the code base?"
+                    ]
+                , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore or we run out of time.."
+                ]
+              )
+            ]
 
         ImportantLines ->
             [ ( True
@@ -233,8 +280,34 @@ slideContent section =
             ]
 
         -- Second Look
-        RecapStructure ->
-            [ ( True, [] ) ]
+        RecapStructure { annotationLink, pdfLink } ->
+            -- Include recap important lines
+            [ ( True
+              , [ slideHeading "Code structure"
+                , timedHeading "5" "Independently" "Remember"
+                , slideP "Look at the pieces that make up the code and how they connect or flow together. This exercise is meant as a recap of the first session on the code, and as a way to onboard people that might have missed the first session on this code snippet."
+                , slideP "Looking at an annotated copy from the last session, make some notes about what parts of the code stand out and why. If you did not participate in the previous session, highlight the variables, methods and classes. Draw links between where they are instantiated and used."
+                , bullets
+                    [ bullet "Study the patterns and think about what they tell you."
+                    ]
+                , slideP "When we looked at this code last month, we talked about important lines together."
+                , slideP "These were chosen by a few people: 8, 12, 23, 60, 59, 97"
+                ]
+              )
+            , ( True
+              , [ slideHeading "Code structure"
+                , timedHeading "10" "Together" "Review & Summerise"
+                , slideP "Someone who was in the previous session could summarise or where we got to or we could think about:"
+                , bullets
+                    [ bullet "What direction does the code flow in?"
+                    , bullet "What parts stand out for lack, or excess, of links to other parts?"
+                    , bullet "What parts of the code seem to warrant more attention?"
+                    , bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
+                    , bullet "What thoughts did you have when thinking about the structure?"
+                    ]
+                ]
+              )
+            ]
 
         CentralThemes ->
             [ ( True, [] ) ]
@@ -243,13 +316,78 @@ slideContent section =
             [ ( True, [] ) ]
 
         DecisionsMade ->
-            [ ( True, [] ) ]
+            [ ( True
+              , [ slideHeading "The decisions made in the code"
+                , timedHeading "5" "Independently" "Consider code choices"
+                , slideP "Reexamine the code snippet and list decisions of the creator(s) of the code, for example a decision to use a certain design pattern or use a certain library or API."
+                , bullets
+                    [ bullet "Try not to judge the decisions as good or bad"
+                    , bullet "Focus on what decisions the developer(s) had to make, not why they made them"
+                    ]
+                , item (img [ src "example-code-decisions.png", style "height" "250px" ] [])
+                ]
+              )
+            , ( True
+              , [ slideHeading "The decisions made in the code"
+                , timedHeading "10" "Together" "Discuss"
+                , bullets
+                    [ bullet "Decisions covered by many vs few"
+                    , bullet "Strategies used to decide (e.g. method names, documentation, variable names, prior knowledge of system)"
+                    ]
+                ]
+              )
+            ]
 
         DecisionsConsequences ->
-            [ ( True, [] ) ]
+            [ ( True
+              , [ slideHeading "Consequences of the decisions"
+                , timedHeading "5" "Independently" "Consider the consequences"
+                , slideP "Think about the consequences of the decisions that were made. These could be the decisions you found yourself in the previous exercise or a decision someone else pointed out."
+                , slideP "You might want to think consider the impact of the decisions this code on:"
+                , bullets
+                    [ bullet "readability"
+                    , bullet "performance"
+                    , bullet "extendability"
+                    ]
+                , item (img [ src "example-consequences.png", style "height" "210px" ] [])
+                ]
+              )
+            , ( True
+              , [ slideHeading "Consequences of the decisions"
+                , timedHeading "10" "Together" "Discuss"
+                , bullets
+                    [ bullet "Consequences covered by many vs few"
+                    , bullet "Different types of consequence chosen (e.g. readability, extendability, performance)"
+                    , bullet "Pros of these decisions"
+                    , bullet "Possible cons of these decisions"
+                    ]
+                ]
+              )
+            ]
 
         DecisionsWhy ->
-            [ ( True, [] ) ]
+            [ ( True
+              , [ slideHeading "The 'why' of the decisions"
+                , timedHeading "10" "Together" "Make statements"
+                , slideP "Can you understand why the code was designed this way?"
+                , bullets
+                    [ bullet "What assumptions do these decisions rely on?"
+                    , bullet "Can you think of reasons these decisions might have been made?"
+                    , bullet "What alternatives would have been possible?"
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "Reflect on the session"
+                , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
+                , timedHeading "5" "Together" "Note down things"
+                , bullets
+                    [ bullet "that went well or felt good"
+                    , bullet "you want to try to do differently next time because they didn't work or felt bad"
+                    ]
+                ]
+              )
+            ]
 
 
 

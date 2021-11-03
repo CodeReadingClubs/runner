@@ -17,6 +17,7 @@ type
     | WhyDoingThis
     | SecondThoughts
     | Reflect
+    | Feedback
     | SessionEnd EndInfo
       -- First Look
     | FirstGlance
@@ -113,6 +114,19 @@ slideContent section =
             ]
 
         Reflect ->
+            [ ( True
+              , [ slideHeading "Reflect on the session"
+                , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
+                , timedHeading "5" "Together" "Note down things"
+                , bullets
+                    [ bullet "that went well or felt good"
+                    , bullet "you want to try to do differently next time because they didn't work or felt bad"
+                    ]
+                ]
+              )
+            ]
+
+        Feedback ->
             [ ( True
               , [ slideHeading "Reflect on the session"
                 , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
@@ -373,16 +387,6 @@ slideContent section =
                     [ bullet "What assumptions do these decisions rely on?"
                     , bullet "Can you think of reasons these decisions might have been made?"
                     , bullet "What alternatives would have been possible?"
-                    ]
-                ]
-              )
-            , ( True
-              , [ slideHeading "Reflect on the session"
-                , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
-                , timedHeading "5" "Together" "Note down things"
-                , bullets
-                    [ bullet "that went well or felt good"
-                    , bullet "you want to try to do differently next time because they didn't work or felt bad"
                     ]
                 ]
               )

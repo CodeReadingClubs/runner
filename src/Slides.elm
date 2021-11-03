@@ -105,7 +105,7 @@ slides =
     , DecisionsMade
     , DecisionsConsequences
     , DecisionsWhy
-    , Reflect
+    , Feedback
     , SessionEnd
         { codeDescription = "Code from Starship - starship.rs Cross-shell prompt"
         , codeLink = "https://github.com/starship/starship/blob/cc417742bbfe193ee9fc0d2784e4d76581f6502b/src/modules/erlang.rs"

@@ -293,7 +293,10 @@ slideContent section =
                 , slideP "Briefly discuss what it means to be important as a group (if you want to)"
                 , bullets
                     [ bullet "then, identify the 4 lines you consider most important"
+                    , bullet "Note those lines down on your board"
+                    , bullet "Think about why you chose them"
                     ]
+                , slideP "We'll dot vote our line numbers together and discuss choices in the next exercise"
                 ]
               )
             , ( True

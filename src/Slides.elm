@@ -88,7 +88,7 @@ subscriptions model =
 
 annotationLink : String
 annotationLink =
-    ""
+    "https://annotate.code-reading.org/#/file/LYe2FMDsBcHpQjWAjANiZtwE4BsAOABmwCZD8BjbAEwEZl7lwSTrdCBWcAdl23w7duhQiQAs1cGJKwAzgCcKsVAEtMFeeACG0cLABm8sAFotkAJ7QAFisgBzAHQArWUA"
 
 
 miroLink : String
@@ -100,26 +100,25 @@ miroLink =
 -}
 slides : List CustomSlide
 slides =
-    [ SessionStart
+    [ SessionStartFirstClub
         { facilitatedBy = "Katja"
         , miroLink = miroLink
         , annotationLink = annotationLink
-        , pdfLink = "https://katj.am/code.pdf"
+        , pdfLink = ""
         }
-    , RandomLine
+    , FirstGlance
     , SecondThoughts
-    , RecapStructure
+    , AnnotateStructure
         { annotationLink = annotationLink
-        , pdfLink = "https://katj.am/code.pdf"
+        , pdfLink = ""
         }
-    , DecisionsMade
-    , DecisionsConsequences
-    , DecisionsWhy
-    , Feedback
+    , ImportantLines
+    , Summarise
     , SessionEnd
-        { codeDescription = ""
-        , codeLink = ""
+        { codeDescription = "moment: from-anything.js"
+        , codeLink = "https://github.com/moment/moment/blob/e96809208c9d1b1bbe22d605e76985770024de42/src/lib/create/from-anything.js"
         }
+    , Feedback
     ]
         |> List.map (\section -> Exercises.slideContent section)
         |> List.concat

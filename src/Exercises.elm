@@ -57,7 +57,8 @@ slideContent section =
                     ]
                 , slideHr
                 , bullets
-                    [ bullet "Don't look at the code until we start the first exercise."
+                    [ bullet "Hello! What is code reading? Why are we all here?"
+                    , bullet "Don't look at the code until we start the first exercise"
                     , bullet "I'll keep the exercises & timer posted on my screenshare"
                     , bullet "Join the miro and claim a board"
                     , bullet "Make independent notes on your board"
@@ -79,7 +80,7 @@ slideContent section =
                     , bulletLink "Miro board" miroLink
                     , bulletLink "Code in annotation tool" annotationLink
                     , if String.length pdfLink > 0 then
-                        bulletLink "Code pdf to download" pdfLink
+                        bulletLink "Example annotation" pdfLink
 
                       else
                         item (text "")

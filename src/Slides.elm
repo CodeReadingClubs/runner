@@ -101,7 +101,7 @@ miroLink =
 slides : List CustomSlide
 slides =
     [ SessionStartFirstClub
-        { facilitatedBy = "Katja"
+        { facilitatedBy = "Katja & Rupert"
         , miroLink = miroLink
         , annotationLink = annotationLink
         , pdfLink = ""
@@ -110,7 +110,7 @@ slides =
     , SecondThoughts
     , AnnotateStructure
         { annotationLink = annotationLink
-        , pdfLink = ""
+        , pdfLink = "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
         }
     , ImportantLines
     , Summarise

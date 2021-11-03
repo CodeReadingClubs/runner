@@ -13,7 +13,8 @@ import Time exposing (Posix)
 type
     Section
     -- Information
-    = SessionStart StartInfo
+    = SessionStartFirstClub StartInfo
+    | SessionStart StartInfo
     | WhyDoingThis
     | SecondThoughts
     | Reflect
@@ -38,6 +39,36 @@ type
 slideContent : Section -> List ( Bool, List SharedType.CustomContent )
 slideContent section =
     case section of
+        SessionStartFirstClub { facilitatedBy, miroLink, annotationLink, pdfLink } ->
+            [ ( False
+              , [ slideHeading "Code Reading Club"
+                , slideP ("Facilitators: " ++ facilitatedBy)
+                , slideP "hello@code-reading.org | https://code-reading.org"
+                , slideHr
+                , bullets
+                    [ bulletLink "Code of conduct" "https://code-reading.org/conduct"
+                    , bulletLink "Miro board" miroLink
+                    , bulletLink "Code in annotation tool" annotationLink
+                    , if String.length pdfLink > 0 then
+                        bulletLink "Code pdf to download" pdfLink
+
+                      else
+                        item (text "")
+                    ]
+                , slideHr
+                , bullets
+                    [ bullet "Hello! What is code reading? Why are we all here?"
+                    , bullet "Don't look at the code until we start the first exercise"
+                    , bullet "I'll keep the exercises & timer posted on my screenshare"
+                    , bullet "Join the miro and claim a board"
+                    , bullet "Make independent notes on your board"
+                    , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
+                    ]
+                , item (h2 [ style "margin-top" "-20px" ] [ text "Any questions before we start?" ]) |> hide
+                ]
+              )
+            ]
+
         SessionStart { facilitatedBy, miroLink, annotationLink, pdfLink } ->
             [ ( False
               , [ slideHeading "Code Reading Club"
@@ -48,7 +79,11 @@ slideContent section =
                     [ bulletLink "Code of conduct" "https://code-reading.org/conduct"
                     , bulletLink "Miro board" miroLink
                     , bulletLink "Code in annotation tool" annotationLink
-                    , bulletLink "Code pdf to download" pdfLink
+                    , if String.length pdfLink > 0 then
+                        bulletLink "Example annotation" pdfLink
+
+                      else
+                        item (text "")
                     ]
                 , slideHr
                 , bullets
@@ -197,7 +232,11 @@ slideContent section =
                 , item (img [ src "scribbled-code.png", style "float" "right", style "height" "260px", style "margin" "-20px 20px 0 0" ] [])
                 , bullets
                     [ bulletLink "Code to annotate" annotationLink
-                    , bulletLink "Pdf to print" pdfLink
+                    , if String.length pdfLink > 0 then
+                        bulletLink "Code pdf to download" pdfLink
+
+                      else
+                        item (text "")
                     ]
                 , bullets
                     [ bullet "Variables"

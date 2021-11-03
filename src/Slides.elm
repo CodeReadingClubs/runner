@@ -86,30 +86,39 @@ subscriptions model =
         Sub.none
 
 
+annotationLink : String
+annotationLink =
+    "https://annotate.code-reading.org/#/file/LYe2FMDsBcHpQjWAjANiZtwE4BsAOABmwCZD8BjbAEwEZl7lwSTrdCBWcAdl23w7duhQiQAs1cGJKwAzgCcKsVAEtMFeeACG0cLABm8sAFotkAJ7QAFisgBzAHQArWUA"
+
+
+miroLink : String
+miroLink =
+    "https://miro.com/welcomeonboard/dG1yTUh5MkFDZ1hyNmtBbGV3T0tYSnZya1NyZFU0RVZzclM1NVVXMkNkRVpCZHBQZXpsWFJnenJFVFE3RXFBMXwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=980551198040"
+
+
 {-| The list of slides
 -}
 slides : List CustomSlide
 slides =
-    [ SessionStart
-        { facilitatedBy = "Rupert, Dan, Felienne, Katja and Nick"
-        , miroLink = "https://miro.com/welcomeonboard/YlpYNm5TdUViMzAybWY4b1l3c3o2bk5TRWk4Y0xiOG9uajFWcFp4cFFCNlh1dUZVUmJadmhqekxOTGhVc3JLOHwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=629576332995"
-        , annotationLink = "https://annotate.code-reading.org/#/file/M4FwhgTsAWCWAOB6UkYMQIwDYHsOIGMCAWARgHZziAmDDAMwFNSBOAZkcZfoIAYATauQAcxRsX7kAbAFZhperN61kEAogC2OfgFcsjYIkYQsYAHYBzAHRQgA"
-        , pdfLink = "https://katj.am/code.pdf"
+    [ SessionStartFirstClub
+        { facilitatedBy = "Katja & Rupert"
+        , miroLink = miroLink
+        , annotationLink = annotationLink
+        , pdfLink = ""
         }
-    , RandomLine
+    , FirstGlance
     , SecondThoughts
-    , RecapStructure
-        { annotationLink = "https://annotate.code-reading.org/#/file/M4FwhgTsAWCWAOB6UkYMQIwDYHsOIGMCAWARgHZziAmDDAMwFNSBOAZkcZfoIAYATauQAcxRsX7kAbAFZhperN61kEAogC2OfgFcsjYIkYQsYAHYBzAHRQgA"
-        , pdfLink = "https://katj.am/code.pdf"
+    , AnnotateStructure
+        { annotationLink = annotationLink
+        , pdfLink = "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
         }
-    , DecisionsMade
-    , DecisionsConsequences
-    , DecisionsWhy
-    , Feedback
+    , ImportantLines
+    , Summarise
     , SessionEnd
-        { codeDescription = "Code from Starship - starship.rs Cross-shell prompt"
-        , codeLink = "https://github.com/starship/starship/blob/cc417742bbfe193ee9fc0d2784e4d76581f6502b/src/modules/erlang.rs"
+        { codeDescription = "moment: from-anything.js"
+        , codeLink = "https://github.com/moment/moment/blob/e96809208c9d1b1bbe22d605e76985770024de42/src/lib/create/from-anything.js"
         }
+    , Feedback
     ]
         |> List.map (\section -> Exercises.slideContent section)
         |> List.concat

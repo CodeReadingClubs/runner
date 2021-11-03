@@ -86,20 +86,30 @@ subscriptions model =
         Sub.none
 
 
+annotationLink : String
+annotationLink =
+    ""
+
+
+miroLink : String
+miroLink =
+    "https://miro.com/welcomeonboard/dG1yTUh5MkFDZ1hyNmtBbGV3T0tYSnZya1NyZFU0RVZzclM1NVVXMkNkRVpCZHBQZXpsWFJnenJFVFE3RXFBMXwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=980551198040"
+
+
 {-| The list of slides
 -}
 slides : List CustomSlide
 slides =
     [ SessionStart
-        { facilitatedBy = "Rupert, Dan, Felienne, Katja and Nick"
-        , miroLink = "https://miro.com/welcomeonboard/YlpYNm5TdUViMzAybWY4b1l3c3o2bk5TRWk4Y0xiOG9uajFWcFp4cFFCNlh1dUZVUmJadmhqekxOTGhVc3JLOHwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=629576332995"
-        , annotationLink = "https://annotate.code-reading.org/#/file/M4FwhgTsAWCWAOB6UkYMQIwDYHsOIGMCAWARgHZziAmDDAMwFNSBOAZkcZfoIAYATauQAcxRsX7kAbAFZhperN61kEAogC2OfgFcsjYIkYQsYAHYBzAHRQgA"
+        { facilitatedBy = "Katja"
+        , miroLink = miroLink
+        , annotationLink = annotationLink
         , pdfLink = "https://katj.am/code.pdf"
         }
     , RandomLine
     , SecondThoughts
     , RecapStructure
-        { annotationLink = "https://annotate.code-reading.org/#/file/M4FwhgTsAWCWAOB6UkYMQIwDYHsOIGMCAWARgHZziAmDDAMwFNSBOAZkcZfoIAYATauQAcxRsX7kAbAFZhperN61kEAogC2OfgFcsjYIkYQsYAHYBzAHRQgA"
+        { annotationLink = annotationLink
         , pdfLink = "https://katj.am/code.pdf"
         }
     , DecisionsMade
@@ -107,8 +117,8 @@ slides =
     , DecisionsWhy
     , Feedback
     , SessionEnd
-        { codeDescription = "Code from Starship - starship.rs Cross-shell prompt"
-        , codeLink = "https://github.com/starship/starship/blob/cc417742bbfe193ee9fc0d2784e4d76581f6502b/src/modules/erlang.rs"
+        { codeDescription = ""
+        , codeLink = ""
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

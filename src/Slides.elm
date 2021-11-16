@@ -106,14 +106,16 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = ""
         }
-    , FirstGlance
+    , RandomLine
     , SecondThoughts
-    , AnnotateStructure
+    , RecapStructure
         { annotationLink = annotationLink
         , pdfLink = "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
         }
-    , ImportantLines
-    , Summarise
+    , DecisionsMade
+    , DecisionsConsequences
+    , DecisionsWhy
+    , Feedback
     , SessionEnd
         { codeDescription = "moment: from-anything.js"
         , codeLink = "https://github.com/moment/moment/blob/e96809208c9d1b1bbe22d605e76985770024de42/src/lib/create/from-anything.js"

@@ -127,9 +127,10 @@ slideContent section =
         SecondThoughts ->
             [ ( True
               , [ slideHeading "Second thoughts?"
-                , slideP "What's the most disorientating feature of the process or the code sample?"
+                , slideP "What's the most disorientating thing so far? This can be something about the Code Reading Club process or the code sample we are looking at."
+                , slideP "Is something confusing or worrying you? Are you feeling excited or uneasy?"
                 , container (div [])
-                    [ timedHeading "2" "Independently" "Note down one thing"
+                    [ timedHeading "2" "Independently" "Note down 1 or 2 things"
                     , item (img [ src "example-excited-worried.png", style "height" "250px" ] [])
                     ]
                 ]
@@ -266,10 +267,12 @@ slideContent section =
               , [ slideHeading "Random Line"
                 , timedHeading "5" "Independently" "Examine the line"
                 , slideP "Select a random line from the code in whatever way you like. It can be helpful to randomly pick 3 line numbers and have the facilitator choose from them, which they think will be most interesting to talk about; but surprisingly, even a blank line can generate some conversation!"
-                , slideP "Examine this line individually."
+                , slideP "Debugging often starts with a line number."
+                , slideP "Start by looking at the line itself, then think about how it relates to the code around it."
                 , bullets
                     [ bullet "What is the main idea of this line?"
                     , bullet "What lines does it relate to and why?"
+                    , bullet "What strategies & prior knowlegde are you using to figure this out?"
                     ]
                 ]
               )
@@ -290,9 +293,9 @@ slideContent section =
             [ ( True
               , [ slideHeading "Content"
                 , timedHeading "5" "Independently" "Identify important lines"
-                , slideP "Briefly discuss what it means to be important as a group (if you want to)"
+                , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                 , bullets
-                    [ bullet "then, identify the 4 lines you consider most important"
+                    [ bullet "Identify the 4 lines you consider most important"
                     , bullet "Note those lines down on your board"
                     , bullet "Think about why you chose them"
                     ]

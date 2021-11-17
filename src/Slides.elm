@@ -120,7 +120,6 @@ slides =
         { codeDescription = "moment: from-anything.js"
         , codeLink = "https://github.com/moment/moment/blob/e96809208c9d1b1bbe22d605e76985770024de42/src/lib/create/from-anything.js"
         }
-    , Feedback
     ]
         |> List.map (\section -> Exercises.slideContent section)
         |> List.concat

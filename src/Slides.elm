@@ -88,7 +88,7 @@ subscriptions model =
 
 annotationLink : String
 annotationLink =
-    "https://annotate.code-reading.org/#/file/LYe2FMDsBcHpQjWAjANiZtwE4BsAOABmwCZD8BjbAEwEZl7lwSTrdCBWcAdl23w7duhQiQAs1cGJKwAzgCcKsVAEtMFeeACG0cLABm8sAFotkAJ7QAFisgBzAHQArWUA"
+    "https://annotate.code-reading.org/#/file/A4UwdsD2AuD0oRrARgG0slBDAZgFgGYBOAggRgAYB2HHIgVgA4AmZqxrAnANm-pBABjPPTZY8WQRQqZkkgNbgAJrADOAJ0GwswYLHXAtARwCuIdQEsQq2IMgBbe+GiqAdINQArIA"
 
 
 miroLink : String
@@ -106,19 +106,18 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = ""
         }
-    , RandomLine
+    , FirstGlance
     , SecondThoughts
-    , RecapStructure
+    , AnnotateStructure
         { annotationLink = annotationLink
         , pdfLink = "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
         }
-    , DecisionsMade
-    , DecisionsConsequences
-    , DecisionsWhy
+    , ImportantLines
+    , Summarise
     , Feedback
     , SessionEnd
-        { codeDescription = "moment: from-anything.js"
-        , codeLink = "https://github.com/moment/moment/blob/e96809208c9d1b1bbe22d605e76985770024de42/src/lib/create/from-anything.js"
+        { codeDescription = "penpot: comments.clj"
+        , codeLink = "https://github.com/penpot/penpot/blob/baf43933107ff9582278a3f665eec4527a4ac00b/backend/src/app/rpc/queries/comments.clj"
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

@@ -88,7 +88,7 @@ subscriptions model =
 
 annotationLink : String
 annotationLink =
-    "https://annotate.code-reading.org/#/file/A4UwdsD2AuD0oRrARgG0slBDAZgFgGYBOAggRgAYB2HHIgVgA4AmZqxrAnANm-pBABjPPTZY8WQRQqZkkgNbgAJrADOAJ0GwswYLHXAtARwCuIdQEsQq2IMgBbe+GiqAdINQArIA"
+    "https://annotate.code-reading.org/#/file/A4UwdsD2AuD0oRrARgG0slBDAZgFgGYBOAggRgAYB2HHIgVgA4AmZqxrAnANm-pBABjPPTZY8WQRQqZkkgNbgAJrADOAJ0GwswYLHXAtARwCuIdQEsQq+Osg4LqEADpBqAFZA"
 
 
 miroLink : String
@@ -110,14 +110,14 @@ slides =
     , SecondThoughts
     , AnnotateStructure
         { annotationLink = annotationLink
-        , pdfLink = "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
+        , pdfLink = ""
         }
     , ImportantLines
     , Summarise
     , Feedback
     , SessionEnd
-        { codeDescription = "penpot: comments.clj"
-        , codeLink = "https://github.com/penpot/penpot/blob/baf43933107ff9582278a3f665eec4527a4ac00b/backend/src/app/rpc/queries/comments.clj"
+        { codeDescription = "penpot: profile.clj"
+        , codeLink = "https://github.com/penpot/penpot/blob/baf43933107ff9582278a3f665eec4527a4ac00b/backend/src/app/rpc/queries/profile.clj"
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

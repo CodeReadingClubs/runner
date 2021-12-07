@@ -101,13 +101,14 @@ miroLink =
 slides : List CustomSlide
 slides =
     [ SessionStartFirstClub
-        { facilitatedBy = "Code Reading Club team"
+        { facilitatedBy = "Code Reading Club team (Dan, Felienne, Katja, Nick & Rupert)"
         , miroLink = miroLink
         , annotationLink = annotationLink
         , pdfLink = ""
         }
     , FirstGlance
     , SecondThoughts
+    , Syntax
     , AnnotateStructure
         { annotationLink = annotationLink
         , pdfLink = ""

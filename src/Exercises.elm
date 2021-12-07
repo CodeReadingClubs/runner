@@ -22,6 +22,7 @@ type
     | SessionEnd EndInfo
       -- First Look
     | FirstGlance
+    | Syntax
     | AnnotateStructure AnnotateInfo
     | ListNames
     | RandomLine
@@ -219,6 +220,35 @@ slideContent section =
                     [ bullet "Knowledge of the domain, of the programming language? Of a framework?"
                     , bullet "What knowledge do you think might be needed to better understand this code?"
                     ]
+                ]
+              )
+            ]
+
+        Syntax ->
+            [ ( True
+              , [ slideHeading "Syntax knowledge"
+                , slideP "The goal of this exercise is to practice to make sure everyone in club is familiar with syntactic elements of the code."
+                , timedHeading "5" "Independently" "Examine syntax"
+                , slideP "Look at the code and examine syntactic elements. Do you know the meaning of all elements?"
+                , slideP "You can use these questions as a guide:"
+                , bullets
+                    [ bullet "Is it clear to you what the role of each block in the code is (function, condition, repetition etc)?"
+                    , bullet "Do you recognize all operators?"
+                    , bullet "Take the remainder of the time to think about what other things are unfamiliar."
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "Syntax knowledge"
+                , timedHeading "5" "Together" "Discuss"
+                , slideP "Talk about unfamiliar constructs."
+                , slideP "Were there constructs that were unfamiliar?"
+                , bullets
+                    [ bullet "If so, are there members of the group who know the meaning?"
+                    , bullet "If not, can you look up the constructs?"
+                    ]
+                , slideP "Why are the syntactic constructs unfamiliar?"
+                , slideP "Are they ideosyncratic to this language or code base?"
                 ]
               )
             ]

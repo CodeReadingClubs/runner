@@ -88,12 +88,12 @@ subscriptions model =
 
 annotationLink : String
 annotationLink =
-    "https://annotate.code-reading.org/#/file/A4UwdsD2AuD0oRrARgG0slBDAZgFgGYBOAggRgAYB2HHIgVgA4AmZqxrAnANm-pBABjPPTZY8WQRQqZkkgNbgAJrADOAJ0GwswYLHXAtARwCuIdQEsQq+Osg4LqEADpBqAFZA"
+    "https://annotate.code-reading.org/#/file/A4UwdsD2AuD0oRrARgG0slIBm2DM2IAHACwEDGADHgIYCMBeRyIATASea+QOwgu5WANgAmyGihrkA1uBGwAzgCdysGsGCwlwVQEcAriCUBLEAtgA3UwHcjAOnKoAVkA"
 
 
 miroLink : String
 miroLink =
-    "https://miro.com/welcomeonboard/dG1yTUh5MkFDZ1hyNmtBbGV3T0tYSnZya1NyZFU0RVZzclM1NVVXMkNkRVpCZHBQZXpsWFJnenJFVFE3RXFBMXwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=980551198040"
+    "https://miro.com/welcomeonboard/ekZnZ2RzUzBRNkpIZTFzMHJsM1VSY3ZrRnNteHBnVTBvMkMwUnhseWJwOWRFVEc1QVhGWWVLT2x4djdVaHZMTXwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=511929949465"
 
 
 {-| The list of slides
@@ -101,13 +101,14 @@ miroLink =
 slides : List CustomSlide
 slides =
     [ SessionStartFirstClub
-        { facilitatedBy = "Katja & Rupert"
+        { facilitatedBy = "Code Reading Club team (Dan, Felienne, Katja, Nick & Rupert)"
         , miroLink = miroLink
         , annotationLink = annotationLink
         , pdfLink = ""
         }
     , FirstGlance
     , SecondThoughts
+    , Syntax
     , AnnotateStructure
         { annotationLink = annotationLink
         , pdfLink = ""
@@ -116,8 +117,8 @@ slides =
     , Summarise
     , Feedback
     , SessionEnd
-        { codeDescription = "penpot: profile.clj"
-        , codeLink = "https://github.com/penpot/penpot/blob/baf43933107ff9582278a3f665eec4527a4ac00b/backend/src/app/rpc/queries/profile.clj"
+        { codeDescription = "penpot: viewer.clj"
+        , codeLink = "https://github.com/penpot/penpot/blob/beff3fe843fc03a13f38be23f4c2c7ebeff26dba/backend/src/app/rpc/queries/viewer.clj"
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

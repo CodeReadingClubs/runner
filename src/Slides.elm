@@ -109,10 +109,7 @@ slides =
     , Syntax
     , SecondThoughts
     , RandomLine
-    , RecapStructure
-        { annotationLink = annotationLink
-        , pdfLink = ""
-        }
+    , RecapStructure [ 12, 38, 44, 48, 52, 59, 93 ]
     , DecisionsMade
     , DecisionsConsequences
     , DecisionsWhy

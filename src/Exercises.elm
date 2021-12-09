@@ -29,7 +29,7 @@ type
     | ImportantLines
     | Summarise
       -- Second Look
-    | RecapStructure AnnotateInfo
+    | RecapStructure (List Int)
     | CentralThemes
     | CentralConcepts
     | DecisionsMade
@@ -198,7 +198,7 @@ slideContent section =
               , [ slideHeading "First glance"
                 , slideP "The goal of this exercise is to practice to get a first impression of code and act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
                 , timedHeading "1" "Independently" "Glance at the code"
-                , slideP "It's important that is an immediate reaction."
+                , slideP "It's important that what you use is your  immediate reaction, don't overthink it!"
                 , bullets
                     [ bullet "Look at code for a few seconds. Note the first thing that catches your eye"
                     , bullet "Then look again for a few more seconds. Note the second thing that catches your eye"
@@ -368,8 +368,7 @@ slideContent section =
             ]
 
         -- Second Look
-        RecapStructure { annotationLink, pdfLink } ->
-            -- Include recap important lines
+        RecapStructure importantLines ->
             [ ( True
               , [ slideHeading "Code structure"
                 , timedHeading "5" "Independently" "Remember"
@@ -379,7 +378,7 @@ slideContent section =
                     [ bullet "Study the patterns and think about what they tell you."
                     ]
                 , slideP "When we looked at this code last month, we talked about important lines together."
-                , slideP "These were chosen by a few people: 8, 12, 23, 60, 59, 97"
+                , slideP ("These were chosen by a few people: " ++ String.join ", " (List.map String.fromInt importantLines))
                 ]
               )
             , ( True

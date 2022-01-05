@@ -88,12 +88,12 @@ subscriptions model =
 
 annotationLink : String
 annotationLink =
-    "https://annotate.code-reading.org/#/file/A4UwdsD2AuD0oRrARgG0slBDAZgFgGYBOAggRgAYB2HHIgVgA4AmZqxrAnANm-pBABjPPTZY8WQRQqZkkgNbgAJrADOAJ0GwswYLHXAtARwCuIdQEsQq+Osg4LqEADpBqAFZA"
+    "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
 
 
 miroLink : String
 miroLink =
-    "https://miro.com/welcomeonboard/VXg1M2lDc2kxQ0tDNFhZeVYxV0pRcHNRQXNvZEdtWVRERmJrUWlGRDFjRThuejdkVHdNenBNSDJ5S0FkN2ZOZHwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=784195131213"
+    "https://miro.com/welcomeonboard/VndMbGZvZlN2R3hVVzZwdXkyTEh6VkJUVHdQb0FXdnA3am11UmFybWFremtQT25sYVA3cUxpU2E4eDFocWF1ZXwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=5347545442"
 
 
 {-| The list of slides
@@ -106,17 +106,14 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = ""
         }
-    , Syntax
+    , FirstGlance
     , SecondThoughts
-    , RandomLine
-    , RecapStructure [ 12, 38, 44, 48, 52, 59, 93 ]
-    , DecisionsMade
-    , DecisionsConsequences
-    , DecisionsWhy
-    , Feedback
+    , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
+    , ImportantLines
+    , Summarise
     , SessionEnd
-        { codeDescription = "penpot: profile.clj"
-        , codeLink = "https://github.com/penpot/penpot/blob/baf43933107ff9582278a3f665eec4527a4ac00b/backend/src/app/rpc/queries/profile.clj"
+        { codeDescription = "PhoneNumberValidator.swift for the messaging app Signal."
+        , codeLink = "https://github.com/signalapp/Signal-iOS/blob/b68d8a3c8147feb2b69e7421a625608c44b98652/Signal/src/Models/PhoneNumberValidator.swift"
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

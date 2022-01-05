@@ -88,12 +88,12 @@ subscriptions model =
 
 annotationLink : String
 annotationLink =
-    "https://annotate.code-reading.org/#/file/A4UwdsD2AuD0oRrARgG0slBDAZgFgGYBOAggRgAYB2HHIgVgA4AmZqxrAnANm-pBABjPPTZY8WQRQqZkkgNbgAJrADOAJ0GwswYLHXAtARwCuIdQEsQq+Osg4LqEADpBqAFZA"
+    ""
 
 
 miroLink : String
 miroLink =
-    "https://miro.com/welcomeonboard/VXg1M2lDc2kxQ0tDNFhZeVYxV0pRcHNRQXNvZEdtWVRERmJrUWlGRDFjRThuejdkVHdNenBNSDJ5S0FkN2ZOZHwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=784195131213"
+    "https://miro.com/welcomeonboard/VndMbGZvZlN2R3hVVzZwdXkyTEh6VkJUVHdQb0FXdnA3am11UmFybWFremtQT25sYVA3cUxpU2E4eDFocWF1ZXwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=5347545442"
 
 
 {-| The list of slides
@@ -106,17 +106,9 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = ""
         }
-    , Syntax
-    , SecondThoughts
-    , RandomLine
-    , RecapStructure [ 12, 38, 44, 48, 52, 59, 93 ]
-    , DecisionsMade
-    , DecisionsConsequences
-    , DecisionsWhy
-    , Feedback
     , SessionEnd
-        { codeDescription = "penpot: profile.clj"
-        , codeLink = "https://github.com/penpot/penpot/blob/baf43933107ff9582278a3f665eec4527a4ac00b/backend/src/app/rpc/queries/profile.clj"
+        { codeDescription = ""
+        , codeLink = ""
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

@@ -88,7 +88,7 @@ subscriptions model =
 
 annotationLink : String
 annotationLink =
-    ""
+    "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
 
 
 miroLink : String
@@ -106,9 +106,14 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = ""
         }
+    , FirstGlance
+    , SecondThoughts
+    , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
+    , ImportantLines
+    , Summarise
     , SessionEnd
-        { codeDescription = ""
-        , codeLink = ""
+        { codeDescription = "PhoneNumberValidator.swift for the messaging app Signal."
+        , codeLink = "https://github.com/signalapp/Signal-iOS/blob/b68d8a3c8147feb2b69e7421a625608c44b98652/Signal/src/Models/PhoneNumberValidator.swift"
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

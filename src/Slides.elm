@@ -88,12 +88,12 @@ subscriptions model =
 
 annotationLink : String
 annotationLink =
-    "https://annotate.code-reading.org/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5goA"
+    "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
 
 
 miroLink : String
 miroLink =
-    "https://miro.com/welcomeonboard/VndMbGZvZlN2R3hVVzZwdXkyTEh6VkJUVHdQb0FXdnA3am11UmFybWFremtQT25sYVA3cUxpU2E4eDFocWF1ZXwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=5347545442"
+    "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
 
 
 {-| The list of slides
@@ -101,7 +101,7 @@ miroLink =
 slides : List CustomSlide
 slides =
     [ SessionStartFirstClub
-        { facilitatedBy = "Katja & Rupert"
+        { facilitatedBy = "Katja"
         , miroLink = miroLink
         , annotationLink = annotationLink
         , pdfLink = ""
@@ -112,8 +112,8 @@ slides =
     , ImportantLines
     , Summarise
     , SessionEnd
-        { codeDescription = "PhoneNumberValidator.swift for the messaging app Signal."
-        , codeLink = "https://github.com/signalapp/Signal-iOS/blob/b68d8a3c8147feb2b69e7421a625608c44b98652/Signal/src/Models/PhoneNumberValidator.swift"
+        { codeDescription = "Firefox browser module Discovery.jsm"
+        , codeLink = "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
         }
     ]
         |> List.map (\section -> Exercises.slideContent section)

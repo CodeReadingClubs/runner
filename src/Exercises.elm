@@ -10,9 +10,14 @@ import SliceShow.Slide exposing (..)
 import Time exposing (Posix)
 
 
+{-| The defined slides.
+Use these to build your deck in Slides.elm
+-}
 type
     Section
-    -- Information
+    ----
+    -- Club guidelines & group reflection
+    ----
     = SessionStartFirstClub StartInfo
     | SessionStart StartInfo
     | WhyDoingThis
@@ -20,7 +25,9 @@ type
     | Reflect
     | Feedback
     | SessionEnd EndInfo
-      -- First Look
+      ----
+      -- First Look at a piece of code
+      ----
     | FirstGlance
     | Syntax
     | AnnotateStructure AnnotateInfo
@@ -28,7 +35,9 @@ type
     | RandomLine
     | ImportantLines
     | Summarise
-      -- Second Look
+      ----
+      -- Second Look at the same code
+      ----
     | RecapStructure (List Int)
     | CentralThemes
     | CentralConcepts
@@ -40,7 +49,7 @@ type
 slideContent : Section -> List ( Bool, List SharedType.CustomContent )
 slideContent section =
     case section of
-        SessionStartFirstClub { facilitatedBy, miroLink, annotationLink, pdfLink } ->
+        SessionStartFirstClub { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
             [ ( False
               , [ slideHeading "Code Reading Club"
                 , slideP ("Facilitators: " ++ facilitatedBy)
@@ -48,7 +57,7 @@ slideContent section =
                 , slideHr
                 , bullets
                     [ bulletLink "Code of conduct" "https://code-reading.org/conduct"
-                    , bulletLink "Miro board" miroLink
+                    , bulletLink "Miro board" groupWorkspaceLink
                     , bulletLink "Code in annotation tool" annotationLink
                     , if String.length pdfLink > 0 then
                         bulletLink "Code pdf to download" pdfLink
@@ -61,7 +70,7 @@ slideContent section =
                     [ bullet "Hello! What is code reading? Why are we all here?"
                     , bullet "Don't look at the code until we start the first exercise"
                     , bullet "I'll keep the exercises & timer posted on my screenshare"
-                    , bullet "Join the miro and claim a board"
+                    , bullet "Join the shared workspace (e.g. miro) and claim a board"
                     , bullet "Make independent notes on your board"
                     , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
                     ]
@@ -70,7 +79,7 @@ slideContent section =
               )
             ]
 
-        SessionStart { facilitatedBy, miroLink, annotationLink, pdfLink } ->
+        SessionStart { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
             [ ( False
               , [ slideHeading "Code Reading Club"
                 , slideP ("Facilitators: " ++ facilitatedBy)
@@ -78,7 +87,7 @@ slideContent section =
                 , slideHr
                 , bullets
                     [ bulletLink "Code of conduct" "https://code-reading.org/conduct"
-                    , bulletLink "Miro board" miroLink
+                    , bulletLink "Miro board" groupWorkspaceLink
                     , bulletLink "Code in annotation tool" annotationLink
                     , if String.length pdfLink > 0 then
                         bulletLink "Example annotation" pdfLink

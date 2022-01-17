@@ -7,6 +7,7 @@ import Html.Events exposing (onClick)
 import SharedType exposing (CustomSlide, Message(..), Model)
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
+import Time
 
 
 {-| The name(s) of people facilitating the session

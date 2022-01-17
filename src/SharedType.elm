@@ -32,7 +32,7 @@ type alias CustomContent =
 
 type alias StartInfo =
     { facilitatedBy : String
-    , miroLink : String
+    , groupWorkspaceLink : String
     , annotationLink : String
     , pdfLink : String
     }

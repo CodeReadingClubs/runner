@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    ""
+    "Katja & Rupert"
 
 
 {-| A link to the code in annotation tool
@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.code-reading.org>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    ""
+    "https://annotate.code-reading.org/#/file/A4Cw9gLmwE4JYGcC2B6Ulr2SgRgGzBxQEMBOYgZgHYAWANgEY7SAGFgExwDMAmCrmgy6l27AMY0WpLuJZ0+7Yux4BWFHAB2EAKYwNxPGnBRYiVF2JjtCAHQBzMEA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    ""
+    "https://miro.com/welcomeonboard/UmdMNkxQbHU4bnllbTlFdmptQWNGTlVKblZFWUNubXhzR2w1ejZTZ2RqOGxmWW5IdHNhc0N0WnNBTWEzWFZ1cXwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=776444319440"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    ""
+    "faces.go from PhotoPrism an open-source photo tagging & search app"
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    ""
+    "https://github.com/photoprism/photoprism/blob/a9a374616900dbf23f41f9ddc409fdc0623dad25/internal/photoprism/faces.go"
 
 
 {-| The list of slides to use for this session

@@ -1,8 +1,8 @@
 # Code Reading Club runner
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7a05708c-1ea0-4f7c-8639-1b18715fe47e/deploy-status)](https://app.netlify.com/sites/code-reading-runner/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2a347c8e-886e-44fc-9518-52f0a2a00d64/deploy-status)](https://app.netlify.com/sites/code-reading-runner/deploys)
 
-[Latest Release](https://runner.code-reading.org)
+[Latest Release](https://runner.codereading.club)
 
 ### Prerequisites
 Follow official install instructions for your setup:

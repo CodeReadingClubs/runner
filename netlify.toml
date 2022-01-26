@@ -1,7 +1,7 @@
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "https://runner.codereading.club/index.html"
+  status = 301
 
 [build]
   publish = "dist"

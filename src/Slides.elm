@@ -19,7 +19,7 @@ facilitatedBy =
 
 
 {-| A link to the code in annotation tool
-To generate a link, go to <https://annotate.code-reading.org>
+To generate a link, go to <https://annotate.codereading.club>
 -}
 annotationLink : String
 annotationLink =

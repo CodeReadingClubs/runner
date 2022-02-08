@@ -53,11 +53,11 @@ slideContent section =
             [ ( False
               , [ slideHeading "Code Reading Club"
                 , slideP ("Facilitators: " ++ facilitatedBy)
-                , slideP "hello@code-reading.org | https://code-reading.org"
+                , slideP "hello@codereading.club | https://codereading.club"
                 , slideHr
                 , bullets
-                    [ bulletLink "Code of conduct" "https://code-reading.org/conduct"
-                    , bulletLink "Miro board" groupWorkspaceLink
+                    [ bulletLink "Code of conduct" "https://codereading.club/conduct"
+                    , bulletLink "Group workspace" groupWorkspaceLink
                     , bulletLink "Code in annotation tool" annotationLink
                     , if String.length pdfLink > 0 then
                         bulletLink "Code pdf to download" pdfLink
@@ -83,11 +83,11 @@ slideContent section =
             [ ( False
               , [ slideHeading "Code Reading Club"
                 , slideP ("Facilitators: " ++ facilitatedBy)
-                , slideP "hello@code-reading.org | https://code-reading.org"
+                , slideP "hello@codereading.club | https://codereading.club"
                 , slideHr
                 , bullets
-                    [ bulletLink "Code of conduct" "https://code-reading.org/conduct"
-                    , bulletLink "Miro board" groupWorkspaceLink
+                    [ bulletLink "Code of conduct" "https://codereading.club/conduct"
+                    , bulletLink "Group workspace" groupWorkspaceLink
                     , bulletLink "Code in annotation tool" annotationLink
                     , if String.length pdfLink > 0 then
                         bulletLink "Example annotation" pdfLink
@@ -99,7 +99,7 @@ slideContent section =
                 , bullets
                     [ bullet "Grab a copy of the code"
                     , bullet "I'll keep the exercises & timer posted on my screenshare"
-                    , bullet "Join the miro and claim a board"
+                    , bullet "Join the group workspace and claim a board"
                     , bullet "Make independent notes on your board"
                     , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
                     ]
@@ -192,11 +192,11 @@ slideContent section =
                 , bullets
                     [ bulletLink codeDescription codeLink
                     ]
-                , slideP "Code reading club resources: https://code-reading.org"
+                , slideP "Code reading club resources: https://codereading.club"
                 , slideP "Read Felienne's book! The Programmer's Brain"
                 , slideP "Start a club"
                 , slideP "Join a club"
-                , slideP "Get in touch hello@code-reading.org"
+                , slideP "Get in touch hello@codereading.club"
                 ]
               )
             ]
@@ -551,7 +551,7 @@ paddedSlide ( showStopwatch, content ) =
                         item (img [ src "icon.png", class "stopwatch" ] [])
                    , item
                         (div [ class "footer" ]
-                            [ text "Slides for this workshop: https://runner.code-reading.org"
+                            [ text "Slides for this workshop: https://runner.codereading.club"
                             ]
                         )
                    ]

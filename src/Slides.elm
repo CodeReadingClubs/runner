@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Dan. Felienne, Rupert, Katja & Nick"
+    "Dan. Rupert, Katja & Nick"
 
 
 {-| A link to the code in annotation tool
@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/E4UwtglgHgtMCuA7A9KSVkCMA2B7TWAbAEwDMAJgOyUCG5mAnAwBwAMIAxiJhwGbWsArB2akaIXoIAsrSqw70AjAQAONDgGsaAcxABnVOGgxEuciGR79eiLkQHeEbCADKAF1zAdIAHRu9QA"
+    "https://annotate.codereading.club/#/file/CYVwxg1qkOYPYHppXBeCBGAbOHMDMBWANjABYAGAUzIEYyMKB2JjADgGYqWMBDCigE58wwW2EV8HQcSEIsASzwARZQHEEAIRyQtOiL2xUEAFQBOCmDCpmAzgDoADgFsgA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1XOTTyCuyIpq4m1ixNu8pLaAhBcurd5GkPTSdKd9TimA/edit?usp=sharing"
+    "https://jamboard.google.com/d/1QGhwZJOnXDOZadHkgb77EDVJB-6sBdCjbbq7SBzkccE/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "Back to base with Remix's fullstack solution for filestorage.ts"
+    "Trigger.pm (perl) from DuckDuckGo's community sourced \"instant answers\" deprecated experiment https://duckduckhack.com"
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/remix-run/remix/blob/b623d77adb9980ecebcf7705c83aef54070cdb1b/packages/remix-node/sessions/fileStorage.ts"
+    "https://github.com/duckduckgo/duckduckgo/blob/bf56c40e414b077b83e77ba009f9f989f0f39609/lib/DDG/Block/Blockable/Triggers.pm"
 
 
 {-| The list of slides to use for this session
@@ -69,7 +69,25 @@ slides =
     -- (newGroupSlides, firstLookSlides, secondLookSlides)
     -- or make your own
     ----
-    firstLookSlides
+    [ SessionStartFirstClub
+        { facilitatedBy = facilitatedBy
+        , groupWorkspaceLink = groupWorkspaceLink
+        , annotationLink = annotationLink
+        , pdfLink = pdfLink
+        }
+    , FirstGlance
+    , WhyDoingThis
+    , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
+    , RandomLine
+    , ImportantLines
+    , Summarise
+    , Reflect
+    , Feedback
+    , SessionEnd
+        { codeDescription = codeDescription
+        , codeLink = codeLink
+        }
+    ]
         |> List.map (\section -> Exercises.slideContent section)
         |> List.concat
         |> List.map Exercises.paddedSlide

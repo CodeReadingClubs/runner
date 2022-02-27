@@ -1,7 +1,19 @@
 [[redirects]]
+  from = "https://runner.code-reading.org/*"
+  to = "https://runner.codereading.club/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://code-reading-runner.netlify.app/*"
+  to = "https://runner.codereading.club/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "https://runner.codereading.club/index.html"
-  status = 301
+  status = 200
 
 [build]
   publish = "dist"

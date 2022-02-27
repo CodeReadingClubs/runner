@@ -67,12 +67,10 @@ slideContent section =
                     ]
                 , slideHr
                 , bullets
-                    [ bullet "Hello! What is code reading? Why are we all here?"
-                    , bullet "Don't look at the code until we start the first exercise"
-                    , bullet "I'll keep the exercises & timer posted on my screenshare"
-                    , bullet "Join the shared workspace (e.g. miro) and claim a board"
-                    , bullet "Make independent notes on your board"
-                    , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
+                    [ bullet "Hello! What is code reading? Why are we all here? How does it work? Intro Tools."
+                    , bullet "Don't look at the code until we start the first exercise."
+                    , bullet "Join the shared workspace and claim a board. Make independent notes on your board."
+                    , bullet "After each exercise we'll copy any thoughts we want to share to a shared board."
                     ]
                 , item (h2 [ style "margin-top" "-20px" ] [ text "Any questions before we start?" ]) |> hide
                 ]

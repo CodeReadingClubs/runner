@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Dan, Felienne, Katja & Nick"
+    "Dan, Felienne, Nick, Katja & Rupert"
 
 
 {-| A link to the code in annotation tool
@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/CYVwxg1qkOYPYHppXBeCBGAbOHMDMBWANjABYAGAUzIEYyMKB2JjADgGYqWMBDCigE58wwW2EV8HQcSEIsASzwARZQHEEAIRyQtOiL2xUEAFQBOCmDCpmAzgDoADgFsgA"
+    "https://deploy-preview-21--crc-annotations.netlify.app/#/file/K4ZwFghmCWAm0HoAOAbCAXAZgewE4FsEAjFbIhABlgFYAWATlgDYGmJZ6B2AJgGZYAjAA4inAZiK8KwzJgi0KRUZgHMEIXAGMEAQSRIEAGWgh0AUwB2Z3AgASEC7BRmAKhFwBzM+dgBlYLgAbmYAngBKZiBI2BYgZgB0SGBIQA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1QGhwZJOnXDOZadHkgb77EDVJB-6sBdCjbbq7SBzkccE/edit?usp=sharing"
+    "https://jamboard.google.com/d/1cCt8UcMnfScISwpmw88e5K5iJ15fMZKjDKr7EI_YQ2Y/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "Trigger.pm (perl) from DuckDuckGo's community sourced \"instant answers\" deprecated experiment https://duckduckhack.com"
+    "HandleTargetedSurveyResponse.php from Ushahidi: Crowdsourcing Solutions to Empower COmmunities - https://www.ushahidi.com"
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/duckduckgo/duckduckgo/blob/bf56c40e414b077b83e77ba009f9f989f0f39609/lib/DDG/Block/Blockable/Triggers.pm"
+    "https://github.com/ushahidi/platform/blob/0d549d6496ad9723d18b71fb3018ffa40bb7f1d6/src/App/Listener/HandleTargetedSurveyResponse.php"
 
 
 {-| The list of slides to use for this session

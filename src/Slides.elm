@@ -77,8 +77,8 @@ slides =
         }
     , FirstGlance
     , WhyDoingThis
-    , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , RandomLine
+    , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
     , Summarise
     , Reflect

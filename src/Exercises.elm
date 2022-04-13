@@ -291,6 +291,8 @@ slideContent section =
                     , bullet "What patterns are visible from the colors and links only?"
                     , bullet "How does the data flow through the code?"
                     , bullet "What parts of the code seem to warrant more attention?"
+                    , bullet "Which colours did you choose to highlight each item?"
+                    , bullet "What strategies did you use to identify different elements in the code?"
                     ]
                 ]
               )

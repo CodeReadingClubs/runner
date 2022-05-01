@@ -299,7 +299,29 @@ slideContent section =
             ]
 
         ListNames ->
-            [ ( True, [] ) ]
+            [ ( True
+              , [ slideHeading "Names"
+                , timedHeading "5" "Independently" "Highlight"
+                , slideP "Start by examining the names of things. This is one method for discovering how the code fits together and its intentions."
+                , bullets
+                    [ bullet "Can you identify any patterns?"
+                    , bullet "Are there any anomolies?"
+                    , bullet "What are the consequences in terms of readability?"
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "Names"
+                , timedHeading "10" "Together" "Identify molds used"
+                , slideP "This can be done with one person scribing while others call out examples."
+                , bullets
+                    [ bullet "What can we learn from these names?"
+                    , bullet "Which elements are related to each other, from the names only?"
+                    , bullet "Are there names that are ambiguous when looked at without context?"
+                    ]
+                ]
+              )
+            ]
 
         RandomLine ->
             [ ( True

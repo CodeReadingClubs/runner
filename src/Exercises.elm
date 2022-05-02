@@ -299,7 +299,29 @@ slideContent section =
             ]
 
         ListNames ->
-            [ ( True, [] ) ]
+            [ ( True
+              , [ slideHeading "Names"
+                , timedHeading "5" "Independently" "Highlight"
+                , slideP "Start by examining the names of things. This is one method for discovering how the code fits together and its intentions."
+                , bullets
+                    [ bullet "Can you identify any patterns?"
+                    , bullet "Are there any anomolies?"
+                    , bullet "What are the consequences in terms of readability?"
+                    ]
+                ]
+              )
+            , ( True
+              , [ slideHeading "Names"
+                , timedHeading "10" "Together" "Identify molds used"
+                , slideP "This can be done with one person scribing while others call out examples."
+                , bullets
+                    [ bullet "What can we learn from these names?"
+                    , bullet "Which elements are related to each other, from the names only?"
+                    , bullet "Are there names that are ambiguous when looked at without context?"
+                    ]
+                ]
+              )
+            ]
 
         RandomLine ->
             [ ( True
@@ -382,7 +404,7 @@ slideContent section =
               , [ slideHeading "Code structure"
                 , timedHeading "5" "Independently" "Remember"
                 , slideP "Look at the pieces that make up the code and how they connect or flow together. This exercise is meant as a recap of the first session on the code, and as a way to onboard people that might have missed the first session on this code snippet."
-                , slideP "Looking at an annotated copy from the last session, make some notes about what parts of the code stand out and why. If you did not participate in the previous session, highlight the variables, methods and classes. Draw links between where they are instantiated and used."
+                , slideP "Looking at an annotated copy from the last session, make some notes about what parts of the code stand out and why. If you did not participate in the previous session, highlight the variables, methods and classes. Start to draw links between where they are instantiated and used."
                 , bullets
                     [ bullet "Study the patterns and think about what they tell you."
                     ]
@@ -392,7 +414,7 @@ slideContent section =
               )
             , ( True
               , [ slideHeading "Code structure"
-                , timedHeading "10" "Together" "Review & Summerise"
+                , timedHeading "5" "Together" "Review & Summerise"
                 , slideP "Someone who was in the previous session could summarise or where we got to or we could think about:"
                 , bullets
                     [ bullet "What direction does the code flow in?"

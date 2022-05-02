@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1cCt8UcMnfScISwpmw88e5K5iJ15fMZKjDKr7EI_YQ2Y/edit?usp=sharing"
+    "https://jamboard.google.com/d/1quXWrD58S5Ze3cxdqf5gkjIGLYYVD3sm1OSTACCmM08/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "HandleTargetedSurveyResponse.php from Ushahidi: Crowdsourcing Solutions to Empower COmmunities - https://www.ushahidi.com"
+    "HandleTargetedSurveyResponse.php from Ushahidi: Crowdsourcing Solutions to Empower Communities - https://www.ushahidi.com"
 
 
 {-| A link to the code in repo
@@ -75,18 +75,19 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = pdfLink
         }
-    , FirstGlance
+    , ListNames
     , WhyDoingThis
-    , RandomLine
-    , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
+    , RecapStructure [ 37, 53, 70, 103, 109 ]
     , ImportantLines
     , Summarise
-    , Reflect
-    , Feedback
+    , DecisionsMade
+    , DecisionsConsequences
+    , DecisionsWhy
     , SessionEnd
         { codeDescription = codeDescription
         , codeLink = codeLink
         }
+    , Feedback
     ]
         |> List.map (\section -> Exercises.slideContent section)
         |> List.concat

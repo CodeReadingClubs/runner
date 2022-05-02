@@ -77,7 +77,7 @@ slides =
         }
     , ListNames
     , WhyDoingThis
-    , RecapStructure [ 29, 39, 41, 46, 51, 61, 68, 97, 102 ]
+    , RecapStructure [ 37, 53, 70, 103, 109 ]
     , ImportantLines
     , Summarise
     , DecisionsMade

@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Dan, Felienne, Nick, Katja & Rupert"
+    "Dan, Felienne, Nick &  Katja"
 
 
 {-| A link to the code in annotation tool
@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://deploy-preview-21--crc-annotations.netlify.app/#/file/K4ZwFghmCWAm0HoAOAbCAXAZgewE4FsEAjFbIhABlgFYAWATlgDYGmJZ6B2AJgGZYAjAA4inAZiK8KwzJgi0KRUZgHMEIXAGMEAQSRIEAGWgh0AUwB2Z3AgASEC7BRmAKhFwBzM+dgBlYLgAbmYAngBKZiBI2BYgZgB0SGBIQA"
+    "https://annotate.codereading.club/#/file/LYUwlgTmwLQPYQOYHpSWsgRgGzp5ArAAwBmA7AJwECGBBIJAHAGxUCMAxh+WUY0QBY2FMpkwEyAsmQAmmAEwESyAM4gIAN3XJqABzDJsYfGF3ZqAOwCC+gHQArFUA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1quXWrD58S5Ze3cxdqf5gkjIGLYYVD3sm1OSTACCmM08/edit?usp=sharing"
+    "https://jamboard.google.com/d/1NX3S8QYGvw4vDrKEP3qfD3ZC-EvGNCBFRMumDiBpNDw/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "HandleTargetedSurveyResponse.php from Ushahidi: Crowdsourcing Solutions to Empower Communities - https://www.ushahidi.com"
+    "iplanApi.js from https://meirim.org/ The goal of this project is to empower citizens to effectively organize for their quality of life in their cities and to ensure information about protests is accessible."
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/ushahidi/platform/blob/0d549d6496ad9723d18b71fb3018ffa40bb7f1d6/src/App/Listener/HandleTargetedSurveyResponse.php"
+    "https://github.com/meirim-org/meirim/blob/50f795a55ef86951ccf770804197bb57477db25f/server/api/lib/iplanApi.js"
 
 
 {-| The list of slides to use for this session
@@ -75,14 +75,12 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = pdfLink
         }
-    , ListNames
+    , FirstGlance
     , WhyDoingThis
-    , RecapStructure [ 37, 53, 70, 103, 109 ]
+    , ListNames
+    , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
     , Summarise
-    , DecisionsMade
-    , DecisionsConsequences
-    , DecisionsWhy
     , SessionEnd
         { codeDescription = codeDescription
         , codeLink = codeLink

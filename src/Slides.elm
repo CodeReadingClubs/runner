@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/LYUwlgTmwLQPYQOYHpSWsgRgGzp5ArAAwBmA7AJwECGBBIJAHAGxUCMAxh+WUY0QBY2FMpkwEyAsmQAmmAEwESyAM4gIAN3XJqABzDJsYfGF3ZqAOwCC+gHQArFUA"
+    "https://annotate.codereading.club/#/file/DYQwTg1gtADuDOBTMB6UkUCNgHtMoE4BWAZgEYB2MgDgCYzEATEgBgoDMKWX3HH3aHEuwDGmAgBZqJEhIBsmRvLTgIKAC5hEiAPrrEAWxih98AHQwAnkA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1NX3S8QYGvw4vDrKEP3qfD3ZC-EvGNCBFRMumDiBpNDw/edit?usp=sharing"
+    "https://jamboard.google.com/d/1XBF_dxJcbeFZDG3uIWis7yH26rQbDAmJzhUOEDeIim4"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "iplanApi.js from https://meirim.org/ The goal of this project is to empower citizens to effectively organize for their quality of life in their cities and to ensure information about protests is accessible."
+    "Part of the Lark - Parsing Library & Toolkit, tree_templates.py which defines utilities for matching and translation tree templates."
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/meirim-org/meirim/blob/50f795a55ef86951ccf770804197bb57477db25f/server/api/lib/iplanApi.js"
+    "https://github.com/lark-parser/lark/blob/953171821ed307f700fddf27f3fcb9483346bd46/lark/tree_templates.py"
 
 
 {-| The list of slides to use for this session
@@ -78,6 +78,7 @@ slides =
     , FirstGlance
     , WhyDoingThis
     , ListNames
+    , RandomLine
     , ImportantLines
     , Summarise
     , SessionEnd

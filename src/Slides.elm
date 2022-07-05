@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    ""
+    "https://jamboard.google.com/d/1XBF_dxJcbeFZDG3uIWis7yH26rQbDAmJzhUOEDeIim4"
 
 
 {-| A link to download pdf of your code
@@ -41,7 +41,7 @@ Leave empty if you don't need downloadable pdf
 -}
 pdfLink : String
 pdfLink =
-    "https://jamboard.google.com/d/1XBF_dxJcbeFZDG3uIWis7yH26rQbDAmJzhUOEDeIim4"
+    ""
 
 
 {-| What the code is
@@ -78,6 +78,7 @@ slides =
     , FirstGlance
     , WhyDoingThis
     , ListNames
+    , RandomLine
     , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
     , Summarise

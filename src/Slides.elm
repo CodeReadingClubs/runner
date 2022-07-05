@@ -78,7 +78,6 @@ slides =
     , FirstGlance
     , WhyDoingThis
     , ListNames
-    , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
     , Summarise
     , SessionEnd

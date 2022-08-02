@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/DYQwTg1gtADuDOBTMB6UkUCNgHtMoE4BWAZgEYB2MgDgCYzEATEgBgoDMKWX3HH3aHEuwDGmAgBZqJEhIBsmRvLTgIKAC5hEiAPrrEAWxih98AHQwAnkA"
+    "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1XBF_dxJcbeFZDG3uIWis7yH26rQbDAmJzhUOEDeIim4"
+    "https://jamboard.google.com/d/12sEa_5kSwLpoyzeaE9f3e1C14LUju2Rmz9G3wci0XaY/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "Part of the Lark - Parsing Library & Toolkit, tree_templates.py which defines utilities for matching and translation tree templates."
+    "DOOM teleportion code p_telept.c see linuxdoom-1.10/FILES2 for overview"
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/lark-parser/lark/blob/953171821ed307f700fddf27f3fcb9483346bd46/lark/tree_templates.py"
+    "https://github.com/id-Software/DOOM/blob/77735c3ff0772609e9c8d29e3ce2ab42ff54d20b/linuxdoom-1.10/p_telept.c"
 
 
 {-| The list of slides to use for this session
@@ -76,7 +76,7 @@ slides =
         , pdfLink = pdfLink
         }
     , FirstGlance
-    , WhyDoingThis
+    , WhatAreWeThinking
     , ListNames
     , RandomLine
     , ImportantLines

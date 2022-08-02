@@ -21,6 +21,7 @@ type
     = SessionStartFirstClub StartInfo
     | SessionStart StartInfo
     | WhyDoingThis
+    | WhatAreWeThinking
     | SecondThoughts
     | Reflect
     | Feedback
@@ -116,6 +117,33 @@ slideContent section =
                     , item (img [ src "example-excited-worried.png", style "height" "250px" ] [])
                     ]
                     |> hide
+                ]
+              )
+            , ( True
+              , [ slideHeading "Why are we doing this?"
+                , container (div [])
+                    [ timedHeading "5" "Together" "Discuss"
+                    , bullets
+                        [ bullet "Give everyone a chance to read out their hopes and fears"
+                        , bullet "Discuss what you want to get out of the club"
+                        , bullet "Think about how to accommodate members with varying levels of experience and confidence"
+                        ]
+                    ]
+                ]
+              )
+            ]
+
+        WhatAreWeThinking ->
+            [ ( True
+              , [ slideHeading "What are we thinking?"
+                , slideP "Take a few minutes to think about what's on your mind. Is there something you want to share with the group about yourself? Is there something you are un-sure or surious about right now?"
+                , container (div [])
+                    [ timedHeading "2" "Independently" "Note down one thing"
+                    , bullets
+                        [ bullet "that you want to share about why you are here or something you know about that you can bring to the group"
+                        , bullet "that you are confused about or want to know about this group"
+                        ]
+                    ]
                 ]
               )
             , ( True
@@ -301,8 +329,8 @@ slideContent section =
         ListNames ->
             [ ( True
               , [ slideHeading "Names"
-                , timedHeading "5" "Independently" "Highlight"
-                , slideP "Start by examining the names of things. This is one method for discovering how the code fits together and its intentions."
+                , timedHeading "5" "Together" "List names"
+                , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
                 , bullets
                     [ bullet "Can you identify any patterns?"
                     , bullet "Are there any anomolies?"
@@ -312,11 +340,12 @@ slideContent section =
               )
             , ( True
               , [ slideHeading "Names"
-                , timedHeading "10" "Together" "Identify molds used"
-                , slideP "This can be done with one person scribing while others call out examples."
+                , timedHeading "10" "Together" "Identify patterns"
+                , slideP "Are there any conventions followed or not followed with the naming?"
                 , bullets
                     [ bullet "What can we learn from these names?"
                     , bullet "Which elements are related to each other, from the names only?"
+                    , bullet "Which come from the domain? Which come from constructs / concepts in programming?"
                     , bullet "Are there names that are ambiguous when looked at without context?"
                     ]
                 ]

@@ -21,6 +21,7 @@ type
     = SessionStartFirstClub StartInfo
     | SessionStart StartInfo
     | WhyDoingThis
+    | WhatAreWeThinking
     | SecondThoughts
     | Reflect
     | Feedback
@@ -116,6 +117,33 @@ slideContent section =
                     , item (img [ src "example-excited-worried.png", style "height" "250px" ] [])
                     ]
                     |> hide
+                ]
+              )
+            , ( True
+              , [ slideHeading "Why are we doing this?"
+                , container (div [])
+                    [ timedHeading "5" "Together" "Discuss"
+                    , bullets
+                        [ bullet "Give everyone a chance to read out their hopes and fears"
+                        , bullet "Discuss what you want to get out of the club"
+                        , bullet "Think about how to accommodate members with varying levels of experience and confidence"
+                        ]
+                    ]
+                ]
+              )
+            ]
+
+        WhatAreWeThinking ->
+            [ ( True
+              , [ slideHeading "What are we thinking?"
+                , slideP "Take a few minutes to think about what's on your mind. Is there something you want to share with the group about yourself? Is there something you are un-sure or surious about right now?"
+                , container (div [])
+                    [ timedHeading "2" "Independently" "Note down one thing"
+                    , bullets
+                        [ bullet "that you want to share about why you are here or something you know about that you can bring to the group"
+                        , bullet "that you are confused about or want to know about this group"
+                        ]
+                    ]
                 ]
               )
             , ( True

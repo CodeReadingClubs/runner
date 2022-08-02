@@ -329,8 +329,8 @@ slideContent section =
         ListNames ->
             [ ( True
               , [ slideHeading "Names"
-                , timedHeading "5" "Independently" "Highlight"
-                , slideP "Start by examining the names of things. This is one method for discovering how the code fits together and its intentions."
+                , timedHeading "5" "Together" "List names"
+                , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
                 , bullets
                     [ bullet "Can you identify any patterns?"
                     , bullet "Are there any anomolies?"
@@ -340,11 +340,12 @@ slideContent section =
               )
             , ( True
               , [ slideHeading "Names"
-                , timedHeading "10" "Together" "Identify molds used"
-                , slideP "This can be done with one person scribing while others call out examples."
+                , timedHeading "10" "Together" "Identify patterns"
+                , slideP "Are there any conventions followed or not followed with the naming?"
                 , bullets
                     [ bullet "What can we learn from these names?"
                     , bullet "Which elements are related to each other, from the names only?"
+                    , bullet "Which come from the domain? Which come from constructs / concepts in programming?"
                     , bullet "Are there names that are ambiguous when looked at without context?"
                     ]
                 ]

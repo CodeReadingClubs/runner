@@ -136,7 +136,7 @@ slideContent section =
         WhatAreWeThinking ->
             [ ( True
               , [ slideHeading "What are we thinking?"
-                , slideP "Take a few minutes to think about what's on your mind. Is there something you want to share with the group about yourself? Is there something you are un-sure or surious about right now?"
+                , slideP "Take a few minutes to think about what's on your mind. Is there something you want to share with the group about yourself? Is there something you are un-sure or curious about right now?"
                 , container (div [])
                     [ timedHeading "2" "Independently" "Note down one thing"
                     , bullets
@@ -147,13 +147,12 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Why are we doing this?"
+              , [ slideHeading "What are we thinking?"
                 , container (div [])
                     [ timedHeading "5" "Together" "Discuss"
                     , bullets
-                        [ bullet "Give everyone a chance to read out their hopes and fears"
-                        , bullet "Discuss what you want to get out of the club"
-                        , bullet "Think about how to accommodate members with varying levels of experience and confidence"
+                        [ bullet "Give everyone a chance to read out their thoughts if they want to"
+                        , bullet "Share your expectations for the session"
                         ]
                     ]
                 ]

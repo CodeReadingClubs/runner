@@ -328,8 +328,9 @@ slideContent section =
         ListNames ->
             [ ( True
               , [ slideHeading "Names"
-                , timedHeading "5" "Together" "List names"
+                , timedHeading "5" "Small groups" "List names"
                 , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
+                , slideP "Start thinking about:"
                 , bullets
                     [ bullet "Can you identify any patterns?"
                     , bullet "Are there any anomolies?"

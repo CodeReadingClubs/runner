@@ -328,7 +328,7 @@ slideContent section =
         ListNames ->
             [ ( True
               , [ slideHeading "Names"
-                , timedHeading "5" "Small groups" "List names"
+                , timedHeading "5" "Independent" "List names"
                 , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
                 , slideP "Start thinking about:"
                 , bullets

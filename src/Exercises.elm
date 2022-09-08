@@ -120,10 +120,83 @@ slideHeadingFromSection section =
         )
 
 
+sectionIntroFromSection : Section -> CustomContent
+sectionIntroFromSection section =
+    slidePMarkdown
+        (case section of
+            SessionStartFirstClub _ ->
+                ""
+
+            SessionStart _ ->
+                ""
+
+            WorkshopIntro _ ->
+                ""
+
+            WhyDoingThis ->
+                ""
+
+            WhatAreWeThinking ->
+                "Thinking intro"
+
+            SecondThoughts ->
+                ""
+
+            Reflect ->
+                ""
+
+            Feedback ->
+                ""
+
+            SessionEnd _ ->
+                ""
+
+            FirstGlance ->
+                "Glance intro"
+
+            Syntax ->
+                ""
+
+            AnnotateStructure _ ->
+                "Annotate intro"
+
+            ListNames ->
+                "Name intro"
+
+            RandomLine ->
+                ""
+
+            ImportantLines ->
+                "Important intro"
+
+            Summarise ->
+                ""
+
+            RecapStructure _ ->
+                ""
+
+            CentralThemes ->
+                ""
+
+            CentralConcepts ->
+                ""
+
+            DecisionsMade ->
+                ""
+
+            DecisionsConsequences ->
+                ""
+
+            DecisionsWhy ->
+                ""
+        )
+
+
 sectionIntro : Section -> ( Bool, List SharedType.CustomContent )
 sectionIntro section =
     ( False
     , [ slideHeadingFromSection section
+      , sectionIntroFromSection section
       ]
     )
 
@@ -208,10 +281,8 @@ slideContent section =
                 , slideP "The plan"
                 , bullets
                     [ bullet "What is Code Reading Club"
-                    , bullet "Exercise in 3 parts"
-                    , bullet ""
-                    , bullet ""
-                    , bullet ""
+                    , bullet "5 Exercises in 3 parts"
+                    , bullet "What next?"
                     ]
                 , item (h2 [ style "margin-top" "-20px" ] [ text "Any questions before we start?" ]) |> hide
                 ]
@@ -340,7 +411,8 @@ slideContent section =
 
         -- First Look
         FirstGlance ->
-            [ ( True
+            [ sectionIntro section
+            , ( True
               , [ slideHeadingFromSection section
                 , slideP "The goal of this exercise is to practice to get a first impression of code and act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
                 , timedHeading "1" "Independently" "Glance at the code"
@@ -400,7 +472,8 @@ slideContent section =
             ]
 
         AnnotateStructure { annotationLink, pdfLink } ->
-            [ ( True
+            [ sectionIntro section
+            , ( True
               , [ slideHeadingFromSection section
                 , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help!"
                 , timedHeading "8" "Independently" "Examine structure"
@@ -438,7 +511,8 @@ slideContent section =
             ]
 
         ListNames ->
-            [ ( True
+            [ sectionIntro section
+            , ( True
               , [ slideHeadingFromSection section
                 , timedHeading "5" "Independent" "List names"
                 , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
@@ -492,7 +566,8 @@ slideContent section =
             ]
 
         ImportantLines ->
-            [ ( True
+            [ sectionIntro section
+            , ( True
               , [ slideHeadingFromSection section
                 , timedHeading "5" "Independently" "Identify important lines"
                 , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
@@ -519,7 +594,8 @@ slideContent section =
             ]
 
         Summarise ->
-            [ ( True
+            [ sectionIntro section
+            , ( True
               , [ slideHeadingFromSection section
                 , timedHeading "5" "Independently" "Summarise"
                 , slideP "The goal of this exercise is to think about the core purpose or function of this code."

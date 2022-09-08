@@ -85,7 +85,6 @@ slides =
         { codeDescription = codeDescription
         , codeLink = codeLink
         }
-    , Feedback
     ]
         |> List.map (\section -> Exercises.slideContent section)
         |> List.concat

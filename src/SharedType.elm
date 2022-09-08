@@ -30,6 +30,12 @@ type alias CustomContent =
 -- Slide config types
 
 
+type alias ExerciseIntro =
+    { title : String
+    , body : String
+    }
+
+
 type alias StartInfo =
     { facilitatedBy : String
     , groupWorkspaceLink : String

@@ -4,7 +4,7 @@ import Html exposing (Html, a, button, div, h1, h2, hr, img, li, p, span, text, 
 import Html.Attributes exposing (class, href, src, style)
 import Html.Events exposing (onClick)
 import Markdown
-import SharedType exposing (AnnotateInfo, CustomContent, CustomSlide, EndInfo, StartInfo)
+import SharedType exposing (AnnotateInfo, CustomContent, CustomSlide, EndInfo, ExerciseIntro, StartInfo)
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
 import Time exposing (Posix)
@@ -20,6 +20,7 @@ type
     ----
     = SessionStartFirstClub StartInfo
     | SessionStart StartInfo
+    | WorkshopIntro StartInfo
     | WhyDoingThis
     | WhatAreWeThinking
     | SecondThoughts
@@ -47,13 +48,93 @@ type
     | DecisionsWhy
 
 
+slideHeadingFromSection : Section -> CustomContent
+slideHeadingFromSection section =
+    slideHeading
+        (case section of
+            SessionStartFirstClub _ ->
+                "Code Reading Club"
+
+            SessionStart _ ->
+                "Code Reading Club"
+
+            WorkshopIntro _ ->
+                "Code Reading Club"
+
+            WhyDoingThis ->
+                "Why are we doing this?"
+
+            WhatAreWeThinking ->
+                "What are we thinking?"
+
+            SecondThoughts ->
+                "Second thoughts?"
+
+            Reflect ->
+                "Reflect on the session"
+
+            Feedback ->
+                "Reflect on the session"
+
+            SessionEnd _ ->
+                "What now?"
+
+            FirstGlance ->
+                "First glance"
+
+            Syntax ->
+                "Syntax knowledge"
+
+            AnnotateStructure _ ->
+                "Code structure"
+
+            ListNames ->
+                "Names"
+
+            RandomLine ->
+                "Random Line"
+
+            ImportantLines ->
+                "Content"
+
+            Summarise ->
+                "Summary"
+
+            RecapStructure _ ->
+                "Code structure"
+
+            CentralThemes ->
+                ""
+
+            CentralConcepts ->
+                ""
+
+            DecisionsMade ->
+                "The decisions made in the code"
+
+            DecisionsConsequences ->
+                "Consequences of the decisions"
+
+            DecisionsWhy ->
+                "The 'why' of the decisions"
+        )
+
+
+sectionIntro : Section -> ( Bool, List SharedType.CustomContent )
+sectionIntro section =
+    ( False
+    , [ slideHeadingFromSection section
+      ]
+    )
+
+
 slideContent : Section -> List ( Bool, List SharedType.CustomContent )
 slideContent section =
     case section of
         SessionStartFirstClub { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
             [ ( False
-              , [ slideHeading "Code Reading Club"
-                , slideP ("Facilitators: " ++ facilitatedBy)
+              , [ slideHeadingFromSection section
+                , slideP ("with " ++ facilitatedBy)
                 , slideP "hello@codereading.club | https://codereading.club"
                 , slideHr
                 , bullets
@@ -80,8 +161,8 @@ slideContent section =
 
         SessionStart { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
             [ ( False
-              , [ slideHeading "Code Reading Club"
-                , slideP ("Facilitators: " ++ facilitatedBy)
+              , [ slideHeadingFromSection section
+                , slideP ("with " ++ facilitatedBy)
                 , slideP "hello@codereading.club | https://codereading.club"
                 , slideHr
                 , bullets
@@ -107,9 +188,39 @@ slideContent section =
               )
             ]
 
+        WorkshopIntro { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
+            [ ( False
+              , [ slideHeadingFromSection section
+                , slideP ("with " ++ facilitatedBy ++ " at Strange Loop 2022")
+                , slideP "hello@codereading.club | https://codereading.club"
+                , slideHr
+                , bullets
+                    [ bulletLink "Code of conduct" "https://codereading.club/conduct"
+                    , bulletLink "Group workspace" groupWorkspaceLink
+                    , bulletLink "Code in annotation tool" annotationLink
+                    , if String.length pdfLink > 0 then
+                        bulletLink "Example annotation" pdfLink
+
+                      else
+                        item (text "")
+                    ]
+                , slideHr
+                , slideP "The plan"
+                , bullets
+                    [ bullet "What is Code Reading Club"
+                    , bullet "Exercise in 3 parts"
+                    , bullet ""
+                    , bullet ""
+                    , bullet ""
+                    ]
+                , item (h2 [ style "margin-top" "-20px" ] [ text "Any questions before we start?" ]) |> hide
+                ]
+              )
+            ]
+
         WhyDoingThis ->
             [ ( True
-              , [ slideHeading "Why are we doing this?"
+              , [ slideHeadingFromSection section
                 , slideP "Take a few minutes to talk about your motivation for doing the club. This is important because it will help you support each other and make it more likely that your group will feel that the club sessions have value for them."
                 , container (div [])
                     [ timedHeading "2" "Independently" "Note down one thing"
@@ -120,7 +231,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Why are we doing this?"
+              , [ slideHeadingFromSection section
                 , container (div [])
                     [ timedHeading "5" "Together" "Discuss"
                     , bullets
@@ -134,8 +245,9 @@ slideContent section =
             ]
 
         WhatAreWeThinking ->
-            [ ( True
-              , [ slideHeading "What are we thinking?"
+            [ sectionIntro section
+            , ( True
+              , [ slideHeadingFromSection section
                 , slideP "Take a few minutes to think about what's on your mind. Is there something you want to share with the group about yourself? Is there something you are un-sure or curious about right now?"
                 , container (div [])
                     [ timedHeading "2" "Independently" "Note down one thing"
@@ -147,7 +259,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "What are we thinking?"
+              , [ slideHeadingFromSection section
                 , container (div [])
                     [ timedHeading "5" "Together" "Discuss"
                     , bullets
@@ -161,7 +273,7 @@ slideContent section =
 
         SecondThoughts ->
             [ ( True
-              , [ slideHeading "Second thoughts?"
+              , [ slideHeadingFromSection section
                 , slideP "What's the most disorientating thing so far? This can be something about the Code Reading Club process or the code sample we are looking at."
                 , slideP "Is something confusing or worrying you? Are you feeling excited or uneasy?"
                 , container (div [])
@@ -171,7 +283,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Second thoughts?"
+              , [ slideHeadingFromSection section
                 , container (div [])
                     [ timedHeading "5" "Together" "Discuss"
                     , bullets
@@ -186,7 +298,7 @@ slideContent section =
 
         Reflect ->
             [ ( True
-              , [ slideHeading "Reflect on the session"
+              , [ slideHeadingFromSection section
                 , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
                 , timedHeading "5" "Together" "Note down things"
                 , bullets
@@ -199,7 +311,7 @@ slideContent section =
 
         Feedback ->
             [ ( True
-              , [ slideHeading "Reflect on the session"
+              , [ slideHeadingFromSection section
                 , slideP "If you have time, it's helpful to wrap up the session with a little reflection."
                 , timedHeading "5" "Together" "Note down things"
                 , bullets
@@ -212,7 +324,7 @@ slideContent section =
 
         SessionEnd { codeDescription, codeLink } ->
             [ ( False
-              , [ slideHeading "What now?"
+              , [ slideHeadingFromSection section
                 , slideP "Code used for this session..."
                 , bullets
                     [ bulletLink codeDescription codeLink
@@ -229,7 +341,7 @@ slideContent section =
         -- First Look
         FirstGlance ->
             [ ( True
-              , [ slideHeading "First glance"
+              , [ slideHeadingFromSection section
                 , slideP "The goal of this exercise is to practice to get a first impression of code and act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
                 , timedHeading "1" "Independently" "Glance at the code"
                 , slideP "It's important that what you use is your  immediate reaction, don't overthink it!"
@@ -242,7 +354,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "First glance"
+              , [ slideHeadingFromSection section
                 , timedHeading "8" "Together" "Discuss"
                 , slideP "Talk about why things might have jumped out for different people. It might be tempting for some people to start talking about the big picture; try to steer discussion back to individual details, rather than summaries."
                 , bullets
@@ -260,7 +372,7 @@ slideContent section =
 
         Syntax ->
             [ ( True
-              , [ slideHeading "Syntax knowledge"
+              , [ slideHeadingFromSection section
                 , slideP "The goal of this exercise is to practice to make sure everyone in club is familiar with syntactic elements of the code."
                 , timedHeading "5" "Independently" "Examine syntax"
                 , slideP "Look at the code and examine syntactic elements. Do you know the meaning of all elements?"
@@ -273,7 +385,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Syntax knowledge"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Together" "Discuss"
                 , slideP "Talk about unfamiliar constructs."
                 , slideP "Were there constructs that were unfamiliar?"
@@ -289,7 +401,7 @@ slideContent section =
 
         AnnotateStructure { annotationLink, pdfLink } ->
             [ ( True
-              , [ slideHeading "Code structure"
+              , [ slideHeadingFromSection section
                 , slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help!"
                 , timedHeading "8" "Independently" "Examine structure"
                 , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
@@ -311,7 +423,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Code structure"
+              , [ slideHeadingFromSection section
                 , timedHeading "10" "Together" "Discuss"
                 , bullets
                     [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
@@ -327,7 +439,7 @@ slideContent section =
 
         ListNames ->
             [ ( True
-              , [ slideHeading "Names"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Independent" "List names"
                 , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
                 , slideP "Start thinking about:"
@@ -339,7 +451,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Names"
+              , [ slideHeadingFromSection section
                 , timedHeading "10" "Together" "Identify patterns"
                 , slideP "Are there any conventions followed or not followed with the naming?"
                 , bullets
@@ -354,7 +466,7 @@ slideContent section =
 
         RandomLine ->
             [ ( True
-              , [ slideHeading "Random Line"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Independently" "Examine the line"
                 , slideP "Select a random line from the code in whatever way you like. It can be helpful to randomly pick 3 line numbers and have the facilitator choose from them, which they think will be most interesting to talk about; but surprisingly, even a blank line can generate some conversation!"
                 , slideP "Debugging often starts with a line number."
@@ -381,7 +493,7 @@ slideContent section =
 
         ImportantLines ->
             [ ( True
-              , [ slideHeading "Content"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Independently" "Identify important lines"
                 , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                 , bullets
@@ -393,7 +505,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Content"
+              , [ slideHeadingFromSection section
                 , timedHeading "8" "Together" "Discuss"
                 , slideP "Discuss in the group:"
                 , bullets
@@ -408,7 +520,7 @@ slideContent section =
 
         Summarise ->
             [ ( True
-              , [ slideHeading "Summary"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Independently" "Summarise"
                 , slideP "The goal of this exercise is to think about the core purpose or function of this code."
                 , bullets
@@ -417,7 +529,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Summary"
+              , [ slideHeadingFromSection section
                 , timedHeading "8" "Together" "Discuss"
                 , bullets
                     [ bullet "topics covered by many vs few"
@@ -430,7 +542,7 @@ slideContent section =
         -- Second Look
         RecapStructure importantLines ->
             [ ( True
-              , [ slideHeading "Code structure"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Independently" "Remember"
                 , slideP "Look at the pieces that make up the code and how they connect or flow together. This exercise is meant as a recap of the first session on the code, and as a way to onboard people that might have missed the first session on this code snippet."
                 , slideP "Looking at an annotated copy from the last session, make some notes about what parts of the code stand out and why. If you did not participate in the previous session, highlight the variables, methods and classes. Start to draw links between where they are instantiated and used."
@@ -442,7 +554,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Code structure"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Together" "Review & Summerise"
                 , slideP "Someone who was in the previous session could summarise or where we got to or we could think about:"
                 , bullets
@@ -464,7 +576,7 @@ slideContent section =
 
         DecisionsMade ->
             [ ( True
-              , [ slideHeading "The decisions made in the code"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Independently" "Consider code choices"
                 , slideP "Reexamine the code snippet and list decisions of the creator(s) of the code, for example a decision to use a certain design pattern or use a certain library or API."
                 , bullets
@@ -475,7 +587,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "The decisions made in the code"
+              , [ slideHeadingFromSection section
                 , timedHeading "10" "Together" "Discuss"
                 , bullets
                     [ bullet "Decisions covered by many vs few"
@@ -487,7 +599,7 @@ slideContent section =
 
         DecisionsConsequences ->
             [ ( True
-              , [ slideHeading "Consequences of the decisions"
+              , [ slideHeadingFromSection section
                 , timedHeading "5" "Independently" "Consider the consequences"
                 , slideP "Think about the consequences of the decisions that were made. These could be the decisions you found yourself in the previous exercise or a decision someone else pointed out."
                 , slideP "You might want to think consider the impact of the decisions this code on:"
@@ -500,7 +612,7 @@ slideContent section =
                 ]
               )
             , ( True
-              , [ slideHeading "Consequences of the decisions"
+              , [ slideHeadingFromSection section
                 , timedHeading "10" "Together" "Discuss"
                 , bullets
                     [ bullet "Consequences covered by many vs few"
@@ -514,7 +626,7 @@ slideContent section =
 
         DecisionsWhy ->
             [ ( True
-              , [ slideHeading "The 'why' of the decisions"
+              , [ slideHeadingFromSection section
                 , timedHeading "10" "Together" "Make statements"
                 , slideP "Can you understand why the code was designed this way?"
                 , bullets

@@ -9,7 +9,8 @@ $dark3: #49306b; //cyber grape
 
 $mid1: #ee964b;
 $mid2: #f4d35e;
-$mid3: #28afb0;
+$mid3: #1f271b;
+$mid4: #28afb0;
 $dark: #1f271b;
 $dark2: #19647e;
 
@@ -24,10 +25,16 @@ body > div {
 }
 
 a {
-  color: $dark3;
+  color: $dark;
+  border-left: solid 20px $mid4;
+  border-bottom: solid 2px $mid1;
+  padding-left: 10px;
   &:hover {
     background-color: darken(#e4dfda, 10);
-    color: darken($dark3, 15);
+    color: darken($dark, 15);
+  }
+  &:hover {
+    color: $dark;
   }
 }
 
@@ -87,6 +94,7 @@ h2 span {
 
 .slides li {
   padding-bottom: 10px;
+  list-style: none;
 }
 
 .footer {

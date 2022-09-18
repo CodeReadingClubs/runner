@@ -1,6 +1,6 @@
 module Exercises exposing (..)
 
-import Html exposing (Html, a, button, div, h1, h2, hr, img, li, p, span, text, ul)
+import Html exposing (Html, a, button, div, h1, h2, h3, hr, img, li, p, span, text, ul)
 import Html.Attributes exposing (class, href, src, style)
 import Html.Events exposing (onClick)
 import Markdown
@@ -264,8 +264,7 @@ slideContent section =
         WorkshopIntro { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
             [ ( False
               , [ slideHeadingFromSection section
-                , slideP ("with " ++ facilitatedBy ++ " at Strange Loop 2022")
-                , slideP "hello@codereading.club | https://codereading.club"
+                , slideHeading3 ("a Strange Loop 2022 workshop with " ++ facilitatedBy)
                 , slideHr
                 , bullets
                     [ bulletLink "Code of conduct" "https://codereading.club/conduct"
@@ -278,13 +277,13 @@ slideContent section =
                         item (text "")
                     ]
                 , slideHr
-                , slideP "The plan"
+                , slideHeading2 "The plan"
                 , bullets
-                    [ bullet "What is Code Reading Club"
-                    , bullet "5 Exercises in 3 parts"
-                    , bullet "What next?"
+                    [ bullet "What is Code Reading Club?"
+                    , bullet "Try 5 Exercises in 3 parts, together!"
+                    , bullet "What else is there?"
                     ]
-                , item (h2 [ style "margin-top" "-20px" ] [ text "Any questions before we start?" ]) |> hide
+                , slideHeading3 "Any questions before we start?" |> hide
                 ]
               )
             ]
@@ -722,6 +721,16 @@ slideContent section =
 slideHeading : String -> CustomContent
 slideHeading title =
     item (h1 [] [ text title ])
+
+
+slideHeading2 : String -> CustomContent
+slideHeading2 heading =
+    item (h2 [] [ text heading ])
+
+
+slideHeading3 : String -> CustomContent
+slideHeading3 heading =
+    item (h3 [] [ text heading ])
 
 
 slideHr : CustomContent

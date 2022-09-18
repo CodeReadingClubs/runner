@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    ""
+    "https://jamboard.google.com/d/1Ke1uUnED6QilyhcQio50TOjqyT_NnyRFe6HDZuh_qjQ/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code

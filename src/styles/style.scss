@@ -10,12 +10,6 @@ $dark3: #49306b; //cyber grape
 $orange: #ee964b;
 $yellow: #f4d35e;
 $teal: #28afb0;
-
-$mid1: #ee964b;
-$mid2: #f4d35e;
-$mid3: #1f271b;
-$mid4: #28afb0;
-
 $dark: #1f271b;
 $dark2: #19647e;
 $background: #f3f3f3;
@@ -32,8 +26,8 @@ body > div {
 
 a {
   color: $dark;
-  border-left: solid 20px $mid4;
-  border-bottom: solid 2px $mid1;
+  border-left: solid 20px $teal;
+  border-bottom: solid 2px $orange;
   padding-left: 10px;
 
   &:hover {

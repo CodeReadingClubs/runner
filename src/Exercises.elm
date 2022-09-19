@@ -749,7 +749,7 @@ styledSeparator =
 
 slideP : String -> CustomContent
 slideP paragraph =
-    item (p [ class "stuff" ] [ text paragraph ])
+    item (p [ class "paragraph" ] [ text paragraph ])
 
 
 slidePMarkdown : String -> CustomContent

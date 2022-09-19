@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "DOOM teleportion code p_telept.c see linuxdoom-1.10/FILES2 for overview"
+    "DOOM teleportation code p_telept.c see linuxdoom-1.10/FILES2 for overview"
 
 
 {-| A link to the code in repo

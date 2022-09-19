@@ -1,13 +1,11 @@
 module Exercises exposing (..)
 
-import Html exposing (Html, a, button, div, h1, h2, h3, hr, img, li, p, span, text, ul)
+import Html exposing (a, br, div, h1, h2, h3, hr, img, li, p, span, text, ul)
 import Html.Attributes exposing (class, href, src, style)
-import Html.Events exposing (onClick)
 import Markdown
 import SharedType exposing (AnnotateInfo, CustomContent, CustomSlide, EndInfo, ExerciseIntro, StartInfo)
 import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
-import Time exposing (Posix)
 
 
 {-| The defined slides.
@@ -206,7 +204,9 @@ slideContent section =
     case section of
         SessionStartFirstClub { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
             [ ( False
-              , [ slideHeadingFromSection section
+              , [ codeReadingWordmark
+                , styledSeparator
+                , slideHeadingFromSection section
                 , slideP ("with " ++ facilitatedBy)
                 , slideP "hello@codereading.club | https://codereading.club"
                 , slideHr
@@ -263,9 +263,9 @@ slideContent section =
 
         WorkshopIntro { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
             [ ( False
-              , [ slideHeadingFromSection section
+              , [ codeReadingWordmark
+                , styledSeparator
                 , slideHeading3 ("a Strange Loop 2022 workshop with " ++ facilitatedBy)
-                , slideHr
                 , bullets
                     [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                     , bulletLink "Group workspace" groupWorkspaceLink
@@ -276,7 +276,6 @@ slideContent section =
                       else
                         item (text "")
                     ]
-                , slideHr
                 , slideHeading2 "The plan"
                 , bullets
                     [ bullet "What is Code Reading Club?"
@@ -465,7 +464,7 @@ slideContent section =
                     , bullet "If not, can you look up the constructs?"
                     ]
                 , slideP "Why are the syntactic constructs unfamiliar?"
-                , slideP "Are they ideosyncratic to this language or code base?"
+                , slideP "Are they idiosyncratic to this language or code base?"
                 ]
               )
             ]
@@ -518,7 +517,7 @@ slideContent section =
                 , slideP "Start thinking about:"
                 , bullets
                     [ bullet "Can you identify any patterns?"
-                    , bullet "Are there any anomolies?"
+                    , bullet "Are there any anomalies?"
                     , bullet "What are the consequences in terms of readability?"
                     ]
                 ]
@@ -547,7 +546,7 @@ slideContent section =
                 , bullets
                     [ bullet "What is the main idea of this line?"
                     , bullet "What lines does it relate to and why?"
-                    , bullet "What strategies & prior knowlegde are you using to figure this out?"
+                    , bullet "What strategies & prior knowledge are you using to figure this out?"
                     ]
                 ]
               )
@@ -630,7 +629,7 @@ slideContent section =
               )
             , ( True
               , [ slideHeadingFromSection section
-                , timedHeading "5" "Together" "Review & Summerise"
+                , timedHeading "5" "Together" "Review & Summarise"
                 , slideP "Someone who was in the previous session could summarise or where we got to or we could think about:"
                 , bullets
                     [ bullet "What direction does the code flow in?"
@@ -718,6 +717,11 @@ slideContent section =
 -- Markup helpers
 
 
+codeReadingWordmark : CustomContent
+codeReadingWordmark =
+    item (h1 [] [ text "Code", br [] [], span [ class "syntax-highlight" ] [ text "Reading" ], br [] [], text "Club" ])
+
+
 slideHeading : String -> CustomContent
 slideHeading title =
     item (h1 [] [ text title ])
@@ -738,9 +742,14 @@ slideHr =
     item (hr [] [])
 
 
+styledSeparator : CustomContent
+styledSeparator =
+    item (hr [ class "separator" ] [])
+
+
 slideP : String -> CustomContent
 slideP paragraph =
-    item (p [] [ text paragraph ])
+    item (p [ class "paragraph" ] [ text paragraph ])
 
 
 slidePMarkdown : String -> CustomContent
@@ -786,7 +795,7 @@ paddedSlide : ( Bool, List CustomContent ) -> CustomSlide
 paddedSlide ( showStopwatch, content ) =
     slide
         [ container
-            (div [ class "slides", style "padding" "50px 100px" ])
+            (div [ class "slides" ])
             (content
                 ++ [ if showStopwatch then
                         custom

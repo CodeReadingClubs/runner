@@ -157,8 +157,9 @@ sectionIntroFromSection section =
         FirstGlance ->
             [ slideP "The goal of this exercise is to practice to get a first impression of code and act upon that."
             , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
-            , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
             , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
+            , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
+            , item (img [ src "example-first-glance.png", style "width" "120%", style "margin" "-10px 0 0 -10%" ] [])
             ]
 
         Syntax ->
@@ -349,7 +350,7 @@ slideContent section =
                     ++ [ container (div [])
                             [ timedHeading "5" "Together" "Discuss"
                             , slideP ""
-                            , slideP "Share our expectations for the session"
+                            , slideHeading3 "Share our expectations for the session"
                             , item (img [ src "react-huffy.jpg", style "height" "250px" ] [])
                             , item (img [ src "elm-cautious.jpg", style "height" "250px" ] [])
                             , item (img [ src "elm-exhilerated.jpg", style "height" "250px" ] [])
@@ -435,22 +436,22 @@ slideContent section =
                     ++ [ timedHeading "1" "Independently" "Glance at the code"
                        , slideP "It's important that what you use is your  immediate reaction, don't overthink it!"
                        , bullets
-                            [ bullet "Look at code for a few seconds. Note the first thing that catches your eye"
-                            , bullet "Then look again for a few more seconds. Note the second thing that catches your eye"
-                            , bullet "Now think about why you noticed those things first & note that down"
+                            [ bullet "1. Look at code for a few seconds. Note the first thing that catches your eye."
+                            , bullet "2. Look again for a few more seconds. Note the second thing that catches your eye."
+                            , bullet "3. Now think about why you noticed those things first & note that down."
                             ]
-                       , item (img [ src "example-first-glance.png", style "width" "120%", style "margin" "-10px 0 0 -10%" ] [])
                        ]
               )
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "8" "Together" "Discuss"
-                       , slideP "Talk about why things might have jumped out for different people. It might be tempting for some people to start talking about the big picture; try to steer discussion back to individual details, rather than summaries."
+                       , slideP "It might be tempting for some people to start talking about the big picture, but for this exercise we focus on the details we notice, rather than attempt to summerise."
+                       , slideHeading3 "Talk about why things might have jumped out for different people."
                        , bullets
                             [ bullet "How do those initial observations help with deciding what to look at next?"
-                            , bullet "What lines or facts or concepts were chosen by everyone versus by only a few people?"
+                            , bullet "What lines, facts or concepts were noticed by many vs. few people in the group?"
                             ]
-                       , slideP "Reflect also on what kind of knowledge you used in this exercise."
+                       , slideHeading3 "Reflect also on what kind of knowledge you used in this exercise."
                        , bullets
                             [ bullet "Knowledge of the domain, of the programming language? Of a framework?"
                             , bullet "What knowledge do you think might be needed to better understand this code?"

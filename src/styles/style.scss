@@ -24,17 +24,24 @@ body > div {
   background-color: $background !important;
 }
 
+// All links by default (includes overview slides)
 a {
-  color: $dark;
-  border-left: solid 20px $teal;
   border-bottom: solid 2px $orange;
+  border-left: solid 10px $teal;
+  color: $dark;
   padding-left: 10px;
+}
+
+// Links on individual slides
+.slides a {
+  border-left: solid 20px $teal;
 
   &:hover {
     background-color: darken(#e4dfda, 10);
     color: darken($dark, 15);
   }
-  &:hover {
+
+  &:visited {
     color: $dark;
   }
 }

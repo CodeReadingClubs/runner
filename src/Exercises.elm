@@ -139,7 +139,7 @@ sectionIntroFromSection section =
             [ slideP "This is a chance to get to know each other. It's important to be aware of who you are sharing this space with - so the club can be a success for everyone."
             , slideP "Take a few minutes to think about what's on your mind."
             , slideP "Is there something you want to share with the group about yourself?"
-            , slideP "Is there something you are un-sure or curious about right now?"
+            , slideP "Is there something you are unsure or curious about right now?"
             ]
 
         SecondThoughts ->
@@ -330,11 +330,13 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ container (div [])
-                            [ timedHeading "2" "Independently" "Note down one thing"
-                            , bullets
-                                [ bullet "that you want to share about why you are here or something you know about that you can bring to the group"
-                                , bullet "that you are confused about or want to know about this group"
-                                ]
+                            [ timedHeading "1" "Independently" "Note down one thing"
+                            , slideHeading3 "For example"
+                            , slideP "something about why you are here"
+                            , slideP "something you know about that you want to share"
+                            , slideP "something you are confused about or want to ask about this group"
+                            , slideP "- or -"
+                            , slideP "something you are excited about"
                             ]
                        ]
               )
@@ -342,10 +344,13 @@ slideContent section =
               , slideHeadingFromSection section
                     ++ [ container (div [])
                             [ timedHeading "5" "Together" "Discuss"
-                            , bullets
-                                [ bullet "Give everyone a chance to read out their thoughts if they want to"
-                                , bullet "Share your expectations for the session"
-                                ]
+                            , slideP ""
+                            , slideP "Share our expectations for the session"
+                            , item (img [ src "react-huffy.jpg", style "height" "250px" ] [])
+                            , item (img [ src "elm-cautious.jpg", style "height" "250px" ] [])
+                            , item (img [ src "elm-exhilerated.jpg", style "height" "250px" ] [])
+                            , item (img [ src "react-confident.jpg", style "height" "250px" ] [])
+                            , item (img [ src "react-lucky.jpg", style "height" "250px" ] [])
                             ]
                        ]
               )

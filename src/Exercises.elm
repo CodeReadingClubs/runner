@@ -87,7 +87,7 @@ slideHeadingFromSection section =
                 "Code structure"
 
             ListNames ->
-                "Names"
+                "Naming things"
 
             RandomLine ->
                 "Random Line"
@@ -169,7 +169,10 @@ sectionIntroFromSection section =
             [ slideHeading2 "Annotate intro" ]
 
         ListNames ->
-            [ slideHeading2 "Name intro" ]
+            [ slideHeading2 "If you ask 2 developers to name a thing, there is only a 7% chance they come up with the same name."
+            , item (img [ src "elm-anxious.jpg", style "height" "250px" ] [])
+            , item (img [ src "react-huffy.jpg", style "height" "250px" ] [])
+            ]
 
         RandomLine ->
             []
@@ -532,9 +535,9 @@ slideContent section =
             [ sectionIntro section
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "Independent" "List names"
+                    ++ [ timedHeading "5" "In Pairs" "Identify things that are named"
                        , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
-                       , slideP "Start thinking about:"
+                       , slideHeading3 "Start thinking about:"
                        , bullets
                             [ bullet "Can you identify any patterns?"
                             , bullet "Are there any anomalies?"
@@ -544,13 +547,34 @@ slideContent section =
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "10" "Together" "Identify patterns"
-                       , slideP "Are there any conventions followed or not followed with the naming?"
+                    ++ [ timedHeading "5" "Together" "List names on the Jamboard"
+                       , slideHeading3 "Some people add names"
+                       , bullets [ bullet "Use a single text box for each name" ]
+                       , slideHeading3 "Other people start grouping and de-duping"
                        , bullets
-                            [ bullet "What can we learn from these names?"
+                            [ bullet "Pull together in clusters and label the group with a sticky note"
+                            , bullet "No rules here - so if you want to include a name in another cluster, re-dupe!"
+                            ]
+                       ]
+              )
+            , ( True
+              , slideHeadingFromSection section
+                    ++ [ timedHeading "5" "Together" "What can we learn from these names?"
+                       , slideHeading3 "Continue adding thoughts on sticky notes while we talk"
+                       , bullets
+                            [ bullet "Which come from the domain?"
+                            , bullet "Which come from constructs / concepts in programming?"
                             , bullet "Which elements are related to each other, from the names only?"
-                            , bullet "Which come from the domain? Which come from constructs / concepts in programming?"
-                            , bullet "Are there names that are ambiguous when looked at without context?"
+                            ]
+                       ]
+              )
+            , ( True
+              , slideHeadingFromSection section
+                    ++ [ timedHeading "5" "Together" "Identify patterns"
+                       , slideHeading3 "Talk about moulds"
+                       , bullets
+                            [ bullet "Are there names that are ambiguous when looked at without context?"
+                            , bullet "Are there any conventions followed or not followed with the naming?"
                             ]
                        ]
               )

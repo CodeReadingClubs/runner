@@ -171,7 +171,7 @@ sectionIntroFromSection section =
         ListNames ->
             [ slideHeading2 "If you ask 2 developers to name a thing, there is only a 7% chance they come up with the same name."
             , item (img [ src "elm-anxious.jpg", style "height" "250px" ] [])
-            , item (img [ src "react-huffy.jpg", style "height" "250px" ] [])
+            , item (img [ src "react-anxious.jpg", style "height" "250px" ] [])
             ]
 
         RandomLine ->

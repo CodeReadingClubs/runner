@@ -75,12 +75,11 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = pdfLink
         }
-    , FirstGlance
     , WhatAreWeThinking
+    , FirstGlance
     , ListNames
     , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
-    , Summarise
     , SessionEnd
         { codeDescription = codeDescription
         , codeLink = codeLink

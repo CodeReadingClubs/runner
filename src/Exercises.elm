@@ -266,6 +266,21 @@ slideContent section =
               , [ codeReadingWordmark
                 , styledSeparator
                 , slideHeading3 ("a Strange Loop 2022 workshop with " ++ facilitatedBy)
+                , slideHeading2 "The plan" |> hide
+                , bullets
+                    [ bullet "1. What is Code Reading Club?"
+                    , bullet "2. Why are we here?"
+                    , bullet "3. Try 4 Exercises in 3 parts, together!"
+                    , bullet "4. What else is there?"
+                    ]
+                    |> hide
+                , slideHeading2 "Any questions before we start?" |> hide
+                ]
+              )
+            , ( False
+              , [ codeReadingWordmark
+                , styledSeparator
+                , slideHeading3 ("a Strange Loop 2022 workshop with " ++ facilitatedBy)
                 , bullets
                     [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                     , bulletLink "Group workspace" groupWorkspaceLink
@@ -276,13 +291,6 @@ slideContent section =
                       else
                         item (text "")
                     ]
-                , slideHeading2 "The plan"
-                , bullets
-                    [ bullet "What is Code Reading Club?"
-                    , bullet "Try 5 Exercises in 3 parts, together!"
-                    , bullet "What else is there?"
-                    ]
-                , slideHeading3 "Any questions before we start?" |> hide
                 ]
               )
             ]

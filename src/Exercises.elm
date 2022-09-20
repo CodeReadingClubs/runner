@@ -155,7 +155,11 @@ sectionIntroFromSection section =
             []
 
         FirstGlance ->
-            [ slideHeading2 "Glance intro" ]
+            [ slideP "The goal of this exercise is to practice to get a first impression of code and act upon that."
+            , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
+            , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
+            , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
+            ]
 
         Syntax ->
             []
@@ -428,8 +432,7 @@ slideContent section =
             [ sectionIntro section
             , ( True
               , slideHeadingFromSection section
-                    ++ [ slideP "The goal of this exercise is to practice to get a first impression of code and act upon that. We all have different instincts and strategies for where to start when faced with a new piece of code. It doesn't matter how trivial you think the first and second things you noticed are."
-                       , timedHeading "1" "Independently" "Glance at the code"
+                    ++ [ timedHeading "1" "Independently" "Glance at the code"
                        , slideP "It's important that what you use is your  immediate reaction, don't overthink it!"
                        , bullets
                             [ bullet "Look at code for a few seconds. Note the first thing that catches your eye"

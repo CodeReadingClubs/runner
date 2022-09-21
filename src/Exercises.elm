@@ -178,7 +178,6 @@ sectionIntroFromSection section =
             , slideP "New code can be scary, doing something will help!"
             , item (img [ src "dannotated-code.png", style "height" "260px" ] [])
             , item (img [ src "annotated-code.png", style "height" "260px" ] [])
-            , item (img [ src "annotated-code.png", style "height" "260px" ] [])
             , item (img [ src "scribbled-code.png", style "height" "260px", style "margin" "-20px 20px 0 0" ] [])
             ]
 
@@ -543,13 +542,20 @@ slideContent section =
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "10" "Together" "Discuss"
+                    ++ [ timedHeading "5" "One person" "Present"
+                       , slideHeading3 "Share your annotations"
+                       , slideHeading3 "Talk through your process and what you discovered"
+                       ]
+              )
+            , ( True
+              , slideHeadingFromSection section
+                    ++ [ timedHeading "5" "One at a time" "Add one new thing"
                        , bullets
-                            [ bullet "Did anyone have trouble deciding what constituted a variable, function or class?"
+                            [ bullet "Did you have trouble deciding what constituted a variable, function or class?"
                             , bullet "What patterns are visible from the colors and links only?"
                             , bullet "How does the data flow through the code?"
                             , bullet "What parts of the code seem to warrant more attention?"
-                            , bullet "Which colours did you choose to highlight each item?"
+                            , bullet "How did you choose which colours to use?"
                             , bullet "What strategies did you use to identify different elements in the code?"
                             ]
                        ]

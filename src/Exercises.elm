@@ -22,6 +22,7 @@ type
     | WhyDoingThis
     | WhatAreWeThinking
     | SecondThoughts
+    | Break
     | Reflect
     | Feedback
     | SessionEnd EndInfo
@@ -67,6 +68,9 @@ slideHeadingFromSection section =
 
             SecondThoughts ->
                 "Second thoughts?"
+
+            Break ->
+                "Take a break"
 
             Reflect ->
                 "Reflect on the session"
@@ -145,6 +149,9 @@ sectionIntroFromSection section =
         SecondThoughts ->
             []
 
+        Break ->
+            []
+
         Reflect ->
             []
 
@@ -166,7 +173,11 @@ sectionIntroFromSection section =
             []
 
         AnnotateStructure _ ->
-            [ slideHeading2 "Annotate intro" ]
+            [ slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time."
+            , slideP "New code can be scary, doing something will help!"
+            , item (img [ src "annotated-code.png", style "float" "right", style "height" "260px" ] [])
+            , item (img [ src "scribbled-code.png", style "float" "right", style "height" "260px", style "margin" "-20px 20px 0 0" ] [])
+            ]
 
         ListNames ->
             [ slideHeading2 "If you ask 2 developers to name a thing, there is only a 7% chance they come up with the same name."
@@ -339,7 +350,6 @@ slideContent section =
               , slideHeadingFromSection section
                     ++ [ container (div [])
                             [ timedHeading "1" "Independently" "Note down one thing"
-                            , slideHeading3 "For example"
                             , slideP "something about why you are here"
                             , slideP "something you know about that you want to share"
                             , slideP "something you are confused about or want to ask about this group"
@@ -388,6 +398,9 @@ slideContent section =
                        ]
               )
             ]
+
+        Break ->
+            []
 
         Reflect ->
             [ ( True
@@ -496,11 +509,9 @@ slideContent section =
             [ sectionIntro section
             , ( True
               , slideHeadingFromSection section
-                    ++ [ slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time. New code can be scary, doing something will help!"
-                       , timedHeading "8" "Independently" "Examine structure"
-                       , slideP "Highlight the places where they are defined a draw links to where they are used. Use 3 different colours."
-                       , item (img [ src "annotated-code.png", style "float" "right", style "height" "260px" ] [])
-                       , item (img [ src "scribbled-code.png", style "float" "right", style "height" "260px", style "margin" "-20px 20px 0 0" ] [])
+                    ++ [ timedHeading "10" "Independently" "Examine structure"
+                       , slideP "Highlight the places where things are defined a draw links to where they are used. Use different colours."
+                       , slideP "There is no \"right\" way to do this excercise. Use your insticts to explore how the pieces of code flow."
                        , bullets
                             [ bulletLink "Code to annotate" annotationLink
                             , if String.length pdfLink > 0 then
@@ -509,6 +520,7 @@ slideContent section =
                               else
                                 item (text "")
                             ]
+                       , slideHeading3 "Start by identifying"
                        , bullets
                             [ bullet "Variables"
                             , bullet "Functions / Methods"
@@ -817,8 +829,8 @@ timedHeading minutes who heading =
     in
     container (h2 [])
         [ item (text heading)
-        , item (span [ class "who" ] [ text who ])
         , item (span [ class "time" ] [ text (minutes ++ label) ])
+        , item (span [ class "who" ] [ text who ])
         ]
 
 

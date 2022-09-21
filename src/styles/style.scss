@@ -79,12 +79,14 @@ h2 span {
     border-radius: 8px;
     border: 2px solid $dark2; //#4281a4;
     color: $dark2; //#4281a4;
+    float: right;
     font-size: 0.6em;
     padding: 3px 5px;
     margin: 0 10px 0 30px;
   }
 
   &.time {
+    float: right;
     font-size: 0.7em;
   }
 }

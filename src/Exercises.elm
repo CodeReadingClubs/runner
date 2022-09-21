@@ -165,6 +165,7 @@ sectionIntroFromSection section =
             [ slideP "The goal of this exercise is to practice to get a first impression of code and act upon that."
             , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
             , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
+            , item (img [ src "annotated-code.png", style "height" "260px" ] [])
             , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
             , item (img [ src "example-first-glance.png", style "width" "120%", style "margin" "-10px 0 0 -10%" ] [])
             ]
@@ -175,8 +176,10 @@ sectionIntroFromSection section =
         AnnotateStructure _ ->
             [ slideP "The goal of this exercise is to be a concrete thing to *do* when looking at new code for the first time."
             , slideP "New code can be scary, doing something will help!"
-            , item (img [ src "annotated-code.png", style "float" "right", style "height" "260px" ] [])
-            , item (img [ src "scribbled-code.png", style "float" "right", style "height" "260px", style "margin" "-20px 20px 0 0" ] [])
+            , item (img [ src "dannotated-code.png", style "height" "260px" ] [])
+            , item (img [ src "annotated-code.png", style "height" "260px" ] [])
+            , item (img [ src "annotated-code.png", style "height" "260px" ] [])
+            , item (img [ src "scribbled-code.png", style "height" "260px", style "margin" "-20px 20px 0 0" ] [])
             ]
 
         ListNames ->
@@ -400,7 +403,17 @@ slideContent section =
             ]
 
         Break ->
-            []
+            [ ( True
+              , slideHeadingFromSection section
+                    ++ [ timedHeading "5" "Together & Independently" ""
+                       , slideHeading2 "If you need something to do..."
+                       , slideHeading3 "tell your neighbour something great about a programming language you like."
+                       , item (img [ src "cards1.jpg", style "height" "250px" ] [])
+                       , item (img [ src "cards2.jpg", style "height" "250px" ] [])
+                       , item (img [ src "cards4.jpg", style "height" "250px" ] [])
+                       ]
+              )
+            ]
 
         Reflect ->
             [ ( True

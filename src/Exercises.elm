@@ -80,7 +80,7 @@ slideHeadingFromSection section =
                 "Reflect on the session"
 
             SessionEnd _ ->
-                "What now?"
+                "Q & A and next steps"
 
             FirstGlance ->
                 "First glance"
@@ -167,11 +167,17 @@ sectionIntroFromSection section =
 
         FirstGlance ->
             [ slideP "The goal of this exercise is to practice to get a first impression of code and act upon that."
+                |> hide
             , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
+                |> hide
             , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
+                |> hide
             , bullet "shorturl.at/lmvXY"
+                |> hide
             , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
+                |> hide
             , item (img [ src "example-first-glance.png", style "width" "120%", style "margin" "-10px 0 0 -10%" ] [])
+                |> hide
             ]
 
         Syntax ->
@@ -187,6 +193,7 @@ sectionIntroFromSection section =
 
         ListNames ->
             [ slideHeading2 "If you ask 2 developers to name a thing, there is only a 7% chance they come up with the same name."
+            , slideP "Dror Fietelson - \"How developers choose names\""
             , item (img [ src "elm-anxious.jpg", style "height" "250px" ] [])
             , item (img [ src "react-anxious.jpg", style "height" "250px" ] [])
             ]
@@ -196,6 +203,7 @@ sectionIntroFromSection section =
 
         ImportantLines ->
             [ slideHeading2 "What does it mean to be important?"
+            , slideP "Your brain prefers to see things it already knows, so if you don't make decisions, you might focus on the least important parts."
             , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
             ]
 
@@ -306,7 +314,7 @@ slideContent section =
                     [ bullet "1. What is Code Reading Club?"
                     , bullet "2. Why are we here?"
                     , bullet "3. Try 4 Exercises in 3 parts, together!"
-                    , bullet "4. What else is there?"
+                    , bullet "4. Questions & Answers"
                     ]
                     |> hide
                 , slideHeading2 "Any questions before we start?" |> hide
@@ -462,11 +470,15 @@ slideContent section =
                        , bullets
                             [ bulletLink codeDescription codeLink
                             ]
-                       , slideP "Code reading club resources: https://codereading.club"
-                       , slideP "Read Felienne's book! The Programmer's Brain"
-                       , slideP "Start a club"
-                       , slideP "Join a club"
-                       , slideP "Get in touch hello@codereading.club"
+                       , slideHeading2 "Any questions?"
+                       , slideHeading2 "Next steps"
+                       , bullets
+                            [ bullet "Code reading club resources: https://codereading.club"
+                            , bullet "Read Felienne's book! The Programmer's Brain"
+                            , bullet "Start a club"
+                            , bullet "Join a club"
+                            , bullet "Get in touch hello@codereading.club"
+                            ]
                        ]
               )
             ]
@@ -583,12 +595,6 @@ slideContent section =
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "In Pairs" "Identify things that are named"
                        , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
-                       , slideHeading3 "Start thinking about:"
-                       , bullets
-                            [ bullet "Can you identify any patterns?"
-                            , bullet "Are there any anomalies?"
-                            , bullet "What are the consequences in terms of readability?"
-                            ]
                        ]
               )
             , ( True
@@ -617,7 +623,7 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "Together" "Identify patterns"
-                       , slideHeading3 "Talk about moulds"
+                       , slideHeading3 "Talk about molds"
                        , bullets
                             [ bullet "Are there names that are ambiguous when looked at without context?"
                             , bullet "Are there any conventions followed or not followed with the naming?"
@@ -660,14 +666,15 @@ slideContent section =
                     ++ [ timedHeading "5" "Independently" "Identify important lines"
                        , bullets
                             [ bullet "Identify the 4 lines you consider most important"
-                            , bullet "Note those lines down on a single sticky note"
+                            , bullet "Use a single text box for each number"
+                            , bullet "Group same numbers together in a line"
                             , bullet "Think about why you chose them"
                             ]
                        ]
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "2" "Together" "Aggregate"
+                    ++ [ timedHeading "2" "Together" "Look at the code"
                        , slideHeading3 "Get a sense of"
                        , bullets
                             [ bullet "lines covered by many people?"
@@ -685,7 +692,11 @@ slideContent section =
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "One at a time" "Add one new thing"
                        , bullets
-                            [ bullet "" ]
+                            [ bullet "Did you choose a line because it worried you?"
+                            , bullet "Did you choose a line you understood, or one that confused you?"
+                            , bullet "Did you choose a line with a comment?"
+                            , bullet "Did you choose a return statement or a function declaration?"
+                            ]
                        ]
               )
             ]

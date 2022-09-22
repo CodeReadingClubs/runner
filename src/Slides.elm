@@ -81,6 +81,9 @@ slides =
     , Break
     , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
+    , DecisionsMade
+    , DecisionsConsequences
+    , DecisionsWhy
     , SessionEnd
         { codeDescription = codeDescription
         , codeLink = codeLink

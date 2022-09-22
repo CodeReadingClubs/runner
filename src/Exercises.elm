@@ -323,7 +323,7 @@ slideContent section =
             , ( False
               , [ codeReadingWordmark
                 , styledSeparator
-                , slideHeading3 ("a Strange Loop 2022 workshop with " ++ facilitatedBy)
+                , slideHeading3 "What is Code Reading Club?"
                 , bullets
                     [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                     , bullet "codereading.club/conduct"
@@ -824,7 +824,9 @@ slideContent section =
 
         DecisionSummary ->
             [ ( False
-              , [ decisionsConsequencesWhy ]
+              , [ decisionsConsequencesWhy
+                , styledSeparator
+                ]
                     ++ [ slideHeading2 "Looking at a piece of code again"
                        , slideHeading3 "Consider code choices"
                        , slideHeading3 "Consider the consequences"
@@ -834,7 +836,9 @@ slideContent section =
                        ]
               )
             , ( True
-              , [ decisionsConsequencesWhy ]
+              , [ decisionsConsequencesWhy
+                , styledSeparator
+                ]
                     ++ [ timedHeading "5" "Together" "Step 1 - Identify decisions"
                        , slideP "Try not to judge the decisions as good or bad"
                        , slideP "Focus on what decisions the developer(s) had to make, not why they made them"

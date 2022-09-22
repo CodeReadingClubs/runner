@@ -241,13 +241,11 @@ slideContent section =
                 ]
                     ++ slideHeadingFromSection section
                     ++ [ slideP ("with " ++ facilitatedBy)
-                       , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , slideP "hello@codereading.club | https://codereading.club"
                        , slideHr
                        , bullets
                             [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                             , bulletLink "Group workspace" groupWorkspaceLink
-                            , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                             , bulletLink "Code in annotation tool" annotationLink
                             , if String.length pdfLink > 0 then
                                 bulletLink "Code pdf to download" pdfLink
@@ -273,7 +271,6 @@ slideContent section =
                     ++ [ slideP ("with " ++ facilitatedBy)
                        , slideP "hello@codereading.club | https://codereading.club"
                        , slideHr
-                       , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , bullets
                             [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                             , bulletLink "Group workspace" groupWorkspaceLink
@@ -489,7 +486,7 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "8" "Together" "Discuss"
-                       , slideP "It might be tempting for some people to start talking about the big picture, but for this exercise we focus on the details we notice, rather than attempt to summerise."
+                       , slideP "It might be tempting for some people to start talking about the big picture, but for this exercise we focus on the details we notice, rather than attempt to summarise."
                        , slideHeading3 "Talk about why things might have jumped out for different people."
                        , bullets
                             [ bullet "How do those initial observations help with deciding what to look at next?"

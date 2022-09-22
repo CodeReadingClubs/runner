@@ -169,6 +169,7 @@ sectionIntroFromSection section =
             [ slideP "The goal of this exercise is to practice to get a first impression of code and act upon that."
             , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
             , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
+            , bullet "shorturl.at/lmvXY"
             , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
             , item (img [ src "example-first-glance.png", style "width" "120%", style "margin" "-10px 0 0 -10%" ] [])
             ]
@@ -194,7 +195,9 @@ sectionIntroFromSection section =
             []
 
         ImportantLines ->
-            [ slideHeading2 "What does it mean to be important?" ]
+            [ slideHeading2 "What does it mean to be important?"
+            , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
+            ]
 
         Summarise ->
             []
@@ -240,13 +243,11 @@ slideContent section =
                 ]
                     ++ slideHeadingFromSection section
                     ++ [ slideP ("with " ++ facilitatedBy)
-                       , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , slideP "hello@codereading.club | https://codereading.club"
                        , slideHr
                        , bullets
                             [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                             , bulletLink "Group workspace" groupWorkspaceLink
-                            , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                             , bulletLink "Code in annotation tool" annotationLink
                             , if String.length pdfLink > 0 then
                                 bulletLink "Code pdf to download" pdfLink
@@ -272,7 +273,6 @@ slideContent section =
                     ++ [ slideP ("with " ++ facilitatedBy)
                        , slideP "hello@codereading.club | https://codereading.club"
                        , slideHr
-                       , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , bullets
                             [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                             , bulletLink "Group workspace" groupWorkspaceLink
@@ -318,8 +318,13 @@ slideContent section =
                 , slideHeading3 ("a Strange Loop 2022 workshop with " ++ facilitatedBy)
                 , bullets
                     [ bulletLink "Code of conduct" "https://codereading.club/conduct"
+                    , bullet "codereading.club/conduct"
+                    , bullet ""
                     , bulletLink "Group workspace" groupWorkspaceLink
+                    , bullet "shorturl.at/foW12"
+                    , bullet ""
                     , bulletLink "Code in annotation tool" annotationLink
+                    , bullet "shorturl.at/lmvXY"
                     , if String.length pdfLink > 0 then
                         bulletLink "Example annotation" pdfLink
 
@@ -532,10 +537,10 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "10" "Independently" "Examine structure"
-                       , slideP "Highlight the places where things are defined a draw links to where they are used. Use different colours."
-                       , slideP "There is no \"right\" way to do this exercise. Use your instincts to explore how the pieces of code flow."
+                       , slideP "Highlight the places where things are defined a draw links to where they are used. Use different colours. There is no \"right\" way to do this excercise. Use your insticts to explore how the pieces of code flow."
                        , bullets
                             [ bulletLink "Code to annotate" annotationLink
+                            , bullet "shorturl.at/lmvXY"
                             , if String.length pdfLink > 0 then
                                 bulletLink "Code pdf to download" pdfLink
 
@@ -653,7 +658,6 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "Independently" "Identify important lines"
-                       , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , bullets
                             [ bullet "Identify the 4 lines you consider most important"
                             , bullet "Note those lines down on a single sticky note"
@@ -674,7 +678,7 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "One person" "Present"
-                       , slideHeading3 "Talk through your choices"
+                       , slideHeading3 "Talk through your 4 line choices"
                        ]
               )
             , ( True
@@ -808,7 +812,24 @@ slideContent section =
             ]
 
         DecisionSummary ->
-            [ ( True, [ decisionsConsequencesWhy ] ) ]
+            [ ( False
+              , [ decisionsConsequencesWhy ]
+                    ++ [ slideHeading2 "Looking at a piece of code again"
+                       , slideHeading3 "Consider code choices"
+                       , slideHeading3 "Consider the consequences"
+                       , slideP "Consider the impact of the decisions on e.g. readability, performance, extendability"
+                       , slideHeading3 "Consider potential reasons"
+                       , slideP "Can you understand why the code might have been designed this way?"
+                       ]
+              )
+            , ( True
+              , [ decisionsConsequencesWhy ]
+                    ++ [ timedHeading "5" "Together" "Identify decisions"
+                       , slideP "Try not to judge the decisions as good or bad"
+                       , slideP "Focus on what decisions the developer(s) had to make, not why they made them"
+                       ]
+              )
+            ]
 
 
 

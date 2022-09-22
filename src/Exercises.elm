@@ -477,7 +477,7 @@ slideContent section =
                             , bullet "Read Felienne's book! The Programmer's Brain"
                             , bullet "Start a club"
                             , bullet "Join a club"
-                            , bullet "Get in touch hello@codereading.club"
+                            , bullet "Get in touch - email: hello@codereading.club | twitter: @codereadingclub"
                             ]
                        ]
               )

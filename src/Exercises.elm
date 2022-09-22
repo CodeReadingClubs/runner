@@ -857,10 +857,6 @@ slideP paragraph =
 
 slidePMarkdown : String -> CustomContent
 slidePMarkdown paragraph =
-    let
-        d =
-            Debug.log "para md" paragraph
-    in
     item (Markdown.toHtml [] paragraph)
 
 

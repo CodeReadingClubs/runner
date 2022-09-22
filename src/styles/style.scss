@@ -7,51 +7,86 @@ $light: #f6f4d2;
 //$dark: #a44a3f; //light rust
 $dark3: #49306b; //cyber grape
 
-$mid1: #ee964b;
-$mid2: #f4d35e;
-$mid3: #28afb0;
+$orange: #ee964b;
+$yellow: #f4d35e;
+$teal: #28afb0;
 $dark: #1f271b;
 $dark2: #19647e;
+$background: #f3f3f3;
 
 body {
-  background-color: $mid3; //#48a9a6;
+  background-color: $background;
   font-family: sans-serif;
   font-size: 1.25em;
 }
 
 body > div {
-  background-color: #e4dfda !important;
+  background-color: $background !important;
 }
 
+// All links by default (includes overview slides)
 a {
-  color: $dark3;
+  border-bottom: solid 2px $orange;
+  border-left: solid 10px $teal;
+  color: $dark;
+  padding-left: 10px;
+}
+
+// Links on individual slides
+.slides a {
+  border-left: solid 20px $teal;
+
   &:hover {
     background-color: darken(#e4dfda, 10);
-    color: darken($dark3, 15);
+    color: darken($dark, 15);
+  }
+
+  &:visited {
+    color: $dark;
   }
 }
 
-h1, h2 {
+h1,
+h2 {
   color: $dark;
 }
 
+h1 {
+  font-size: 4rem;
+  font-family: 'Ubuntu Mono', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  min-height: 130px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
 hr {
-  background-color: $mid3;
+  background-color: $teal;
+}
+
+.separator {
+  border: 3px solid $teal;
+  border-radius: 2px;
 }
 
 h2 span {
-
   &.who {
-    background-color: $mid2; //#d4b483;
+    background-color: $yellow; //#d4b483;
     border-radius: 8px;
     border: 2px solid $dark2; //#4281a4;
     color: $dark2; //#4281a4;
+    float: right;
     font-size: 0.6em;
     padding: 3px 5px;
     margin: 0 10px 0 30px;
   }
 
   &.time {
+    float: right;
     font-size: 0.7em;
   }
 }
@@ -60,24 +95,27 @@ h2 span {
   position: absolute;
   top: 17px;
   right: 17px;
-  border: 5px dashed $mid1;
+  border: 5px dashed $orange;
   padding: 10px;
-  background: $mid2;
+  background: $yellow;
   height: 100px;
   width: 100px;
   border-radius: 100px;
   text-align: center;
+
   span {
     font-size: 24px;
   }
+
   button {
-    background-color: $mid1;
+    background-color: $orange;
     border: none;
     border-radius: 100px;
     display: block;
     font-size: 18px;
     margin: 10px auto;
     padding: 5px 10px;
+
     &:active,
     &:focus {
       outline: none;
@@ -85,8 +123,17 @@ h2 span {
   }
 }
 
+.slides {
+  padding: 2rem 4rem;
+}
+
 .slides li {
   padding-bottom: 10px;
+  list-style: none;
+}
+
+.slides  img {
+  padding-right: 0.5rem;
 }
 
 .footer {
@@ -94,4 +141,17 @@ h2 span {
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+.syntax-highlight {
+  background-color: $teal;
+  border-radius: 0.5rem;
+  line-height: 1.2;
+  margin: -0.2rem;
+  margin-left: 1ch;
+  padding: 0.2rem;
+}
+
+.paragraph {
+  max-width: 90%;
 }

@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Dan, Felienne, Nick &  Katja"
+    "Felienne & Katja"
 
 
 {-| A link to the code in annotation tool
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1Brg380qNKXlBslciD4Tp4MpAdJUTt24KGBPPSvo_MQQ/edit?usp=sharing"
+    "https://jamboard.google.com/d/1Ke1uUnED6QilyhcQio50TOjqyT_NnyRFe6HDZuh_qjQ/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "DOOM teleportion code p_telept.c see linuxdoom-1.10/FILES2 for overview"
+    "DOOM teleportation code p_telept.c see linuxdoom-1.10/FILES2 for overview"
 
 
 {-| A link to the code in repo
@@ -69,23 +69,23 @@ slides =
     -- (newGroupSlides, firstLookSlides, secondLookSlides)
     -- or make your own
     ----
-    [ SessionStartFirstClub
+    [ WorkshopIntro
         { facilitatedBy = facilitatedBy
         , groupWorkspaceLink = groupWorkspaceLink
         , annotationLink = annotationLink
         , pdfLink = pdfLink
         }
-    , FirstGlance
     , WhatAreWeThinking
+    , FirstGlance
     , ListNames
+    , Break
     , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
-    , Summarise
+    , DecisionSummary
     , SessionEnd
         { codeDescription = codeDescription
         , codeLink = codeLink
         }
-    , Feedback
     ]
         |> List.map (\section -> Exercises.slideContent section)
         |> List.concat

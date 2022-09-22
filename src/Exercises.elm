@@ -45,6 +45,7 @@ type
     | DecisionsMade
     | DecisionsConsequences
     | DecisionsWhy
+    | DecisionSummary
 
 
 slideHeadingFromSection : Section -> List CustomContent
@@ -119,6 +120,9 @@ slideHeadingFromSection section =
 
             DecisionsWhy ->
                 "The 'why' of the decisions"
+
+            DecisionSummary ->
+                "Decisions, consequences and why"
         )
     , styledSeparator
     ]
@@ -165,7 +169,6 @@ sectionIntroFromSection section =
             [ slideP "The goal of this exercise is to practice to get a first impression of code and act upon that."
             , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
             , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
-            , item (img [ src "annotated-code.png", style "height" "260px" ] [])
             , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
             , item (img [ src "example-first-glance.png", style "width" "120%", style "margin" "-10px 0 0 -10%" ] [])
             ]
@@ -213,6 +216,10 @@ sectionIntroFromSection section =
 
         DecisionsWhy ->
             []
+
+        DecisionSummary ->
+            [ slideHeading2 "There's more where that came from..."
+            ]
 
 
 sectionIntro : Section -> ( Bool, List SharedType.CustomContent )
@@ -800,6 +807,9 @@ slideContent section =
               )
             ]
 
+        DecisionSummary ->
+            [ ( True, [ decisionsConsequencesWhy ] ) ]
+
 
 
 -- Markup helpers
@@ -808,6 +818,11 @@ slideContent section =
 codeReadingWordmark : CustomContent
 codeReadingWordmark =
     item (h1 [] [ text "Code", br [] [], span [ class "syntax-highlight" ] [ text "Reading" ], br [] [], text "Club" ])
+
+
+decisionsConsequencesWhy : CustomContent
+decisionsConsequencesWhy =
+    item (h1 [] [ text "Decisions", br [] [], span [ class "syntax-highlight" ] [ text "Consequences" ], br [] [], text "Why" ])
 
 
 slideHeading : String -> CustomContent

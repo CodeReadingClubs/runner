@@ -191,7 +191,7 @@ sectionIntroFromSection section =
             []
 
         ImportantLines ->
-            [ slideHeading2 "Important intro" ]
+            [ slideHeading2 "What does it mean to be important?" ]
 
         Summarise ->
             []
@@ -233,11 +233,13 @@ slideContent section =
                 ]
                     ++ slideHeadingFromSection section
                     ++ [ slideP ("with " ++ facilitatedBy)
+                       , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , slideP "hello@codereading.club | https://codereading.club"
                        , slideHr
                        , bullets
                             [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                             , bulletLink "Group workspace" groupWorkspaceLink
+                            , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                             , bulletLink "Code in annotation tool" annotationLink
                             , if String.length pdfLink > 0 then
                                 bulletLink "Code pdf to download" pdfLink
@@ -263,6 +265,7 @@ slideContent section =
                     ++ [ slideP ("with " ++ facilitatedBy)
                        , slideP "hello@codereading.club | https://codereading.club"
                        , slideHr
+                       , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , bullets
                             [ bulletLink "Code of conduct" "https://codereading.club/conduct"
                             , bulletLink "Group workspace" groupWorkspaceLink
@@ -646,22 +649,32 @@ slideContent section =
                        , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , bullets
                             [ bullet "Identify the 4 lines you consider most important"
-                            , bullet "Note those lines down on your board"
+                            , bullet "Note those lines down on a single sticky note"
                             , bullet "Think about why you chose them"
                             ]
-                       , slideP "We'll dot vote our line numbers together and discuss choices in the next exercise"
                        ]
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "8" "Together" "Discuss"
-                       , slideP "Discuss in the group:"
+                    ++ [ timedHeading "2" "Together" "Aggregate"
+                       , slideHeading3 "Get a sense of"
                        , bullets
                             [ bullet "lines covered by many people?"
                             , bullet "lines named but not by a lot of people"
-                            , bullet "Agree less than 8 of the most important lines"
                             ]
-                       , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore."
+                       ]
+              )
+            , ( True
+              , slideHeadingFromSection section
+                    ++ [ timedHeading "5" "One person" "Present"
+                       , slideHeading3 "Talk through your choices"
+                       ]
+              )
+            , ( True
+              , slideHeadingFromSection section
+                    ++ [ timedHeading "5" "One at a time" "Add one new thing"
+                       , bullets
+                            [ bullet "" ]
                        ]
               )
             ]

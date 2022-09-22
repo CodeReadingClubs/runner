@@ -195,7 +195,9 @@ sectionIntroFromSection section =
             []
 
         ImportantLines ->
-            [ slideHeading2 "What does it mean to be important?" ]
+            [ slideHeading2 "What does it mean to be important?"
+            , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
+            ]
 
         Summarise ->
             []
@@ -656,7 +658,6 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "Independently" "Identify important lines"
-                       , slideP "Important can mean whatever you want it to. If it's helpful, try to think of it as a line that you might highlight when reading a text."
                        , bullets
                             [ bullet "Identify the 4 lines you consider most important"
                             , bullet "Note those lines down on a single sticky note"
@@ -677,7 +678,7 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "One person" "Present"
-                       , slideHeading3 "Talk through your choices"
+                       , slideHeading3 "Talk through your 4 line choices"
                        ]
               )
             , ( True

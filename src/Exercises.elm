@@ -483,7 +483,7 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "8" "Together" "Discuss"
-                       , slideP "It might be tempting for some people to start talking about the big picture, but for this exercise we focus on the details we notice, rather than attempt to summerise."
+                       , slideP "It might be tempting for some people to start talking about the big picture, but for this exercise we focus on the details we notice, rather than attempt to summarise."
                        , slideHeading3 "Talk about why things might have jumped out for different people."
                        , bullets
                             [ bullet "How do those initial observations help with deciding what to look at next?"
@@ -533,7 +533,7 @@ slideContent section =
               , slideHeadingFromSection section
                     ++ [ timedHeading "10" "Independently" "Examine structure"
                        , slideP "Highlight the places where things are defined a draw links to where they are used. Use different colours."
-                       , slideP "There is no \"right\" way to do this excercise. Use your insticts to explore how the pieces of code flow."
+                       , slideP "There is no \"right\" way to do this exercise. Use your instincts to explore how the pieces of code flow."
                        , bullets
                             [ bulletLink "Code to annotate" annotationLink
                             , if String.length pdfLink > 0 then

@@ -812,7 +812,24 @@ slideContent section =
             ]
 
         DecisionSummary ->
-            [ ( True, [ decisionsConsequencesWhy ] ) ]
+            [ ( False
+              , [ decisionsConsequencesWhy ]
+                    ++ [ slideHeading2 "Looking at a piece of code again"
+                       , slideHeading3 "Consider code choices"
+                       , slideHeading3 "Consider the consequences"
+                       , slideP "Consider the impact of the decisions on e.g. readability, performance, extendability"
+                       , slideHeading3 "Consider potential reasons"
+                       , slideP "Can you understand why the code might have been designed this way?"
+                       ]
+              )
+            , ( True
+              , [ decisionsConsequencesWhy ]
+                    ++ [ timedHeading "5" "Together" "Identify decisions"
+                       , slideP "Try not to judge the decisions as good or bad"
+                       , slideP "Focus on what decisions the developer(s) had to make, not why they made them"
+                       ]
+              )
+            ]
 
 
 

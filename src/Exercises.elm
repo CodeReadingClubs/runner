@@ -287,7 +287,6 @@ slideContent section =
                     , bullet "4. Questions & Answers"
                     ]
                     |> hide
-                , slideHeading2 "Any questions before we start?" |> hide
                 ]
               )
             , ( False
@@ -306,6 +305,19 @@ slideContent section =
 
                       else
                         item (text "")
+                    ]
+                ]
+              )
+            , ( False
+              , [ codeReadingWordmark
+                , styledSeparator
+                , slideHeading3 "How it will work"
+                , bullets
+                    [ bullet "Grab a copy of the code (paper or digital)"
+                    , bullet "I'll keep the exercises & timer posted on my screenshare"
+                    , bullet "Join the group workspace (make a personal board for notes if you want)"
+                    , bullet "Make independent notes"
+                    , bullet "After each exercise copy any thoughts you want to share the group board"
                     ]
                 ]
               )

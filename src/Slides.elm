@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Katja, Felienne, Dan and Nick"
+    "Katja, Felienne, Dan, Nick and Rupert"
 
 
 {-| A link to the code in annotation tool

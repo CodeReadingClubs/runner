@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Felienne & Katja"
+    "Katja, Felienne, Dan, Nick and Rupert"
 
 
 {-| A link to the code in annotation tool
@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
+    "https://annotate.codereading.club/#/file/LYSwxgTg9gzlBmAXA9ANxmKATApsgRgDZT7IAsZA7DgGwCMAhgMx3xhM0NZNh1k6VBNAJyUm+AEzCADAA4JNMMLBlpDZDAhg0MZDiwhEUCMkzBgUAHbILuQgQgMwAaxyIACgxAQYAFRwAHogAstg4hJ4QKJjEECAAXvoAQo4ubp7eMAAiOJiOiCBW7tCoILgQAHSIMEA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1Ke1uUnED6QilyhcQio50TOjqyT_NnyRFe6HDZuh_qjQ/edit?usp=sharing"
+    "https://jamboard.google.com/d/1KuHL3enVoYIjO4EeLEahEujufYSpFkVkmz0jkwJIouY/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "DOOM teleportation code p_telept.c see linuxdoom-1.10/FILES2 for overview"
+    "Colorized bracket pairs decoration provider for Microsoft's vs code editor."
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/id-Software/DOOM/blob/77735c3ff0772609e9c8d29e3ce2ab42ff54d20b/linuxdoom-1.10/p_telept.c"
+    "https://github.com/microsoft/vscode/blob/447e61a31fc36ad3c14e7776973b290826c9c40a/src/vs/editor/common/model/bracketPairsTextModelPart/colorizedBracketPairsDecorationProvider.ts"
 
 
 {-| The list of slides to use for this session
@@ -69,19 +69,19 @@ slides =
     -- (newGroupSlides, firstLookSlides, secondLookSlides)
     -- or make your own
     ----
-    [ WorkshopIntro
+    [ SessionStart
         { facilitatedBy = facilitatedBy
         , groupWorkspaceLink = groupWorkspaceLink
         , annotationLink = annotationLink
         , pdfLink = pdfLink
         }
-    , WhatAreWeThinking
     , FirstGlance
+    , WhatAreWeThinking
     , ListNames
-    , Break
     , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
-    , DecisionSummary
+    , Summarise
+    , Reflect
     , SessionEnd
         { codeDescription = codeDescription
         , codeLink = codeLink

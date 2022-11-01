@@ -170,9 +170,7 @@ sectionIntroFromSection section =
                 |> hide
             , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
                 |> hide
-            , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/JYEwtAyg9gZgLgdwIYCcCmB6AIgeRwWQwCMAbKIjAdmoGYBWAYxphgAZqAmANlYE41eDABwgO-GgzQckRACwcWdWaNYUSwAHYBXAB4goUALZgAjADoTrDAAcA+nDQk01uGYZA"
-                |> hide
-            , bullet "shorturl.at/lmvXY"
+            , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/LYSwxgTg9gzlBmAXA9ANxmKATApsgRgDZT7IAsZA7DgGwCMAhgMx3xhM0NZNh1k6VBNAJyUm+AEzCADAA4JNMMLBlpDZDAhg0MZDiwhEUCMkzBgUAHbILuQgQgMwAaxyIACgxAQYAFRwAHogAstg4hJ4QKJjEECAAXvoAQo4ubp7eMAAiOJiOiCBW7tCoILgQAHSIMEA"
                 |> hide
             , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
                 |> hide
@@ -277,30 +275,51 @@ slideContent section =
 
         SessionStart { facilitatedBy, groupWorkspaceLink, annotationLink, pdfLink } ->
             [ ( False
-              , slideHeadingFromSection section
-                    ++ [ slideP ("with " ++ facilitatedBy)
-                       , slideP "hello@codereading.club | https://codereading.club"
-                       , slideHr
-                       , bullets
-                            [ bulletLink "Code of conduct" "https://codereading.club/conduct"
-                            , bulletLink "Group workspace" groupWorkspaceLink
-                            , bulletLink "Code in annotation tool" annotationLink
-                            , if String.length pdfLink > 0 then
-                                bulletLink "Example annotation" pdfLink
+              , [ codeReadingWordmark
+                , styledSeparator
+                , slideHeading3 ("with " ++ facilitatedBy)
+                , slideP "hello@codereading.club | https://codereading.club"
+                , slideHeading2 "The plan" |> hide
+                , bullets
+                    [ bullet "1. What is Code Reading Club?"
+                    , bullet "2. How it will work"
+                    , bullet "3. Try some exercises together"
+                    , bullet "4. Questions & Answers"
+                    ]
+                    |> hide
+                ]
+              )
+            , ( False
+              , [ codeReadingWordmark
+                , styledSeparator
+                , slideHeading3 "What is Code Reading Club?"
+                , bullets
+                    [ bulletLink "Code of conduct" "https://codereading.club/conduct"
+                    , bullet "codereading.club/conduct"
+                    , bullet ""
+                    , bulletLink "Group workspace" groupWorkspaceLink
+                    , bullet ""
+                    , bulletLink "Code in annotation tool" annotationLink
+                    , if String.length pdfLink > 0 then
+                        bulletLink "Example annotation" pdfLink
 
-                              else
-                                item (text "")
-                            ]
-                       , slideHr
-                       , bullets
-                            [ bullet "Grab a copy of the code"
-                            , bullet "I'll keep the exercises & timer posted on my screenshare"
-                            , bullet "Join the group workspace and claim a board"
-                            , bullet "Make independent notes on your board"
-                            , bullet "After each exercise we'll copy any thoughts we want to share to a shared board"
-                            ]
-                       , item (h2 [ style "margin-top" "-20px" ] [ text "Any questions before we start?" ]) |> hide
-                       ]
+                      else
+                        item (text "")
+                    ]
+                ]
+              )
+            , ( False
+              , [ codeReadingWordmark
+                , styledSeparator
+                , slideHeading3 "How it will work"
+                , bullets
+                    [ bullet "Grab a copy of the code (paper or digital)"
+                    , bullet "I'll keep the exercises & timer posted on my screenshare"
+                    , bullet "Join the group workspace (make a personal board for notes if you want)"
+                    , bullet "Make independent notes"
+                    , bullet "After each exercise copy any thoughts you want to share the group board"
+                    ]
+                ]
               )
             ]
 
@@ -552,7 +571,6 @@ slideContent section =
                        , slideP "Highlight the places where things are defined a draw links to where they are used. Use different colours. There is no \"right\" way to do this excercise. Use your insticts to explore how the pieces of code flow."
                        , bullets
                             [ bulletLink "Code to annotate" annotationLink
-                            , bullet "shorturl.at/lmvXY"
                             , if String.length pdfLink > 0 then
                                 bulletLink "Code pdf to download" pdfLink
 

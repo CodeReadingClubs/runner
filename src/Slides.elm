@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/LYSwxgTg9gzlBmAXA9ANxmKATApsgRgDZT7IAsZA7DgGwCMAhgMx3xhM0NZNh1k6VBNAJyUm+AEzCADAA4JNMMLBlpDZDAhg0MZDiwhEUCMkzBgUAHbILuQgQgMwAaxyIACgxAQYAFRwAHogAstg4hJ4QKJjEECAAXvoAQo4ubp7eMAAiOJiOiCBW7tCoILgQAHSIMEA"
+    "https://annotate.codereading.club/#/file/IYGwDgFsDmD2BuB6O8CuBrAtAMwE6wDsAXAUwIBNEAjEWKxYANmwAYAWATgGYAmNgDgDGjFtmxdR2RgHYOVKiUE8ewcsGAkAjG2Ase5QYgDOuQygyJBsALZhCZIkcRrSmAJYEwqIolK2QwKQAdAQAVuhAA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1KuHL3enVoYIjO4EeLEahEujufYSpFkVkmz0jkwJIouY/edit?usp=sharing"
+    "https://jamboard.google.com/d/1-nJSe0rJZAu_K8HXxbTw15TA-8iUmVA8IukR6WpQkFk/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "Colorized bracket pairs decoration provider for Microsoft's vs code editor."
+    "Nunjucks template for Gov.uk Date input component."
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/microsoft/vscode/blob/447e61a31fc36ad3c14e7776973b290826c9c40a/src/vs/editor/common/model/bracketPairsTextModelPart/colorizedBracketPairsDecorationProvider.ts"
+    "https://github.com/alphagov/govuk-frontend/blob/a6f0493248c60ff30ff679bbec22adaae14a02dc/src/govuk/components/date-input/template.njk"
 
 
 {-| The list of slides to use for this session

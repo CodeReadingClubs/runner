@@ -684,8 +684,7 @@ slideContent section =
                     ++ [ timedHeading "5" "Independently" "Identify important lines"
                        , bullets
                             [ bullet "Identify the 4 lines you consider most important"
-                            , bullet "Use a single text box for each number"
-                            , bullet "Group same numbers together in a line"
+                            , bullet "List your 4 line numbers together"
                             , bullet "Think about why you chose them"
                             ]
                        ]

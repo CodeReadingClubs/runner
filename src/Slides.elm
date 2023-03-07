@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Katja, Felienne, Dan, Nick and Rupert"
+    "Katja, Dan, Felienne & Nick"
 
 
 {-| A link to the code in annotation tool
@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/IYGwDgFsDmD2BuB6O8CuBrAtAMwE6wDsAXAUwIBNEAjEWKxYANmwAYAWATgGYAmNgDgDGjFtmxdR2RgHYOVKiUE8ewcsGAkAjG2Ase5QYgDOuQygyJBsALZhCZIkcRrSmAJYEwqIolK2QwKQAdAQAVuhAA"
+    "https://annotate.codereading.club/#/file/GIQwTiC2ILTA9gVwHYBMQBcCW9kHoBxAT0mRAGctFI8AjAG3lrwBZUBmEANgFYBTAOy92fHtwAcATnYsB0viGkAGcakldxIfrQ0CBeAOYkylannIAHEAGM+5PBj4APDADoLRIA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1-nJSe0rJZAu_K8HXxbTw15TA-8iUmVA8IukR6WpQkFk/edit?usp=sharing"
+    "https://jamboard.google.com/d/1c_Z2I364WUYhifu6xUUoW42_sI4klS9QvQtgpQSS5Q8/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "Nunjucks template for Gov.uk Date input component."
+    "The definition for a text string space used in reinforcement learning algorithms from OpenAI's Gymnasium library"
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/alphagov/govuk-frontend/blob/a6f0493248c60ff30ff679bbec22adaae14a02dc/src/govuk/components/date-input/template.njk"
+    "https://github.com/Farama-Foundation/Gymnasium/blob/4d3a65e7653e5a68934793ea9308d968a5eb6877/gymnasium/spaces/text.py"
 
 
 {-| The list of slides to use for this session

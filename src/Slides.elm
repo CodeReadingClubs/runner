@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Katja, Dan, Felienne & Nick"
+    "Katja, Dan & Nick"
 
 
 {-| A link to the code in annotation tool
@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/GIQwTiC2ILTA9gVwHYBMQBcCW9kHoBxAT0mRAGctFI8AjAG3lrwBZUBmEANgFYBTAOy92fHtwAcATnYsB0viGkAGcakldxIfrQ0CBeAOYkylannIAHEAGM+5PBj4APDADoLRIA"
+    "https://annotate.codereading.club/#/file/IIVQKg8gssYJIGECMKkHoDOAXAhgIwBsBTAWgBMBLAMyoFcMKB7AOxIHci9aK1DG80AJkF4AxqIDseIgBZBADlEBOGURUAGeVQCs8pUoBsB0YPUz1SeRMEztZeegyiAThQAOWDGjfPGAWw8AfT8cLFcADwA6NwBPIA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1c_Z2I364WUYhifu6xUUoW42_sI4klS9QvQtgpQSS5Q8/edit?usp=sharing"
+    "https://jamboard.google.com/d/1qmYUzKSxX0RANPHOjMgWc-WA1Kf8gGUEvlagCBrfpTg/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "The definition for a text string space used in reinforcement learning algorithms from OpenAI's Gymnasium library"
+    "From Stable Diffusion Web UI https://github.com/AUTOMATIC1111/stable-diffusion-webui"
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/Farama-Foundation/Gymnasium/blob/4d3a65e7653e5a68934793ea9308d968a5eb6877/gymnasium/spaces/text.py"
+    "https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/22bcc7be428c94e9408f589966c2040187245d81/scripts/prompt_matrix.py"
 
 
 {-| The list of slides to use for this session

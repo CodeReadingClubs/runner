@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "From Stable Diffusion Web UI https://github.com/AUTOMATIC1111/stable-diffusion-webui"
+    "A prompt matrix from Stable Diffusion Web UI https://github.com/AUTOMATIC1111/stable-diffusion-webui. Stable Diffusion is a machine learning image generator that takes text prompts and returns images."
 
 
 {-| A link to the code in repo

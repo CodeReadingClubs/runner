@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "The snowflake element of Jetradar Mobile's \"SNowfall View\" for Android written in Kotlin."
+    "The snowflake element of Jetradar Mobile's \"Snowfall View\" for Android written in Kotlin."
 
 
 {-| A link to the code in repo

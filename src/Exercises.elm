@@ -170,7 +170,7 @@ sectionIntroFromSection section =
                 |> hide
             , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
                 |> hide
-            , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/LYSwxgTg9gzlBmAXA9ANxmKATApsgRgDZT7IAsZA7DgGwCMAhgMx3xhM0NZNh1k6VBNAJyUm+AEzCADAA4JNMMLBlpDZDAhg0MZDiwhEUCMkzBgUAHbILuQgQgMwAaxyIACgxAQYAFRwAHogAstg4hJ4QKJjEECAAXvoAQo4ubp7eMAAiOJiOiCBW7tCoILgQAHSIMEA"
+            , bulletLink "Code in the annotation tool" "https://annotate.codereading.club/#/file/FIUwLgTghgJlEFkD2AjAlgGxAeigOxgiTRgFoBnPJAdwDMoMNsUNVsAGATgCYuBWOAEYAxtxjdBMSSEEgQAFloAOJSi60UwzlFgA2ELu45KNeo2zkIw7AFsoaPNgBWUAG5RswpDefhocCBtUTGMqOgYmAGUw2gwoAGsQADp4sCA"
                 |> hide
             , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
                 |> hide

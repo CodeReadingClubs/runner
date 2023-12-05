@@ -15,7 +15,7 @@ import Time
 facilitatedBy : String
 facilitatedBy =
     -- e.g. "Katja & Dan"
-    "Rupert"
+    "Katja & Nick"
 
 
 {-| A link to the code in annotation tool
@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    "https://annotate.codereading.club/#/file/O4BgTgtg9ApgNhAtAMzgQwC5gJYGcoBGcA9gVACYHIECsA7AIxoAszNBAxgEwi8EBsADhBoOdEWnIBmZM0FcCaQRwCcIGlFxgOUALLFy8AHTwIQA"
+    "https://annotate.codereading.club/#/file/FIUwLgTghgJlEFkD2AjAlgGxAeigOxgiTRgFoBnPJAdwDMoMNsUNVsAGATgCYuBWOAEYAxtxjdBMSSEEgQAFloAOJSi60UwzlFgA2ELu45KNeo2zkIw7AFsoaPNgBWUAG5RswpDefhocCBtUTGMqOgYmAGUw2gwoAGsQADp4sCA"
 
 
 {-| A link for a shared workspace for your session
@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    "https://jamboard.google.com/d/1aPD8lmCqhcruJqFSj09HfTy3_EpUIhRPu0Jt4aEaB3I/edit?usp=sharing"
+    "https://jamboard.google.com/d/1ly-JyKD0pEesWLDZgTVruwzjqjg6WpYMOp7b4Ne6bVc/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    "The model holding state for tetris clone https://github.com/w0rm/elm-flatris"
+    "The snowflake element of Jetradar Mobile's \"Snowfall View\" for Android written in Kotlin."
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    "https://github.com/w0rm/elm-flatris/blob/dbfb571a445bc2000b680ac70aad3f482ba8c905/src/Model.elm"
+    "https://github.com/JetradarMobile/android-snowfall/blob/092095da1c2d21d1de1ee4f88b09fbc9aad6e62e/snowfall/src/main/java/com/jetradarmobile/snowfall/Snowflake.kt"
 
 
 {-| The list of slides to use for this session
